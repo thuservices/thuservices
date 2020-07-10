@@ -56,6 +56,14 @@ $ systemctl enable goauthing.service goauthing.timer
 
 关于准入与准出的问题，欢迎PR。
 
+据了解，准入代认证 和 连线其他IP 分别负责校园网的准入和准出。当机器无准入时，校内不通；无准出时候，校内通但校外不通。
+
+具体判据为无准入ping包无回应，无准出是ping包到出口即断。
+
+万能方法是 准入代认证，不过可以在观察到已有准入时使用 连线其他IP 也可联网。
+
+关于IPv4和IPv6在准入准出上线与掉线时的表现，以及校内二层接入/三层接入的表现，欢迎PR
+
 ## Tsinghua-Secure
 
 如果是校内环境，首先连接 `Tsinghua-Secure无线网使用指南` 进入 [usereg.tsinghua.edu.cn](usereg.tsinghua.edu.cn) , 登录后在 `自注册及修改口令处` 设置Tsinghua-Secure使用的密码，此密码不需要与info密码相同。
