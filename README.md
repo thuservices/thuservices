@@ -119,7 +119,7 @@ pacman -S seafile-client
 
 由于在家中使用SSLVPN后可获得公网IP，可以使用ISATAP获取清华IPv6地址，以达到挂PT的功能，此处不做详细展开。
 
-## WIN 10
+# WIN 10
 
 在Linux下使用该命令获取相关cmd指令
 
