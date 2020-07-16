@@ -2,6 +2,8 @@
 
 本文将重点关注清华一些服务在Linux机器，包括远端服务器上的使用说明
 
+以及校园专供Windows10的激活指南
+
 ## SSLVPN
 
 在Linux机器上没有PULSE SECURE客户端，除了可以使用WEB VPN外，也可使用 `openconnect` 来做到连接清华VPN。
@@ -116,3 +118,19 @@ pacman -S seafile-client
 ## 获取IPv6挂PT
 
 由于在家中使用SSLVPN后可获得公网IP，可以使用ISATAP获取清华IPv6地址，以达到挂PT的功能，此处不做详细展开。
+
+## WIN 10
+
+在Linux下使用该命令获取相关cmd指令
+
+```
+$ dig -t TXT win10.harrychen.xyz +short
+```
+
+或在 Windows 下使用
+
+```
+cmd> nslookup -q=TXT win10.harrychen.xyz
+```
+
+然后在连上 sslvpn 的情况下执行该脚本即可激活
