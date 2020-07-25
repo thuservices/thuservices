@@ -16,7 +16,7 @@
 
 ## 本科专业培养方案
 
-[清华官网链接](https://www.tsinghua.edu.cn/jyjx1/bksjy/bkzy1.htm)
+[清华官网培养方案链接](https://www.tsinghua.edu.cn/jyjx1/bksjy/bkzy1.htm)
 
 ## 学校宣传资料
 
@@ -41,3 +41,18 @@
 清华大学迎新系统是考生在现场查询报名信息，以及报名流程是否完成的网站
 
 [清华大学迎新系统](http://szyx.cic.tsinghua.edu.cn/index.jsp)
+
+## 注册标志（用于学生火车票）
+
+快速访问路径：INFO（校外需要VPN）->登录->综合->右上角照片处“学籍信息”->历年注册标志
+
+## 校内校车
+
+[校内交通介绍](https://www.tsinghua.edu.cn/zjqh/syxx1/xyjt1.htm)
+[校车交通路线图](https://www.tsinghua.edu.cn/__local/3/BB/BE/7260A578E48A6BA827528DE4F74_004A1626_73CEC.png)
+
+校车实时运行情况可以使用“校内交通介绍”中提到的APP与/或小程序
+
+## 校内地图
+
+[校内地图](https://www.tsinghua.edu.cn/zjqh/xyfg/xydt1.htm)
