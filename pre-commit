@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cat aux/README.pre.md > README.md
+./gen.readme.py >> README.md
+cat aux/README.suf.md >> README.md
+git add README.md
