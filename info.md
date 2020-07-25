@@ -2,7 +2,7 @@
 
 ## 校历
 
-快速访问路径：INFO(校外需要VPN)->综合->右上角校历
+快速访问路径：INFO(校外需要VPN)->登录->综合->右上角校历
 
 ### 2019-2020学年 春夏
 
@@ -27,3 +27,17 @@
 
 [学校宣传资料（校外需要VPN）](http://info.tsinghua.edu.cn/html/xxxczl/xczlxz.htm)
 
+## 选课时间表
+
+快速访问路径：[ACADEMIC](http://academic.tsinghua.edu.cn/)（校外需要VPN）->登录
+->左侧选课专栏->本科生选课下“选课时间安排”
+
+## 选课快捷方式
+
+[选课登录（校内或SSLVPN）](http://zhjwxk.cic.tsinghua.edu.cn/xklogin.do)
+
+## 清华大学迎新系统
+
+清华大学迎新系统是考生在现场查询报名信息，以及报名流程是否完成的网站
+
+[清华大学迎新系统](http://szyx.cic.tsinghua.edu.cn/index.jsp)
