@@ -36,6 +36,10 @@
 
 [选课登录（校内或SSLVPN）](http://zhjwxk.cic.tsinghua.edu.cn/xklogin.do)
 
+## 历年本科生开课目录
+
+[历年本科生开课目录（校内或SSLVPN）](http://announce.cic.tsinghua.edu.cn/node/25833)
+
 ## 清华大学迎新系统
 
 清华大学迎新系统是考生在现场查询报名信息，以及报名流程是否完成的网站
