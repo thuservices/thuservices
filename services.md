@@ -32,9 +32,9 @@ $ openconnect --juniper https://sslvpn.tsinghua.edu.cn
 
 值得注意的是，与清华无关的流量依旧按照原有路由发出，此行为与Windows下不同。（此项需求证）
 
-# 上网认证
+## 上网认证
 
-## （自动）认证
+### （自动）认证
 
 参考 [GoAuthing](https://github.com/z4yx/GoAuthing)
 
@@ -50,7 +50,7 @@ $ systemctl enable goauthing.service goauthing.timer
 
 如果有打包者将此打包，请PR。
 
-## 远端服务器代认证
+### 远端服务器代认证
 
 在某些服务器上无法使用浏览器打开 [net.tsinghua.edu.cn](net.tsinghua.edu.cn) 来认证，只能使用 [命令行工具](## （自动）认证) 或 准入代认证 的方式来认证。
 
@@ -66,7 +66,7 @@ $ systemctl enable goauthing.service goauthing.timer
 
 关于IPv4和IPv6在准入准出上线与掉线时的表现，以及校内二层接入/三层接入的表现，欢迎PR
 
-## Tsinghua-Secure
+### Tsinghua-Secure
 
 如果是校内环境，首先连接 `Tsinghua-Secure无线网使用指南` 进入 [usereg.tsinghua.edu.cn](usereg.tsinghua.edu.cn) , 登录后在 `自注册及修改口令处` 设置Tsinghua-Secure使用的密码，此密码不需要与info密码相同。
 
@@ -99,7 +99,7 @@ $ systemctl enable --now wpa_supplicant-nl80211@XXXX.service
 
 即可连接。
 
-# 清华云盘
+## 清华云盘
 
 建议使用 [seafile.com/download](seafile.com/download) 中的Linux客户端，而不是Terminal客户端，因为Terminal客户端需要独立密码，此密码不同于INFO密码，不能获得，故不能通过Terminal客户端登录。
 
@@ -111,15 +111,15 @@ pacman -S seafile-client
 
 而非 `pacman -S seafile`，此包为Terminal客户端。其余发行版请自行找到对应包。
 
-# ISATAP 
+## ISATAP 
   
 参考 [ipv6.tsinghua.edu.cn](ipv6.tsinghua.edu.cn)
 
-## 获取IPv6挂PT
+### 获取IPv6挂PT
 
 由于在家中使用SSLVPN后可获得公网IP，可以使用ISATAP获取清华IPv6地址，以达到挂PT的功能，此处不做详细展开。
 
-# WIN 10 激活
+## WIN 10 激活
 
 在Linux下使用该命令获取相关cmd指令
 

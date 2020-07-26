@@ -22,14 +22,14 @@
 - [services.md](services.md)
     - 清华服务使用指北（主要面向Linux用户）
         - SSLVPN
-    - 上网认证
-        - （自动）认证
-        - 远端服务器代认证
-        - Tsinghua-Secure
-    - 清华云盘
-    - ISATAP 
-        - 获取IPv6挂PT
-    - WIN 10 激活
+        - 上网认证
+            - （自动）认证
+            - 远端服务器代认证
+            - Tsinghua-Secure
+        - 清华云盘
+        - ISATAP 
+            - 获取IPv6挂PT
+        - WIN 10 激活
 
 ## 知道某个重要信息，但repo中未列出？
 
