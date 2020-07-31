@@ -18,6 +18,17 @@
 
 [清华官网培养方案链接](https://www.tsinghua.edu.cn/jyjx1/bksjy/bkzy1.htm)
 
+[计算机系各年级培养方案info版本（需要已经登录info）](http://zhjw.cic.tsinghua.edu.cn/jhBks.vjhBksPyfakzbBs.do?m=pyfakzFrame&fajhh=193024111&theModule=pyfa)
+
+可以注意到，上述地址中的 193024111 中的19表明是19级的培养方案，后面的3024111是
+院系相关代码
+
+[交叉信息研究院各年级培养方案info版本（需要已经登录info）](http://zhjw.cic.tsinghua.edu.cn/jhBks.vjhBksPyfakzbBs.do?m=pyfakzFrame&fajhh=183047112&theModule=pyfa)
+
+同理，这个地址中的 183047112 是表明18级的培养方案。
+
+对于其他院系的院系代码，欢迎PR。
+
 ## 学校宣传资料
 
 包括清华大学校标、校徽、校色，清华大学校歌、歌词，清华展览，清华概览中文版、清华
