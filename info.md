@@ -18,16 +18,18 @@
 
 [清华官网培养方案链接](https://www.tsinghua.edu.cn/jyjx1/bksjy/bkzy1.htm)
 
-[计算机系各年级培养方案info版本（需要已经登录info）](http://zhjw.cic.tsinghua.edu.cn/jhBks.vjhBksPyfakzbBs.do?m=pyfakzFrame&fajhh=193024111&theModule=pyfa)
+[计算机系19级培养方案info版本（需要已经登录info）](http://zhjw.cic.tsinghua.edu.cn/jhBks.vjhBksPyfakzbBs.do?m=pyfakzFrame&fajhh=193024111&theModule=pyfa)
 
 可以注意到，上述地址中的 193024111 中的19表明是19级的培养方案，后面的3024111是
 院系相关代码
 
-[交叉信息研究院各年级培养方案info版本（需要已经登录info）](http://zhjw.cic.tsinghua.edu.cn/jhBks.vjhBksPyfakzbBs.do?m=pyfakzFrame&fajhh=183047112&theModule=pyfa)
+[交叉信息研究院18级培养方案info版本（需要已经登录info）](http://zhjw.cic.tsinghua.edu.cn/jhBks.vjhBksPyfakzbBs.do?m=pyfakzFrame&fajhh=183047112&theModule=pyfa)
 
 同理，这个地址中的 183047112 是表明18级的培养方案。
 
-对于其他院系的院系代码，欢迎PR。
+[各级各院系培养方案（需要已经登录info）](http://zhjw.cic.tsinghua.edu.cn/jhBks.vjhBksPyfabBs.do?theModule=pyfa)
+
+此处为各年级各院系的索引
 
 ## 学校宣传资料
 
