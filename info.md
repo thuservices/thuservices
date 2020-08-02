@@ -23,10 +23,6 @@
 可以注意到，上述地址中的 193024111 中的19表明是19级的培养方案，后面的3024111是
 院系相关代码
 
-[交叉信息研究院18级培养方案info版本（需要已经登录info）](http://zhjw.cic.tsinghua.edu.cn/jhBks.vjhBksPyfakzbBs.do?m=pyfakzFrame&fajhh=183047112&theModule=pyfa)
-
-同理，这个地址中的 183047112 是表明18级的培养方案。
-
 [各级各院系培养方案（需要已经登录info）](http://zhjw.cic.tsinghua.edu.cn/jhBks.vjhBksPyfabBs.do?theModule=pyfa)
 
 此处为各年级各院系的索引
