@@ -5,6 +5,9 @@
 [选课登录（校内或SSLVPN）（选课时段内有效）](http://zhjwxk.cic.tsinghua.edu.cn/xklogin.do)
 
 ## 文件内容
+- [utils.md](utils.md)
+    - 一些脚本和工具
+        - 一键评教
 - [info.md](info.md)
     - INFO重要信息集合
         - 校历
