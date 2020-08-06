@@ -43,7 +43,7 @@
 
 ## 选课快捷方式
 
-[选课登录（校内或SSLVPN）](http://zhjwxk.cic.tsinghua.edu.cn/xklogin.do)
+[选课登录（校内或SSLVPN）（选课时间内有效）](http://zhjwxk.cic.tsinghua.edu.cn/xklogin.do)
 
 ## 历年本科生开课目录
 

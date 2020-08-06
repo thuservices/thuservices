@@ -2,7 +2,7 @@
 
 ## 快速选课入口
 
-[选课登录（校内或SSLVPN）](http://zhjwxk.cic.tsinghua.edu.cn/xklogin.do)
+[选课登录（校内或SSLVPN）（选课时段内有效）](http://zhjwxk.cic.tsinghua.edu.cn/xklogin.do)
 
 ## 文件内容
 - [info.md](info.md)
