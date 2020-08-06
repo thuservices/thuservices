@@ -45,6 +45,19 @@
 
 [选课登录（校内或SSLVPN）（选课时间内有效）](http://zhjwxk.cic.tsinghua.edu.cn/xklogin.do)
 
+## 选课系统相关说明
+
+你校有两套甚至三套选课系统，分别是 zhjw, zhjwxk 以及 zhjwxkyw。后两者在选课时间内
+开启，前者会在平时开启。
+
+对于前者，通常访问路径是 [ACADEMIC](http://academic.tsinghua.edu.cn/)（校外需要VPN）
+->登录->左侧选课专栏->本科生选课。通常用于在非选课时间内查看开课信息。
+
+中者可以通过快捷方式进入，也可以通过 info/academic 登录后的中间界面登录，webvpn
+也是指向这个选课系统三，这种登录方式当且仅当在选课时间内才可行。
+
+后者与中者类似，只需在操作时改相关url。
+
 ## 历年本科生开课目录
 
 [历年本科生开课目录（校内或SSLVPN）](http://announce.cic.tsinghua.edu.cn/node/25833)
