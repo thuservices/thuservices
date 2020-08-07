@@ -2,7 +2,7 @@
 // @name         TsinghuaCourseConflictMarker
 // @namespace    https://github.com/ZenithalHourlyRate
 // @homepageURL  https://github.com/ZenithalHourlyRate/thuservices
-// @version      1.4
+// @version      1.4.5
 // @description  Tsinghua Course Time Confliction Marker
 // @author       Zenithal
 // @match        http://zhjwxk.cic.tsinghua.edu.cn/xkBks.vxkBksXkbBs.do?m=selectKc*
@@ -45,12 +45,14 @@ for(i=0;i!=d.length;++i){
     }
     var f=e.split(',');
     for(var j=0;j!=f.length;++j){
+      var n=[]
       for(var k=0;k!=b.length;++k){
         if(f[j][0]==b[k][0][0] && f[j][2]==b[k][0][2]){ // just comparison on time, no comparison on others
           d[i].style.color="#ff0000";
-          d[i].title+=b[k][1];
+          n.push(b[k][1]);
         }
       }
+      d[i].title=n.join(',');
     }
   }
 }
