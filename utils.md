@@ -37,3 +37,8 @@ credit: [Konano](https://github.com/Konano)
 
 或者可以通过访问[这里](https://greasyfork.org/en/scripts/408340-tsinghuacourseconflictmarker)
 来一键获得脚本。
+
+现在已经增加webvpn支持。
+
+感谢[CircuitCoder](https://github.com/CircuitCoder)提供的技术指导
+感谢[SharzyL](https://github.com/SharzyL)的建议与DEBUG
