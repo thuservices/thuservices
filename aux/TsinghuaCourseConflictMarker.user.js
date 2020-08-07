@@ -2,7 +2,7 @@
 // @name         TsinghuaCourseConflictMarker
 // @namespace    https://github.com/ZenithalHourlyRate
 // @homepageURL  https://github.com/ZenithalHourlyRate/thuservices
-// @version      1.2
+// @version      1.3
 // @description  Tsinghua Course Time Confliction Marker
 // @author       Zenithal
 // @match        http://zhjwxk.cic.tsinghua.edu.cn/xkBks.vxkBksXkbBs.do?m=selectKc*
@@ -17,9 +17,9 @@ function courseConflict(){
 var a=document.getElementById('iframe2').contentWindow.document.getElementsByClassName("trunk");// get the iframe of selected courses
 var b=[];
 for(var i=0;i!=a.length;++i){
-  if(a[i].text.match(/.-.(.*)/gi)){ // get the span with time information
+  if(a[i].textContent.match(/.-.(.*)/gi)){ // get the span with time information
     if(a[i].title == ""){ // some text is abbrevated
-      var c1=a[i].text.split(","); // some has multiple time
+      var c1=a[i].textContent.split(","); // some has multiple time
       for(var j1=0;j1!=c1.length;++j1){
         b.push(c1[j1]);
       }
@@ -34,10 +34,10 @@ for(var i=0;i!=a.length;++i){
 
 var d=document.getElementById('iframe1').contentWindow.document.getElementsByClassName("trunk");
 for(i=0;i!=d.length;++i){
-  if(d[i].text.match(/.-.(.*)/gi)){
+  if(d[i].textContent.match(/.-.(.*)/gi)){
     var e=""
     if(d[i].title == ""){
-      e=d[i].text;
+      e=d[i].textContent;
     } else {
       e=d[i].title;
     }
