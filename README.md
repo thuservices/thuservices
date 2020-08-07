@@ -8,6 +8,7 @@
 - [utils.md](utils.md)
     - 一些脚本和工具
         - 一键评教
+        - 选课冲突标记
 - [info.md](info.md)
     - INFO重要信息集合
         - 校历

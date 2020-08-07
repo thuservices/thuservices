@@ -20,3 +20,20 @@ $('input[name*=fs]').each(function(){$(this).val(Math.round(1+6*Math.random()))}
 然后对于6+1或7+0，提交时会提醒评分过高，请自行把握。
 
 credit: [Konano](https://github.com/Konano)
+
+## 选课冲突标记
+
+你还在为抢课时满怀期待提交选课，却发现时间冲突而错失选课吗？
+你还在一边记忆已选课时间，一边对照开课列表而感到缓慢吗？
+这个脚本帮你忙！
+
+这个脚本检测你已经选好的课，自动将候选课中有冲突时间的课标红，使得你浏览
+百万课程时速度有如神助。
+
+需要注意的是，现在未对半学期课做完全支持，也就是说可能出现假的时间冲突；
+同时在开课信息以及选课查询界面无法工作，只在选课操作界面工作。
+
+本脚本在 aux/TsinghuaCourseConflictMarker.user.js 中，需要使用油猴安装。
+
+或者可以通过访问[这里](https://greasyfork.org/en/scripts/408340-tsinghuacourseconflictmarker)
+来一键获得脚本。
