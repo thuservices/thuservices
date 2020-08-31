@@ -11,13 +11,13 @@ $('input[name*=fs]').each(function(){$(this).val(Math.round(1+6*Math.random()))}
 评教的主要困难在于打分，本脚本旨在一键为您将**一节课**的分全部打完，对于文字评论，
 请自行动手。
 
-使用方法：进入教评系统，**打开某一节课**，按下F12，找到控制台(console)界面，
+使用方法：进入教评系统，**打开某一节课**，按下 F12，找到控制台(console)界面，
 在控制台中复制粘贴上述脚本然后回车运行，相关分数即打好。需要注意的是，打分后
 星星不会亮（无回显），这是正常现象，请放心填写文字评论后提交。
 
-然后脚本中的1+6可以调整为5+2，3+4等各种组合，可根据需要自行调整。
-需要注意的是不能打0分，即至少有1分保底分（0+7是不可行的），
-然后对于6+1或7+0，提交时会提醒评分过高，请自行把握。
+然后脚本中的 1 + 6可以调整为 5 + 2，3 + 4 等各种组合，可根据需要自行调整。
+需要注意的是不能打 0 分，即至少有 1 分保底分（0 + 7 是不可行的），
+然后对于 6 + 1 或 7 + 0，提交时会提醒评分过高，请自行把握。
 
 credit: [Konano](https://github.com/Konano)
 
@@ -38,7 +38,7 @@ credit: [Konano](https://github.com/Konano)
 或者可以通过访问[这里](https://greasyfork.org/en/scripts/408340-tsinghuacourseconflictmarker)
 来一键获得脚本。
 
-现在已经增加webvpn支持。
+现在已经增加 webvpn 支持。
 
-感谢[CircuitCoder](https://github.com/CircuitCoder)提供的技术指导
-感谢[SharzyL](https://github.com/SharzyL)的建议与DEBUG
+感谢 [CircuitCoder](https://github.com/CircuitCoder) 提供的技术指导
+感谢 [SharzyL](https://github.com/SharzyL) 的建议与 DEBUG
