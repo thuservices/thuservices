@@ -42,3 +42,11 @@ credit: [Konano](https://github.com/Konano)
 
 感谢 [CircuitCoder](https://github.com/CircuitCoder) 提供的技术指导
 感谢 [SharzyL](https://github.com/SharzyL) 的建议与 DEBUG
+
+## INFO 网络学堂 Telegram 消息推送
+
+参见 [thu-weblearn-tgbot](https://github.com/Konano/thu-weblearn-tgbot) 以及
+[thu-info-forwarder](https://github.com/Konano/thu-info-forwarder)。
+
+在 Telegram 上已经存在 THU INFO CHANNEL，由于是私有频道，需要通过[邮件](mailto:i@zenithal.me)
+获取邀请链接。
