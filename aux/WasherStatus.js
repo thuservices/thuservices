@@ -30,31 +30,53 @@ async function gatherResponse(response) {
   // }
 }
 
-async function handleRequest() {
+async function handleRequest(request) {
+
+  const params = {}
+  const req_url = new URL(request.url)
+  const queryString = req_url.search.slice(1).split('&')
+  queryString.forEach(item => {
+    const kv = item.split('=')
+    if (kv[0]) params[kv[0]] = kv[1] || true
+  })
+  
+  //console.log(JSON.stringify(params))
+
+  kws = "紫荆2号楼2层"
+  if("s" in params)
+    kws = params["s"]
+
   const init = {
     headers: {
       "content-type": "application/x-www-form-urlencoded",
       "cookie": "mopenid=",
     },
     method: "POST",
-    body: "regionId=3&searchKws=紫荆2号楼2层&pageSize=15&pageNo=1",
+    body: "regionId=3&searchKws="+kws+"&pageSize=15&pageNo=1",
   }
   const response = await fetch(url, init)
   const results = await gatherResponse(response)
-  console.log(results)
+  //console.log(results)
+  //console.log(request.url)
+
+  
   // console.log(results.result)
   
   html_str = "<html><body>"
-  for(i=0;i!=results["totalCount"];++i){
-    status_str = "<div>" + results["result"][i]["washerName"] + ": "
-    if(results["result"][i]["runingStatus"]!=48){
-      status_str += "运行中..."
-      status_str += " 剩余"+results["result"][i]["remainRunning"]+"分钟"
-    }else{
-      status_str += "空闲！"
+  if(results["totalCount"]!=0){
+    for(i=0;i!=results["totalCount"];++i){
+      status_str = "<div>" + results["result"][i]["washerName"] + ": "
+      if(results["result"][i]["runingStatus"]!=48){
+        status_str += "运行中..."
+        status_str += " 剩余"+results["result"][i]["remainRunning"]+"分钟"
+      }else{
+        status_str += "空闲！"
+      }
+      status_str += "</div>"
+      html_str += status_str
     }
-    status_str += "</div>"
-    html_str += status_str
+  }else{
+    html_str += "无搜索结果"
   }
   html_str += "</body></html>"
   const initR = {
@@ -66,5 +88,5 @@ async function handleRequest() {
 }
 
 addEventListener("fetch", event => {
-  return event.respondWith(handleRequest())
+  return event.respondWith(handleRequest(event.request))
 })
