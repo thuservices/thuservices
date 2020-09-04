@@ -59,6 +59,13 @@ async function handleRequest(request) {
   //console.log(results)
   //console.log(request.url)
 
+  if("j" in params){
+    return new Response(JSON.stringify(results, null, 2), {
+        headers: {
+          "content-type": "application/json;charset=UTF-8"
+        }
+      })
+  }
   
   // console.log(results.result)
   
