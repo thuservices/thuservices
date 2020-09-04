@@ -37,27 +37,42 @@ async function handleRequest(request) {
   const queryString = req_url.search.slice(1).split('&')
   queryString.forEach(item => {
     const kv = item.split('=')
-    if (kv[0]) params[kv[0]] = kv[1] || true
+    if (kv[0]) {
+      if (kv[0] in params) {
+        params[kv[0]].push(kv[1] || true)
+      } else {
+        params[kv[0]] = [kv[1] || true]
+      }
+    }
   })
   
   //console.log(JSON.stringify(params))
 
-  kws = "紫荆2号楼"
+  kws = ["紫荆2号楼"]
   if("s" in params)
     kws = params["s"]
 
-  const init = {
-    headers: {
-      "content-type": "application/x-www-form-urlencoded",
-      "cookie": "mopenid=",
-    },
-    method: "POST",
-    body: "regionId=3&searchKws="+kws+"&pageSize=50&pageNo=1",
+  var allResults = Array()
+  var results
+  for (i=0;i<kws.length;i++) {
+    const init = {
+      headers: {
+        "content-type": "application/x-www-form-urlencoded",
+        "cookie": "mopenid=",
+      },
+      method: "POST",
+      body: "regionId=3&searchKws="+kws[i]+"&pageSize=50&pageNo=1",
+    }
+    const response = await fetch(url, init)
+    results = await gatherResponse(response)
+    for (j=0;j<results.result.length;j++)
+      allResults.push(results.result[j])
   }
-  const response = await fetch(url, init)
-  const results = await gatherResponse(response)
-  //console.log(results)
-  //console.log(request.url)
+  results.result = allResults
+  if (kws.length > 1) {
+      results.totalCount = allResults.length
+      results.pageSize < results.totalCount ? results.pageSize = results.totalCount : 0
+  }
 
   results["result"].sort((a,b) => a["washerName"].localeCompare(b["washerName"]))
 
