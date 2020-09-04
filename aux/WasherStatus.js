@@ -37,21 +37,26 @@ async function handleRequest() {
       "cookie": "mopenid=",
     },
     method: "POST",
-    body: "regionId=3&searchKws=26号楼2层&pageSize=15&pageNo=1",
+    body: "regionId=3&searchKws=紫荆2号楼2层&pageSize=15&pageNo=1",
   }
   const response = await fetch(url, init)
   const results = await gatherResponse(response)
   console.log(results)
   // console.log(results.result)
   
-  status_str = results["result"][0]["washerName"] + ": "
-  if(results["result"][0]["runingStatus"]!=48){
-    status_str += "运行中..."
-    status_str += " 剩余"+results["result"][0]["remainRunning"]+"分钟"
-  }else{
-    status_str += "空闲！"
+  html_str = "<html><body>"
+  for(i=0;i!=results["totalCount"];++i){
+    status_str = "<div>" + results["result"][i]["washerName"] + ": "
+    if(results["result"][i]["runingStatus"]!=48){
+      status_str += "运行中..."
+      status_str += " 剩余"+results["result"][i]["remainRunning"]+"分钟"
+    }else{
+      status_str += "空闲！"
+    }
+    status_str += "</div>"
+    html_str += status_str
   }
-  html_str = "<html><body><div>"+status_str+"</div></body></html>"
+  html_str += "</body></html>"
   const initR = {
     headers: {
       "content-type": "text/html;charset=UTF-8",
