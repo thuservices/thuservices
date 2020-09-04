@@ -42,7 +42,7 @@ async function handleRequest(request) {
   
   //console.log(JSON.stringify(params))
 
-  kws = "紫荆2号楼2层"
+  kws = "紫荆2号楼"
   if("s" in params)
     kws = params["s"]
 
@@ -52,7 +52,7 @@ async function handleRequest(request) {
       "cookie": "mopenid=",
     },
     method: "POST",
-    body: "regionId=3&searchKws="+kws+"&pageSize=15&pageNo=1",
+    body: "regionId=3&searchKws="+kws+"&pageSize=50&pageNo=1",
   }
   const response = await fetch(url, init)
   const results = await gatherResponse(response)
@@ -72,7 +72,10 @@ async function handleRequest(request) {
   
   html_str = "<html><body>"
   if(results["totalCount"]!=0){
-    for(i=0;i!=results["totalCount"];++i){
+    len = results["totalCount"]
+    if(len > results["pageSize"])
+      len = results["pageSize"]
+    for(i=0;i!=len;++i){
       status_str = "<div>" + results["result"][i]["washerName"] + ": "
       if(results["result"][i]["runingStatus"]!=48){
         status_str += "运行中..."
