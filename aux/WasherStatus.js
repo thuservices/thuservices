@@ -62,7 +62,8 @@ async function handleRequest(request) {
   if("j" in params){
     return new Response(JSON.stringify(results, null, 2), {
         headers: {
-          "content-type": "application/json;charset=UTF-8"
+          "content-type": "application/json;charset=UTF-8",
+          "Access-Control-Allow-Origin": "*",
         }
       })
   }
@@ -89,6 +90,7 @@ async function handleRequest(request) {
   const initR = {
     headers: {
       "content-type": "text/html;charset=UTF-8",
+      "Access-Control-Allow-Origin": "*",
     },
   }
   return new Response(html_str, initR)
