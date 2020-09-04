@@ -50,3 +50,25 @@ credit: [Konano](https://github.com/Konano)
 
 在 Telegram 上已经存在 THU INFO CHANNEL，由于是私有频道，需要通过[邮件](mailto:i@zenithal.me)
 获取邀请链接。
+
+## 全校洗衣机状态
+
+还在为了抢洗衣机而努力吗，还在跑上跑下却发现一个洗衣机都没有而痛苦吗，这个服务
+帮你侦测洗衣机状态，足不出户而一键掌握全校洗衣机的动向！
+
+源码在 repo 的 aux 目录中，需要自行填写 mopenid 使用。此项需要在微信端抓包获取。
+
+目前部署在一个cf worker上，地址为 [https://washer.zenithal.workers.dev](https://washer.zenithal.workers.dev)
+
+要实现搜索，我们需要加上参数，目前接受两种参数，「s」与「j」。「s」即为搜索的
+字符串，一般接受的字符串为「x号楼y层」，前面可以冠名紫荆或南区。举例来说
+
+```
+https://washer.zenithal.workers.dev/?s=2号楼2层
+```
+
+会返回「紫荆2」与「南区12、32」的洗衣机运行情况。在该参数缺省的情况下，返回的是
+「紫荆2号楼2层」的洗衣机运行情况。
+
+对于「j」参数，我们只检查「j」是否存在，若存在，则返回原始的json数据，
+此项供开发者使用。两个参数可同时使用。
