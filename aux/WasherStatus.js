@@ -59,6 +59,8 @@ async function handleRequest(request) {
   //console.log(results)
   //console.log(request.url)
 
+  results["result"].sort((a,b) => a["washerName"].localeCompare(b["washerName"]))
+
   if("j" in params){
     return new Response(JSON.stringify(results, null, 2), {
         headers: {
