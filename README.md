@@ -11,6 +11,7 @@
         - 选课冲突标记
         - INFO 网络学堂 Telegram 消息推送
         - 全校洗衣机状态
+        - INFO GPA 计算器
 - [info.md](info.md)
     - INFO重要信息集合
         - 校历

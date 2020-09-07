@@ -58,7 +58,7 @@ credit: [Konano](https://github.com/Konano)
 
 源码在 repo 的 aux 目录中，需要自行填写 mopenid 使用。此项需要在微信端抓包获取。
 
-目前部署在一个cf worker上，地址为 [https://washer.zenithal.workers.dev](https://washer.zenithal.workers.dev)
+目前部署在 cf workers 上，地址为 [https://washer.zenithal.workers.dev](https://washer.zenithal.workers.dev)
 
 要实现搜索，我们需要加上参数，目前接受两种参数，「s」与「j」。「s」即为搜索的
 字符串，一般接受的字符串为「x号楼y层」，前面可以冠名紫荆或南区。举例来说
@@ -78,5 +78,24 @@ https://washer.zenithal.workers.dev/?s=紫荆3号楼&s=紫荆公寓3号楼&s=紫
 
 会返回所有紫荆 3 号楼的洗衣机运行情况（部分洗衣机的名称中有 typo）。
 
-对于「j」参数，我们只检查「j」是否存在，若存在，则返回原始的json数据，
+对于「j」参数，我们只检查「j」是否存在，若存在，则返回原始的 json 数据，
 此项供开发者使用。两个参数可同时使用。
+
+## INFO GPA 计算器
+
+在 cksqs 失败后难以一键查询 GPA 吗，抑或需要割肉花10元才能得到GPA吗，
+这种只保留了3位有效数字的GPA，由于[-0.005,0.005)的舍入，让人感到极大的不确定性；
+而对于手算GPA的同学，由于学年的增加，课程的增多，手算的难度也越来越高，每出一门课
+就需要算一次GPA，负担极重。
+
+于是，我们提出自动的GPA计算功能，考虑到方便、好用等各种因素，我们与往常一样，
+推出 userscript 来实现这一小功能。
+
+本脚本只会读取「INFO-全部成绩」界面中存在的成绩（已经录入系统但没发布的，只能
+通过 cksqs 或付费成绩单获取的，不在计算范围内），用新、旧算法将全部GPA与必限GPA
+计算出来（直接输出double），并弹出通知提醒。
+
+本脚本在 aux/Tsinghua GPA Calculator.user.js 中，需要使用油猴安装。
+
+或者通过[这里](https://greasyfork.org/zh-CN/scripts/410960-tsinghua-gpa-calculator)
+来获得。
