@@ -82,6 +82,7 @@ https://washer.zenithal.workers.dev/?s=紫荆3号楼&s=紫荆公寓3号楼&s=紫
 此项供开发者使用。两个参数可同时使用。
 
 ### 全校洗衣机状态 - iOS 快捷方式
+
 iOS 12 以上的用户可以透过此[链接](https://www.icloud.com/shortcuts/ffc9d9fff7e140ec9e5a92e5f7d16ae0)安装快捷方式以实现快速查询空闲洗衣机。目前仅支持精确度至楼层的查询。 
 
 ## INFO GPA 计算器
