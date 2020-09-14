@@ -11,6 +11,7 @@
         - 选课冲突标记
         - INFO 网络学堂 Telegram 消息推送
         - 全校洗衣机状态
+            - 全校洗衣机状态 - iOS 快捷方式
         - INFO GPA 计算器
 - [info.md](info.md)
     - INFO重要信息集合
@@ -31,6 +32,7 @@
     - 清华服务使用指北（主要面向 Linux 用户）
         - SSLVPN
         - 上网认证
+            - 校园网基础知识
             - （自动）认证
             - 远端服务器代认证
             - Tsinghua-Secure

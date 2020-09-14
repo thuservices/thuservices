@@ -34,6 +34,12 @@ $ openconnect --juniper https://sslvpn.tsinghua.edu.cn
 
 ## 上网认证
 
+### 校园网基础知识
+
+[清华大学校园网使用简介](https://its.tsinghua.edu.cn/helpsystem/train/CampusNetworkLectureNotes201909.pdf)
+
+[清华大学校园网有线局域网用户准入系统使用说明（问与答）](https://its.tsinghua.edu.cn/helpsystem/wirednetwork/RealNameAuthenticationFAQ20190614.pdf)
+
 ### （自动）认证
 
 参考 [GoAuthing](https://github.com/z4yx/GoAuthing)
