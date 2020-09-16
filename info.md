@@ -82,3 +82,7 @@
 ## 校内地图
 
 [校内地图](https://www.tsinghua.edu.cn/zjqh/xyfg/xydt1.htm)
+
+## 清华大学调查问卷系统
+
+[清华大学调查问卷系统](https://wenjuan.tsinghua.edu.cn)
