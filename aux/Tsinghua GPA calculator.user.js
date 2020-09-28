@@ -5,7 +5,7 @@
 // @version      0.1
 // @description  Calculate the gpa on page
 // @author       Zenithal
-// @match        http://zhjw.cic.tsinghua.edu.cn/cj.cjCjbAll.do?m=bks_yxkccj*
+// @match        http://zhjw.cic.tsinghua.edu.cn/cj.cjCjbAll.do?m=*_yxkccj*
 // @grant        none
 // ==/UserScript==
 
