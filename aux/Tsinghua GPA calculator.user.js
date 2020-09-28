@@ -2,7 +2,7 @@
 // @name         Tsinghua GPA calculator
 // @namespace    https://github.com/ZenithalHourlyRate
 // @homepageURL  https://github.com/ZenithalHourlyRate/thuservices
-// @version      0.1
+// @version      0.2
 // @description  Calculate the gpa on page
 // @author       Zenithal
 // @match        http://zhjw.cic.tsinghua.edu.cn/cj.cjCjbAll.do?m=*_yxkccj*
