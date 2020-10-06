@@ -40,37 +40,79 @@ $ openconnect --juniper https://sslvpn.tsinghua.edu.cn
 
 [清华大学校园网有线局域网用户准入系统使用说明（问与答）](https://its.tsinghua.edu.cn/helpsystem/wirednetwork/RealNameAuthenticationFAQ20190614.pdf)
 
-### （自动）认证
+上述文件太长不看版：在校园网中上网分为两步，一步是准入，另一步是准出。
+
+没有准入与准出时，机器只能 ping 通 `166.111.8.28` 与 `2402:f000:1:801::8:28`，如果你有相应 v4 与 v6 地址。校内其他地址不通。
+
+对于 IPv4 而言，当有准入而没有准出时，机器可以 ping 通校内机器，但不能 ping 通校外机器，即不能上外网。只有当有准入而且有准出时，机器可以连接外网。
+
+对于 IPv6 而言，v6 只有准入这一步，有了准入，即可以连接外网。
+
+对于 2 层接入的机器（紫荆宿舍网，教学楼无线网络，一些院系的网络），v4 认证与 v6 认证是联动进行的，即当 v4 准入时，v6 同时也准入。对于 3 层接入的机器（一些院系的网络），v4 与 v6 需要分别准入。
+
+`Tsinghua-Secure` 使用的是另一套认证系统。
+
+### 命令行认证 自动认证
 
 参考 [GoAuthing](https://github.com/z4yx/GoAuthing)
 
+#### 命令行认证
+
+该软件实现了七个主要功能，分别是
+
+```bash
+auth-thu auth # v4准入
+auth-thu deauth # 解除v4准入
+auth-thu auth -6 # v6准入
+auth-thu deauth -6 # 解除v6准入
+auth-thu login # v4准出
+auth-thu logout # 解除v4准出
+auth-thu online # 保持机器在线
+```
+
+普通用户将其放在家目录下，作为命令行工具使用，即可满足大部分认证需求。
+
+#### 自动认证
+
+对于系统管理员来说，可能存在服务器实现自动认证的需求。
+
 下载好文件以后请合理放置在相应目录（如 /usr/local/bin）下，同时将配置文件放在合理目录下，即可使用
 
-要做到自动认证，需将其中附带的 `goauthing.service` 与 `goauthing.timer` 放置 `/usr/lib/systemd/system/` 文件夹下 ，并调整相应内容以符合程序文件以及配置文件的路径，使用
+要做到自动**准入**，需将其中附带的 `goauthing.service` 与 `goauthing.timer` 放置 `/usr/lib/systemd/system/` 文件夹下 ，并调整相应内容以符合程序文件以及配置文件的路径，使用
 
 ``` bash
 $ systemctl enable goauthing.service goauthing.timer
 ```
 
-启动相应服务，即可达到自动认证的目的。
+启动相应服务，即可达到自动认证的目的。如果要实现账户信息储存在用户家目录中而不是 `/etc` 中，可以参考 `goauthing@.{service,timer}`。
 
-如果有打包者将此打包，请 PR。
+如果要实现 `v6` 的自动准入，可以拷贝并调整这些服务文件的一些参数，需要调整的参数请参考软件的文档。如果要实现自动准出，同样请参考相应参数修改。
+
+如果有打包者将此打包，请 PR。目前在 AUR 中已存在 `auth-thu` 包。
 
 ### 远端服务器代认证
 
-在某些服务器上无法使用浏览器打开 [net.tsinghua.edu.cn](https://net.tsinghua.edu.cn) 来认证，只能使用 [命令行工具](## （自动）认证) 或 准入代认证 的方式来认证。
+在某些服务器上无法使用浏览器打开 [net.tsinghua.edu.cn](https://net.tsinghua.edu.cn) 来认证，只能使用 [命令行工具](### 命令行认证 自动认证) 或「准入代认证」的方式来实现准入。
 
-对于代认证，需要先知道服务器的 IPv4 地址，形如 `166.111.x.x` 或 `59.66.x.x` 或 `101.x.x.x`，之后打开 [usereg.tsinghua.edu.cn](https://usereg.tsinghua.edu.cn) 准入代认证部分，填入 IP 即可上网。
+对于代认证，需要先知道服务器的 IPv4 地址，形如 `166.111.x.x` 或 `59.66.x.x` 或 `101.x.x.x`，之后打开 [usereg.tsinghua.edu.cn](https://usereg.tsinghua.edu.cn) 「准入代认证」部分，填入 IP 即可准入，在准入时可以选择是否打开准出。
+
+对于某些三层接入的机器，如果要实现 v6 的准入，也可在「准入代认证」中实现准入。
+
+对于有些服务器存在准入但没有准出的情况，可以使用「连线其他 IP」实现准出。 
 
 关于准入与准出的问题，欢迎 PR。
 
-据了解，准入代认证和连线其他 IP 分别负责校园网的准入和准出。当机器无准入时，校内不通；无准出时候，校内通但校外不通。
-
-具体判据为无准入 ping 包无回应，无准出是 ping 包到出口即断。
-
-万能方法是 准入代认证，不过可以在观察到已有准入时使用 连线其他IP 也可联网。
-
 关于 IPv4 和 IPv6 在准入准出上线与掉线时的表现，以及校内二层接入/三层接入的表现，欢迎 PR
+
+### 远端服务器网页认证
+
+有时 `usereg` 中的信息并不准确，如果此时还能 `ssh` 登录机器，除了之前提到的「命令行认证」外，还可以在登录时使用选项
+
+```
+ssh -D <port> host
+```
+
+这样在本地会搭建一个以 `<port>` 为端口的 socks5 代理，如果在浏览器中使用该代理，即可与往常一样实现网页认证。
 
 ### Tsinghua-Secure
 

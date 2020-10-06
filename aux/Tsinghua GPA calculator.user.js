@@ -4,7 +4,7 @@
 // @homepageURL  https://github.com/ZenithalHourlyRate/thuservices
 // @version      1.0
 // @description  Calculate the gpa on page
-// @author       Zenithal
+// @author       Zenithal, SuXY15
 // @match        http://zhjw.cic.tsinghua.edu.cn/cj.cjCjbAll.do?m=*_yxkccj*
 // @grant        none
 // ==/UserScript==
