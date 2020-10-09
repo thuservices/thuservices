@@ -103,3 +103,11 @@ iOS 12 以上的用户可以透过此[链接](https://www.icloud.com/shortcuts/f
 
 或者通过[这里](https://greasyfork.org/zh-CN/scripts/410960-tsinghua-gpa-calculator)
 来获得。
+
+## 学堂在线视频自动播放
+
+还在后台刷慕课时经常查看是否停止吗，一个脚本帮你自动播放下一课！
+
+脚本在[此](https://greasyfork.org/en/scripts/373881-清华学堂在线视频自动播放)
+
+由于该脚本历史较久，较久未维护，且也存在一些bug，不保证其长期的可用性。发现问题时或改进代码时可联系原作者 @RikaSugisawa
