@@ -41,6 +41,7 @@
             - 远端服务器代认证
             - 远端服务器网页认证
             - Tsinghua-Secure
+            - Tsinghua-Secure 仅校内登录方式
         - 清华云盘
         - ISATAP 
             - 获取IPv6挂PT
