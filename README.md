@@ -5,15 +5,6 @@
 [选课登录（校内或 SSLVPN）（选课时段内有效）](http://zhjwxk.cic.tsinghua.edu.cn/xklogin.do)
 
 ## 文件内容
-- [utils.md](utils.md)
-    - 一些脚本和工具
-        - 一键评教
-        - 选课冲突标记
-        - INFO 网络学堂 Telegram 消息推送
-        - 全校洗衣机状态
-            - 全校洗衣机状态 - iOS 快捷方式
-        - INFO GPA 计算器
-        - 学堂在线视频自动播放
 - [info.md](info.md)
     - INFO重要信息集合
         - 校历
@@ -30,6 +21,15 @@
         - 校内校车
         - 校内地图
         - 清华大学调查问卷系统
+- [utils.md](utils.md)
+    - 一些脚本和工具
+        - 一键评教
+        - 选课冲突标记
+        - INFO 网络学堂 Telegram 消息推送
+        - 全校洗衣机状态
+            - 全校洗衣机状态 - iOS 快捷方式
+        - INFO GPA 计算器
+        - 学堂在线视频自动播放
 - [services.md](services.md)
     - 清华服务使用指北（主要面向 Linux 用户）
         - SSLVPN

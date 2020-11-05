@@ -72,6 +72,8 @@ auth-thu online # 保持机器在线
 
 普通用户将其放在家目录下，作为命令行工具使用，即可满足大部分认证需求。
 
+已知问题：在用户通过`auth-thu auth -C`（仅准入）后调用`auth-thu login`（仅准出），准出会失败。
+
 #### 自动认证
 
 对于系统管理员来说，可能存在服务器实现自动认证的需求。
@@ -152,6 +154,8 @@ $ systemctl enable --now wpa_supplicant-nl80211@XXXX.service
 我们注意到，连接 Tsinghua-Secure 后获取的 IPv4 地址会自动进入准出表中，有可能在未预期的情况下挤占掉线已有的准出设备。
 
 经过测试发现，如果在登录时使用的 username 为「username@tsinghua」（例如lh14@tsinghua），那么其登录行为与「仅校内登录」一样。这种情况下v4只有准入，v6有准入与准出。
+
+在使用该方式认证后，笔者测试可以通过「net.tsinghua.edu.cn」进行准出，但有线网中这个行为不一样。
 
 ## 清华云盘
 
