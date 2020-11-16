@@ -136,6 +136,5 @@ iOS 12 以上的用户可以透过此[链接](https://www.icloud.com/shortcuts/f
 | [INFO](http://info.tsinghua.edu.cn/) | 网页 | 未调查 | 能用 | 官方网页 |
 | [LEARN](http://learn.tsinghua.edu.cn/) | 网页 | 未调查 | 能用 | 官方网页 |
 | [Learn-Project](https://github.com/xxr3376/Learn-Project) | 浏览器插件 | Typescript | 可用 | 按照时间线与种类排列网络学堂项目，在谷歌，火狐以及 Edge 的插件商店中，现代前端 |
-| [LearnX](https://github.com/robertying/learnX) | 移动端APP，Mac OS | Typescript | 可用 | 拥有TUNA[镜像](https://mirrors.tuna.tsinghua.edu.cn/github-release/robertying/learnX/LatestRelease/)分发，拥有苹果与谷歌应用商店分发，其余特性参考项目主页 |
-
-记忆中最近推出了有关INFO的APP，同时以前也有107周年的APP
+| [THUInfo](https://github.com/UNIDY2002/THUInfo) | 移动端APP | Typescript | 可用 | 拥有苹果应用商店分发，包括家园，学生部（教室），图书馆的项目，支持树洞 |
+| AtTsinghua | 移动端APP | 未知 | 未知 | 拥有苹果应用商店分发，其余未调查，为某实验室校庆作品 |
