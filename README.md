@@ -31,7 +31,7 @@
         - INFO GPA 计算器
         - 学堂在线视频自动播放
         - 校园网认证工具汇总
-        - INFO APP / 网络学堂 APP
+        - INFO/网络学堂 APP/插件
 - [services.md](services.md)
     - 清华服务使用指北（主要面向 Linux 用户）
         - SSLVPN

@@ -127,6 +127,15 @@ iOS 12 以上的用户可以透过此[链接](https://www.icloud.com/shortcuts/f
 | [Tsinghua-Online](https://github.com/xxr3376/Tsinghua-Online) | 浏览器插件，在[Chrome 商店](https://chrome.google.com/webstore/detail/tsinghua-online/elkbekfdkihpbcbacmppemegcekohkjo)中 | Javascript | 不再维护，上个 commit 在2013年 | 浏览器插件 |
 | [tunet-c](https://github.com/robertying/tunet-c) | OpenWRT, Linux, macOS; CLI | C | 可用 | 提供认证相关库，二进制文件较小 |
 
-## INFO APP / 网络学堂 APP
+## INFO/网络学堂 APP/插件
 
 本着用轮子不如造轮子的精神，一代代清华人与INFO与网络学堂斗智斗勇，开发了无数易用工具，我们在此尽可能列出它们，供大家根据喜好选用。
+
+| 项目链接 | 支持平台 | 实现语言 | 目前是否可用（是否被维护）| 特性 |
+| --- | --- | --- | --- | --- |
+| [INFO](http://info.tsinghua.edu.cn/) | 网页 | 未调查 | 能用 | 官方网页 |
+| [LEARN](http://learn.tsinghua.edu.cn/) | 网页 | 未调查 | 能用 | 官方网页 |
+| [Learn-Project](https://github.com/xxr3376/Learn-Project) | 浏览器插件 | Typescript | 可用 | 按照时间线与种类排列网络学堂项目，在谷歌，火狐以及 Edge 的插件商店中，现代前端 |
+| [LearnX](https://github.com/robertying/learnX) | 移动端APP，Mac OS | Typescript | 可用 | 拥有TUNA[镜像](https://mirrors.tuna.tsinghua.edu.cn/github-release/robertying/learnX/LatestRelease/)分发，拥有苹果与谷歌应用商店分发，其余特性参考项目主页 |
+
+记忆中最近推出了有关INFO的APP，同时以前也有107周年的APP
