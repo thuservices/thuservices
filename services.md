@@ -54,7 +54,9 @@ $ openconnect --juniper https://sslvpn.tsinghua.edu.cn
 
 ### 命令行认证 自动认证
 
-参考 [GoAuthing](https://github.com/z4yx/GoAuthing)
+参见 [utils.md](utils.md) 中的认证工具汇总。
+
+以下参考 [GoAuthing](https://github.com/z4yx/GoAuthing)
 
 #### 命令行认证
 

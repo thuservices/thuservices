@@ -111,3 +111,22 @@ iOS 12 以上的用户可以透过此[链接](https://www.icloud.com/shortcuts/f
 脚本在[此](https://greasyfork.org/en/scripts/373881-清华学堂在线视频自动播放)
 
 由于该脚本历史较久，较久未维护，且也存在一些bug，不保证其长期的可用性。发现问题时或改进代码时可联系原作者 @RikaSugisawa
+
+## 校园网认证工具汇总
+
+本着用轮子不如造轮子的精神，一代代清华人与校园网斗智斗勇，开发了无数认证工具，我们在此尽可能列出它们，供大家根据喜好选用。
+
+| 项目链接 | 支持平台 | 实现语言 | 目前是否可用（是否被维护）| 特性 |
+| --- | --- | --- | --- | --- |
+| [Tunet-2018 (official)](https://its.tsinghua.edu.cn/) | Windows-GUI, Linux-CLI | 未知 | 在2020年暑假的`ac_id`升级后不可用 | 未调查 |
+| [GoAuthing](https://github.com/z4yx/GoAuthing/) | Linux-CLI (x86_64, arm, mips, ppc), Windows-CLI, Mac OS-CLI | Go | 可用 | 全平台全架构，准入与准出，v4和v6，systemd 服务，TUNA 提供[镜像](https://mirrors.tuna.tsinghua.edu.cn/github-release/z4yx/GoAuthing/LatestRelease/)可以在未认证时下载认证工具，提供认证相关库 |
+| [tunet-python](https://github.com/yuantailing/tunet-python) | 支持 python 的平台，CLI | Python | 可用 | v4与v6，准入与准出，流量与准入出状态监控 |
+| [auth-tsinghua](https://github.com/jiegec/auth-tsinghua) | 支持 node.js 的平台, CLI | Javascript | 不再维护 | 已经重定向至 GoAuthing |
+| [TsinghuaNet](https://github.com/Berrysoft/TsinghuaNet) | Windows, Mac OS, Linux, UWP, Android, iOS | .NET | 可用 | 真全平台，流量与余额监控，准入与准出，v4与v6，提供认证相关库 |
+| [tunet-cli](https://github.com/syimyuzya/tunet-cli) | 支持 python 的平台，CLI | Python | 不再维护，上个 commit 在2017年 | 未调查 |
+| [Tsinghua-Online](https://github.com/xxr3376/Tsinghua-Online) | 浏览器插件，在[Chrome 商店](https://chrome.google.com/webstore/detail/tsinghua-online/elkbekfdkihpbcbacmppemegcekohkjo)中 | Javascript | 不再维护，上个 commit 在2013年 | 浏览器插件 |
+| [tunet-c](https://github.com/robertying/tunet-c) | OpenWRT, Linux, macOS; CLI | C | 可用 | 提供认证相关库，二进制文件较小 |
+
+## INFO APP / 网络学堂 APP
+
+本着用轮子不如造轮子的精神，一代代清华人与INFO与网络学堂斗智斗勇，开发了无数易用工具，我们在此尽可能列出它们，供大家根据喜好选用。
