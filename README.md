@@ -46,6 +46,8 @@
             - Tsinghua-Secure 仅校内登录方式
         - 校园网特性讨论
             - 二层隔离/邻居发现隔离
+                - IPv4
+                - IPv6
             - 动态 IP
             - 不符合 RFC 的 DHCP
         - 清华云盘
