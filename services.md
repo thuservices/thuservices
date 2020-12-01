@@ -195,6 +195,18 @@ ip r a 2402:f000:2:b801::/64 via fe80::xxxx dev wlan0
 
 ### 动态 IP
 
+对于动态IP，我们可以使用 DDNS 解决，各大提供商，例如 DNSPod，dns.he.net，cloudflare 都提供了该服务。
+
+以 dns.he.net 为例，先增加一个 A/AAAA 记录，并选择使用 DDNS，创建好后创建更新 Token，记为 T。我们书写以下脚本
+
+```
+#!/bin/sh
+curl -4 "https://domain.example.com:T@dyn.dns.he.net/nic/update?hostname=domain.example.com"
+```
+注意Token为其中的T。其余参数按照需要修改。
+
+并用 cron 定期执行该脚本，例如每五分钟一次。可以参考 https://crontab.guru/ 命令获取具体阐释。
+
 ### 不符合 RFC 的 DHCP
 
 ## 清华云盘

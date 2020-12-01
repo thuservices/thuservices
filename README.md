@@ -49,6 +49,7 @@
                 - IPv4
                 - IPv6
             - 动态 IP
+    !/bin/sh
             - 不符合 RFC 的 DHCP
         - 清华云盘
         - ISATAP 
