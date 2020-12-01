@@ -159,6 +159,14 @@ $ systemctl enable --now wpa_supplicant-nl80211@XXXX.service
 
 在使用该方式认证后，笔者测试可以通过「net.tsinghua.edu.cn」进行准出，但有线网中这个行为不一样。
 
+## 校园网特性讨论
+
+### 二层隔离/邻居发现隔离
+
+### 动态 IP
+
+### 不符合 RFC 的 DHCP
+
 ## 清华云盘
 
 建议使用 [seafile.com/download](https://seafile.com/download) 中的 Linux 客户端，而不是 Terminal 客户端，因为 Terminal 客户端需要独立密码，此密码不同于 INFO 密码，不能获得，故不能通过 Terminal 客户端登录。

@@ -44,6 +44,10 @@
             - 远端服务器网页认证
             - Tsinghua-Secure
             - Tsinghua-Secure 仅校内登录方式
+        - 校园网特性讨论
+            - 二层隔离/邻居发现隔离
+            - 动态 IP
+            - 不符合 RFC 的 DHCP
         - 清华云盘
         - ISATAP 
             - 获取IPv6挂PT
