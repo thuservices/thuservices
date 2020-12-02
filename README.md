@@ -50,6 +50,7 @@
                 - IPv6
             - 动态 IP
     !/bin/sh
+                - IPv6 静态后缀或短 IPv6 地址
             - 不符合 RFC 的 DHCP
         - 清华云盘
         - ISATAP 

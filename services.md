@@ -207,6 +207,32 @@ curl -4 "https://domain.example.com:T@dyn.dns.he.net/nic/update?hostname=domain.
 
 并用 cron 定期执行该脚本，例如每五分钟一次。可以参考 https://crontab.guru/ 命令获取具体阐释。
 
+#### IPv6 静态后缀或短 IPv6 地址
+
+我们知道，在 SLAAC 下（常见于Tsinghua-Secure），IPv6 地址的后64位可以由客户端自行决定，这时我们可以配置静态后缀，乃至短后缀，如果一个机器只在一个地点下，几乎可以认为前缀固定（需要验证）。
+
+（吐槽：token 这套工具，几乎不在标准里面被提及，文档也少（IPv6 的文档本来就少），还是很小众的东西；毕竟谁需要静态后缀呢，同一个子网下的机器，与其使用静态后缀进行通信（没错，没有只有后缀的路由项，所以到网内另一台机器需要时刻加上前缀），不如配一个静态的私有地址）
+
+往常我们分配到的 IPv6 较复杂，这是因为使用了 EUI64 或者隐私扩展，对于EUI64，可以在地址中发现 `ff:fe` 的字段。
+
+我们可以通过 iproute2 或传统套件配置静态后缀，后者的使用方法请谷歌，前者的方法在此给出。
+
+```bash
+ip token set ::114:514:1919:810/64 dev wlan0
+```
+
+在运行此命令**之前**，我们需要注意，我们需要将网卡的 `forwarding` 关闭（**在配置时**，配置后可以打开转发），并打开 `accept_ra` 与 `autoconf`，并将其他 dhcp 客户端的 v6 功能关闭。
+
+（吐槽：dhcpcd 虽然说是个 dhcp 客户端，它把 SLAAC 的事情也接管了，就很恼。按照传统只需要开了 `accept_ra` 与 `autoconf`，Linux 内核就会自动配置v6地址。如果 `forwarding=1`时，我们需要使 `accept_ra=2`）
+
+```bash
+sysctl net/ipv6/conf/wlan0/accept_ra=1
+sysctl net/ipv6/conf/wlan0/autoconf=1
+sysctl net/ipv6/conf/wlan0/forwarding=0
+```
+
+以上命令的一些参数请按需替换。我们可以将以上命令放在启动脚本中，使得自动配置 token。
+
 ### 不符合 RFC 的 DHCP
 
 ## 清华云盘
