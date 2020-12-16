@@ -85,6 +85,14 @@ https://washer.zenithal.workers.dev/?s=紫荆3号楼&s=紫荆公寓3号楼&s=紫
 
 iOS 12 以上的用户可以透过此[链接](https://www.icloud.com/shortcuts/ffc9d9fff7e140ec9e5a92e5f7d16ae0)安装快捷方式以实现快速查询空闲洗衣机。目前仅支持精确度至楼层的查询。 
 
+### 全校洗衣机状态 - Telegram Bot 二哈
+
+基于该接口[Konano](https://github.com/Konano)开发了一个 Telegram Bot，名为二哈。
+
+项目地址在[此](https://github.com/Konano/Tuna-Erha-Bot)，在洗衣机状态查询功能外，还有更多功能。
+
+可以通过[t.me/erhabot](https://t.me/erhabot) 访问该 Bot。
+
 ## INFO GPA 计算器
 
 在 cksqs 失败后难以一键查询 GPA 吗，抑或需要割肉花 10 元才能得到 GPA 吗，
