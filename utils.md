@@ -120,6 +120,12 @@ iOS 12 以上的用户可以透过此[链接](https://www.icloud.com/shortcuts/f
 
 由于该脚本历史较久，较久未维护，且也存在一些bug，不保证其长期的可用性。发现问题时或改进代码时可联系原作者 @RikaSugisawa
 
+## 学堂在线字幕下载器
+
+还在准备复习的时候一个个翻视频下载字幕吗？这个脚本帮你忙！
+
+脚本在[此](https://greasyfork.org/zh-CN/scripts/408878-xuetangx-caption-crawler)，项目地址在[此](https://github.com/Rabbit-Hu/xuetangx-caption-crawler)。
+
 ## 校园网认证工具汇总
 
 本着用轮子不如造轮子的精神，一代代清华人与校园网斗智斗勇，开发了无数认证工具，我们在此尽可能列出它们，供大家根据喜好选用。
