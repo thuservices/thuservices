@@ -69,4 +69,4 @@
 在 pre-commit hook 的作用下，README.md 是自动生成的，故如果需要在 README.md 中修改，
 请在 aux 文件夹下进行。
 
-所有文件宽松执行一行八十字符（汉字字符宽度为两字符）的格式。
+由于 Windows 文件系统的限制，文件夹名不能为 aux，请在非Windows环境（WSL也可以）下克隆该项目。
