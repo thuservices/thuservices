@@ -158,5 +158,7 @@ Roberts Holder 版本：项目地址在[此](https://github.com/rcy17/MOOC_subti
 | [INFO](http://info.tsinghua.edu.cn/) | 网页 | 未调查 | 能用 | 官方网页 |
 | [LEARN](http://learn.tsinghua.edu.cn/) | 网页 | 未调查 | 能用 | 官方网页 |
 | [Learn-Project](https://github.com/xxr3376/Learn-Project) | 浏览器插件 | Typescript | 可用 | 按照时间线与种类排列网络学堂项目，在谷歌，火狐以及 Edge 的插件商店中，现代前端 |
+| [LearnX](https://github.com/robertying/learnX) | iOS,ipad OS, macOS, Android | React | 可用 | 项目开源许可证，其余参见项目介绍 |
 | [THUInfo](https://github.com/UNIDY2002/THUInfo) | 移动端APP | Typescript | 可用 | 拥有苹果应用商店分发，包括家园，学生部（教室），图书馆的项目，支持树洞 |
 | AtTsinghua | 移动端APP | 未知 | 未知 | 拥有苹果应用商店分发，其余未调查，为某实验室校庆作品 |
+| [learn2018-autodown](https://github.com/Trinkle23897/learn2018-autodown) | 支持 Python 的平台 | Python | 可用 | 真全部信息/文件下载（其余详见项目介绍） |
