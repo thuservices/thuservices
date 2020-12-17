@@ -58,6 +58,12 @@
 
 后者与中者类似，只需在操作时改相关 url。
 
+## 期末考试时间/地点查询
+
+之前在 Info 中会有筛选方式，可惜由于一些原因，该功能被 Info 删除。现在 Info 中只有所有课程的考试信息。
+
+现在需要在 [ACADEMIC](http://academic.tsinghua.edu.cn/) 中登录后，进入门户，在本学期课程中查看
+
 ## 历年本科生开课目录
 
 [历年本科生开课目录（校内或 SSLVPN）](http://announce.cic.tsinghua.edu.cn/node/25833)
