@@ -32,6 +32,7 @@
         - INFO GPA 计算器
         - 学堂在线视频自动播放
         - 学堂在线字幕下载器
+        - 清华教学参考书爬取
         - 校园网认证工具汇总
         - INFO/网络学堂 APP/插件
 - [services.md](services.md)
