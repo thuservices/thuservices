@@ -124,7 +124,9 @@ iOS 12 以上的用户可以透过此[链接](https://www.icloud.com/shortcuts/f
 
 还在准备复习的时候一个个翻视频下载字幕吗？这个脚本帮你忙！
 
-脚本在[此](https://greasyfork.org/zh-CN/scripts/408878-xuetangx-caption-crawler)，项目地址在[此](https://github.com/Rabbit-Hu/xuetangx-caption-crawler)。
+Rabbit Hu 版本：脚本在[此](https://greasyfork.org/zh-CN/scripts/408878-xuetangx-caption-crawler)，项目地址在[此](https://github.com/Rabbit-Hu/xuetangx-caption-crawler)。
+
+Roberts Holder 版本：项目地址在[此](https://github.com/rcy17/MOOC_subtitle_spider)
 
 ## 校园网认证工具汇总
 
