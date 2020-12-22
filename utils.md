@@ -134,6 +134,12 @@ Roberts Holder 版本：项目地址在[此](https://github.com/rcy17/MOOC_subti
 
 项目地址在[此](https://github.com/lflame/TsinghuaBookCrawler)
 
+## 课程地点分享
+
+在[https://wmcgcdn.rika.tech/](https://wmcgcdn.rika.tech/)中，其项目地址为[此](https://github.com/RikaKagurasaka/where-my-course-gone-backend)。
+
+未知其长期是否运营。
+
 ## 校园网认证工具汇总
 
 本着用轮子不如造轮子的精神，一代代清华人与校园网斗智斗勇，开发了无数认证工具，我们在此尽可能列出它们，供大家根据喜好选用。
