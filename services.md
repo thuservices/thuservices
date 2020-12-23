@@ -251,6 +251,10 @@ pacman -S seafile-client
 
 而非 `pacman -S seafile`，此包为 Terminal 客户端。其余发行版请自行找到对应包。
 
+### 魔改 Terminal 客户端
+
+在[该项目](https://github.com/prnake/Thu-Toolbox)中存在一个文件夹 seafile，其中指出了使用 Token 登录清华云盘的办法，可以避免使用独立密码。
+
 ## ISATAP 
   
 参考 [ipv6.tsinghua.edu.cn](https://ipv6.tsinghua.edu.cn)
