@@ -93,6 +93,12 @@ iOS 12 以上的用户可以透过此[链接](https://www.icloud.com/shortcuts/f
 
 可以通过[t.me/erhabot](https://t.me/erhabot) 访问该 Bot。
 
+### 洗衣监控与提醒 - 微信小程序
+
+![THU洗衣](image/washer.jpg)
+
+使用同一套API，在关注洗衣机后，当洗衣机空闲时，会通过微信服务号发送提醒。
+
 ## INFO GPA 计算器
 
 在 cksqs 失败后难以一键查询 GPA 吗，抑或需要割肉花 10 元才能得到 GPA 吗，
