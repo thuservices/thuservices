@@ -144,7 +144,7 @@ Roberts Holder 版本：项目地址在[此](https://github.com/rcy17/MOOC_subti
 
 在[https://wmcgcdn.rika.tech/](https://wmcgcdn.rika.tech/)中，其项目地址为[此](https://github.com/RikaKagurasaka/where-my-course-gone-backend)。
 
-未知其长期是否运营。
+目前已经停止维护与运营。
 
 ## 清华大学计算机系课程攻略
 
