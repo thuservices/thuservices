@@ -259,6 +259,8 @@ pacman -S seafile-client
   
 参考 [ipv6.tsinghua.edu.cn](https://ipv6.tsinghua.edu.cn)
 
+校内外拥有公网IPv4的均可使用该服务。注意 `166.111.21.1` 这个IP是不会回应ping包的。
+
 ### 获取IPv6挂PT
 
 由于在家中使用 SSLVPN 后可获得公网 IP，可以使用 ISATAP 获取清华 IPv6 地址，以达到挂 PT 的功能，此处不做详细展开。
