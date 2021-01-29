@@ -118,6 +118,12 @@ iOS 12 以上的用户可以透过此[链接](https://www.icloud.com/shortcuts/f
 或者通过[这里](https://greasyfork.org/zh-CN/scripts/410960-tsinghua-gpa-calculator)
 来获得。
 
+## 清华大学GPA查询
+
+介绍参考上一节。
+
+在「INFO-全部成绩」页面计算各个学期以及总的的必限以及必限任的GPA。脚本地址在[此](https://greasyfork.org/zh-CN/scripts/420540-清华大学gpa查询)
+
 ## 学堂在线视频自动播放
 
 还在后台刷慕课时经常查看是否停止吗，一个脚本帮你自动播放下一课！
