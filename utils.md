@@ -99,6 +99,8 @@ iOS 12 以上的用户可以透过此[链接](https://www.icloud.com/shortcuts/f
 
 使用同一套API，在关注洗衣机后，当洗衣机空闲时，会通过微信服务号发送提醒。
 
+[项目地址](https://github.com/zrt/thu-wash-notify)
+
 ## INFO GPA 计算器
 
 在 cksqs 失败后难以一键查询 GPA 吗，抑或需要割肉花 10 元才能得到 GPA 吗，
