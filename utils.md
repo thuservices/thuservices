@@ -165,7 +165,7 @@ Roberts Holder 版本：项目地址在[此](https://github.com/rcy17/MOOC_subti
 | 项目链接 | 支持平台 | 实现语言 | 目前是否可用（是否被维护）| 特性 |
 | --- | --- | --- | --- | --- |
 | [Tunet-2018 (official)](https://its.tsinghua.edu.cn/) | Windows-GUI, Linux-CLI | 未知 | 在2020年暑假的`ac_id`升级后不可用 | 未调查 |
-| [GoAuthing](https://github.com/z4yx/GoAuthing/) | Linux-CLI (x86_64, arm, mips, ppc), Windows-CLI, Mac OS-CLI (Intel, Apple) | Go | 可用 | 全平台全架构，准入与准出，v4和v6，systemd 服务，TUNA 提供[镜像](https://mirrors.tuna.tsinghua.edu.cn/github-release/z4yx/GoAuthing/LatestRelease/)可以在未认证时下载认证工具，提供认证相关库 |
+| [GoAuthing](https://github.com/z4yx/GoAuthing/) | Linux-CLI (x86\_64, arm, mips, ppc), Windows-CLI, Mac OS-CLI (Intel, Apple) | Go | 可用 | 全平台全架构，准入与准出，v4和v6，systemd 服务，TUNA 提供[镜像](https://mirrors.tuna.tsinghua.edu.cn/github-release/z4yx/GoAuthing/LatestRelease/)可以在未认证时下载认证工具，提供认证相关库 |
 | [tunet-python](https://github.com/yuantailing/tunet-python) | 支持 python 的平台，CLI | Python | 可用 | v4与v6，准入与准出，流量与准入出状态监控 |
 | [auth-tsinghua](https://github.com/jiegec/auth-tsinghua) | 支持 node.js 的平台, CLI | Javascript | 不再维护 | 已经重定向至 GoAuthing |
 | [TsinghuaNet](https://github.com/Berrysoft/TsinghuaNet) | Windows, Mac OS, Linux, UWP, Android, iOS | .NET | 可用 | 真全平台，流量与余额监控，准入与准出，v4与v6，提供认证相关库 |
@@ -186,3 +186,7 @@ Roberts Holder 版本：项目地址在[此](https://github.com/rcy17/MOOC_subti
 | [THUInfo](https://github.com/UNIDY2002/THUInfo) | 移动端APP | Typescript | 可用 | 拥有苹果应用商店分发，包括家园，学生部（教室），图书馆的项目，支持树洞 |
 | AtTsinghua | 移动端APP | 未知 | 未知 | 拥有苹果应用商店分发，其余未调查，为某实验室校庆作品 |
 | [learn2018-autodown](https://github.com/Trinkle23897/learn2018-autodown) | 支持 Python 的平台 | Python | 可用 | 真全部信息/文件下载（其余详见项目介绍） |
+
+## 注册标志（用于火车票）
+
+参考[此网站](https://tuixue.online/zcimage/)，方便在校外时获取相关注册标志。
