@@ -126,6 +126,10 @@ iOS 12 以上的用户可以透过此[链接](https://www.icloud.com/shortcuts/f
 
 在「INFO-全部成绩」页面计算各个学期以及总的的必限以及必限任的GPA。脚本地址在[此](https://greasyfork.org/zh-CN/scripts/420540-清华大学gpa查询)
 
+## 清华大学一体化平台视频自动播放
+
+脚本在[此](https://github.com/Co1lin/Tsinghua-Yukuotang-Autoplay)，可自动播放 [tsinghua.yuketang.cn](https://github.com/Co1lin/Tsinghua-Yukuotang-Autoplay/blob/main/tsinghua.yuketang.cn) 上的视频。
+
 ## 学堂在线视频自动播放
 
 还在后台刷慕课时经常查看是否停止吗，一个脚本帮你自动播放下一课！
