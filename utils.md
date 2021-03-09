@@ -176,6 +176,7 @@ Roberts Holder 版本：项目地址在[此](https://github.com/rcy17/MOOC_subti
 | [tunet-cli](https://github.com/syimyuzya/tunet-cli) | 支持 python 的平台，CLI | Python | 不再维护，上个 commit 在2017年 | 未调查 |
 | [Tsinghua-Online](https://github.com/xxr3376/Tsinghua-Online) | 浏览器插件，在[Chrome 商店](https://chrome.google.com/webstore/detail/tsinghua-online/elkbekfdkihpbcbacmppemegcekohkjo)中 | Javascript | 不再维护，上个 commit 在2013年 | 浏览器插件 |
 | [tunet-c](https://github.com/robertying/tunet-c) | OpenWRT, Linux, macOS; CLI | C | 可用 | 提供认证相关库，二进制文件较小 |
+| [TsinghuaTunet](https://github.com/WhymustIhaveaname/TsinghuaTunet) | 支持 python 的平台， CLI | Python | 可用于特定子网 | 未调查 |
 
 ## INFO/网络学堂 APP/插件
 
