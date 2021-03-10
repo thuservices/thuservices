@@ -3,7 +3,7 @@
 // @name:zh-CN   清华选课时间冲突标记器
 // @namespace    https://github.com/ZenithalHourlyRate
 // @homepageURL  https://github.com/ZenithalHourlyRate/thuservices
-// @version      1.5
+// @version      1.5.1
 // @description  Mark the conflicted course red
 // @description:zh-CN  将与已选课冲突的候选课标红
 // @author       Zenithal
@@ -11,6 +11,7 @@
 // @match        http://zhjwxkyw.cic.tsinghua.edu.cn/xkBks.vxkBksXkbBs.do?m=selectKc*
 // @match        https://webvpn.tsinghua.edu.cn/http/*/xkBks.vxkBksXkbBs.do?m=selectKc*
 // @grant        none
+// @license      MIT
 // ==/UserScript==
 
 
