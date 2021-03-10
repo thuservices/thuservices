@@ -195,3 +195,11 @@ Roberts Holder 版本：项目地址在[此](https://github.com/rcy17/MOOC_subti
 ## 注册标志（用于火车票）
 
 参考[此网站](https://tuixue.online/zcimage/)，方便在校外时获取相关注册标志。
+
+## 寝室电费查询
+
+有通过 headless Chrome 的[实现](https://github.com/WhymustIhaveaname/TsinghuaElectric)
+
+也有另一种实现，参考 aux 目录中的 `TsinghuaElectricityBillChecker.py`，用户需要修改一些内嵌的参数。
+
+通过这些脚本可以将数据灌入 grafana 中，实现电费监控与报警。
