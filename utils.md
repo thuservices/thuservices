@@ -203,3 +203,9 @@ Roberts Holder 版本：项目地址在[此](https://github.com/rcy17/MOOC_subti
 也有另一种实现，参考 aux 目录中的 `TsinghuaElectricityBillChecker.py`，用户需要修改一些内嵌的参数。
 
 通过这些脚本可以将数据灌入 grafana 中，实现电费监控与报警。
+
+## 清华上下课铃声
+
+在家学习没氛围，想念学校自习室？清华铃声软件帮您忙！
+
+目前有 macOS 版本，项目[在此](https://github.com/LyricZhao/THU-Bell)

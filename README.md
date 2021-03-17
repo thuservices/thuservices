@@ -42,6 +42,7 @@
         - INFO/网络学堂 APP/插件
         - 注册标志（用于火车票）
         - 寝室电费查询
+        - 清华上下课铃声
 - [services.md](services.md)
     - 清华服务使用指北（主要面向 Linux 用户）
         - SSLVPN
