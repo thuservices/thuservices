@@ -58,13 +58,13 @@ credit: [Konano](https://github.com/Konano)
 
 源码在 repo 的 aux 目录中，需要自行填写 mopenid 使用。此项需要在微信端抓包获取。
 
-目前部署在 cf workers 上，地址为 [https://washer.zenithal.workers.dev](https://washer.zenithal.workers.dev)
+目前部署在 cf workers 上，地址为 [https://washer.thu.services](https://washer.thu.services)
 
 要实现搜索，我们需要加上参数，目前接受两种参数，「s」与「j」。「s」即为搜索的
 字符串，一般接受的字符串为「x号楼y层」，前面可以冠名紫荆或南区。举例来说
 
 ```
-https://washer.zenithal.workers.dev/?s=2号楼2层
+https://washer.thu.services/?s=2号楼2层
 ```
 
 会返回「紫荆2」与「南区12、32」的洗衣机运行情况。在该参数缺省的情况下，返回的是
@@ -73,7 +73,7 @@ https://washer.zenithal.workers.dev/?s=2号楼2层
 另外也可以使用多个「s」参数，来获取多个关键词的搜索结果，比如
 
 ```
-https://washer.zenithal.workers.dev/?s=紫荆3号楼&s=紫荆公寓3号楼&s=紫金公寓3号楼
+https://washer.thu.services/?s=紫荆3号楼&s=紫荆公寓3号楼&s=紫金公寓3号楼
 ```
 
 会返回所有紫荆 3 号楼的洗衣机运行情况（部分洗衣机的名称中有 typo）。
