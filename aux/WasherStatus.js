@@ -90,14 +90,15 @@ async function handleRequest(request) {
     }
     const response = await fetch(url, init)
     results = await gatherResponse(response)
+    const curTime = new Date().getTime()
     for (j=0;j<results.result.length;j++)
-      allResults.push(results.result[j])
+      if (results.result[j]['lastUpdateTime'] >= curTime - 86400 * 7 * 1000) // remove broken washers
+        allResults.push(results.result[j])
   }
+
   results.result = allResults
-  if (kws.length > 1) {
-      results.totalCount = allResults.length
-      results.pageSize < results.totalCount ? results.pageSize = results.totalCount : 0
-  }
+  results.totalCount = allResults.length
+  results.pageSize < results.totalCount ? results.pageSize = results.totalCount : 0
 
   results["result"].sort((a,b) => a["washerName"].localeCompare(b["washerName"]))
 
@@ -114,9 +115,7 @@ async function handleRequest(request) {
   
   html_str = "<html><body>"
   if(results["totalCount"]!=0){
-    len = results["totalCount"]
-    if(len > results["pageSize"])
-      len = results["pageSize"]
+    const len = results["totalCount"]
     for(i=0;i!=len;++i){
       status_str = "<div>" + results["result"][i]["washerName"] + ": "
       if(results["result"][i]["runingStatus"]!=48){
