@@ -88,3 +88,9 @@
 ## 清华大学调查问卷系统
 
 [清华大学调查问卷系统](https://wenjuan.tsinghua.edu.cn)
+
+## 清华紫荆码
+
+其链接为 [https://zijing.tsinghua.edu.cn/tp\_jp/h6?m=jp#act=jp/serviceapplication](https://zijing.tsinghua.edu.cn/tp_jp/h6?m=jp#act=jp/serviceapplication)
+
+使用方法为，首次打开登录后，再次打开该网页（或直接刷新），即可呈现紫荆码。这样可以不受制于微信平台。
