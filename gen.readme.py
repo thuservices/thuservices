@@ -2,7 +2,7 @@
 
 import os
 
-files = [f for f in os.listdir('./') if os.path.isfile(f) and '.md' in f and not 'README.md' in f]
+files = sorted([f for f in os.listdir('./') if os.path.isfile(f) and '.md' in f and not 'README.md' in f])
 
 for f in files:
     with open(f,'r') as fp:

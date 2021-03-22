@@ -5,34 +5,6 @@
 [选课登录（校内或 SSLVPN）（选课时段内有效）](http://zhjwxk.cic.tsinghua.edu.cn/xklogin.do)
 
 ## 文件内容
-- [templates.md](templates.md)
-    - LaTeX 等模板
-        - 《如何使用 LaTeX 排版论文》讲稿
-        - ThuThesis
-        - THU-Beamer-Theme
-        - THU coursework Template
-- [utils.md](utils.md)
-    - 一些脚本和工具
-        - 一键评教
-        - 选课冲突标记
-        - INFO 网络学堂 Telegram 消息推送
-        - 全校洗衣机状态
-            - 全校洗衣机状态 - iOS 快捷方式
-            - 全校洗衣机状态 - Telegram Bot 二哈
-            - 洗衣监控与提醒 - 微信小程序
-        - INFO GPA 计算器
-        - 清华大学GPA查询
-        - 清华大学一体化平台视频自动播放
-        - 学堂在线视频自动播放
-        - 学堂在线字幕下载器
-        - 清华教学参考书爬取
-        - 课程地点分享
-        - 清华大学计算机系课程攻略
-        - 校园网认证工具汇总
-        - INFO/网络学堂 APP/插件
-        - 注册标志（用于火车票）
-        - 寝室电费查询
-        - 清华上下课铃声
 - [info.md](info.md)
     - INFO重要信息集合
         - 校历
@@ -75,6 +47,34 @@
         - ISATAP 
             - 获取IPv6挂PT
         - WIN 10 激活
+- [templates.md](templates.md)
+    - LaTeX 等模板
+        - 《如何使用 LaTeX 排版论文》讲稿
+        - ThuThesis
+        - THU-Beamer-Theme
+        - THU coursework Template
+- [utils.md](utils.md)
+    - 一些脚本和工具
+        - 一键评教
+        - 选课冲突标记
+        - INFO 网络学堂 Telegram 消息推送
+        - 全校洗衣机状态
+            - 全校洗衣机状态 - iOS 快捷方式
+            - 全校洗衣机状态 - Telegram Bot 二哈
+            - 洗衣监控与提醒 - 微信小程序
+        - INFO GPA 计算器
+        - 清华大学GPA查询
+        - 清华大学一体化平台视频自动播放
+        - 学堂在线视频自动播放
+        - 学堂在线字幕下载器
+        - 清华教学参考书爬取
+        - 课程地点分享
+        - 清华大学计算机系课程攻略
+        - 校园网认证工具汇总
+        - INFO/网络学堂 APP/插件
+        - 注册标志（用于火车票）
+        - 寝室电费查询
+        - 清华上下课铃声
 
 ## 知道某个重要信息，但repo中未列出？
 
