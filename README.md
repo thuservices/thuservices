@@ -44,6 +44,7 @@
             - 不符合 RFC 的 DHCP
         - 清华云盘
             - 魔改 Terminal 客户端
+            - Chrome 提醒下载的文件危险
         - ISATAP 
             - 获取IPv6挂PT
         - WIN 10 激活

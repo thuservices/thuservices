@@ -255,6 +255,12 @@ pacman -S seafile-client
 
 在[该项目](https://github.com/prnake/Thu-Toolbox)中存在一个文件夹 seafile，其中指出了使用 Token 登录清华云盘的办法，可以避免使用独立密码。
 
+### Chrome 提醒下载的文件危险
+
+此现象可能是奇妙同学的奇妙操作导致 Chrome 讲清华云盘域名标记，进而所有文件下载都会提醒可能有危险并阻止。
+
+请忽略此提醒。当然，如果您下载的真的是奇妙的文件，请您自查。
+
 ## ISATAP 
   
 参考 [ipv6.tsinghua.edu.cn](https://ipv6.tsinghua.edu.cn)
