@@ -124,7 +124,7 @@ ssh -D <port> host
 
 设置好后，可以使用 `NetworkManager` 连接该 Wifi，可以参考 its 的文档 [清华大学无线校园网 802.1x 认证登录客户端配置说明](https://its.tsinghua.edu.cn/upload_files/file/20181218/1545119054386022345.pdf)
 
-也可使用 `wpa_supplicant` 完成相应 wifi 连接。安装 `wpa_supplicant`，编辑 `/etc/wpa_supplicant/wpa_supplicant-nl80211-XXXX.conf`， 其中 `XXXX` 是本机网卡名称，输入一下内容
+也可使用 `wpa_supplicant` 完成相应 wifi 连接。安装 `wpa_supplicant`，编辑 `/etc/wpa_supplicant/wpa_supplicant-nl80211-XXXX.conf`， 其中 `XXXX` 是本机网卡名称，输入以下配置
 
 ```
 ctrl_interface=/var/run/wpa_supplicant
@@ -150,6 +150,8 @@ $ systemctl enable --now wpa_supplicant-nl80211@XXXX.service
 ```
 
 即可连接。
+
+注：本配置由[orv](http://hep.tsinghua.edu.cn/~orv)贡献。
 
 ### Tsinghua-Secure 仅校内登录方式
 
