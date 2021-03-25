@@ -48,6 +48,9 @@
         - ISATAP 
             - 获取IPv6挂PT
         - WIN 10 激活
+        - 正版操作系统与软件下载
+            - ITS
+            - TUNA
 - [templates.md](templates.md)
     - LaTeX 等模板
         - 《如何使用 LaTeX 排版论文》讲稿

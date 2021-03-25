@@ -288,3 +288,13 @@ cmd> nslookup -q=TXT win10.harrychen.xyz
 ```
 
 然后在连上 sslvpn 的情况下执行该脚本即可激活
+
+## 正版操作系统与软件下载
+
+### ITS
+
+访问 <https://its.tsinghua.edu.cn> 登录后即可获得 Win10，杀毒软件，WPS，MS Visio，MS Visual Studio，MATLAB 等正版软件的下载方式
+
+### TUNA
+
+访问 <https://mirrors.tsinghua.edu.cn> ，点击获取下载链接即可。
