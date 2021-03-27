@@ -210,3 +210,13 @@ Roberts Holder 版本：项目地址在[此](https://github.com/rcy17/MOOC_subti
 在家学习没氛围，想念学校自习室？清华铃声软件帮您忙！
 
 目前有 macOS 版本，项目[在此](https://github.com/LyricZhao/THU-Bell)
+
+## 随机选择校内餐厅
+
+食堂太多不知道去哪吃？随机数发生器帮您忙！
+
+项目在[此](https://github.com/SuXY15/RandomCanteen)
+
+小程序二维码
+
+![](https://raw.githubusercontent.com/SuXY15/MyPic/master/RandomCanteen/RandomCanteen.jpg)
