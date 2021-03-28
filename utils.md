@@ -220,3 +220,9 @@ Roberts Holder 版本：项目地址在[此](https://github.com/rcy17/MOOC_subti
 小程序二维码
 
 ![](https://raw.githubusercontent.com/SuXY15/MyPic/master/RandomCanteen/RandomCanteen.jpg)
+
+## 华清大学课程攻略共享计划
+
+面向全校同学的课程攻略共享计划，旨在消除学习资源的信息不对称，促进学习资源和资料的开放共享。项目[在此](https://closed.social/pastExam/)。相较之 GitHub，分享与下载操作对不熟悉技术的同学都更加友好，欢迎分享！
+
+![华清大学课程攻略共享计划](image/course_strategy.jpg)
