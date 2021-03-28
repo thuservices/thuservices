@@ -22,6 +22,7 @@
         - 校内地图
         - 清华大学调查问卷系统
         - 清华紫荆码
+        - eduroam
 - [services.md](services.md)
     - 清华服务使用指北（主要面向 Linux 用户）
         - SSLVPN
