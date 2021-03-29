@@ -81,7 +81,7 @@
 
 校车实时运行情况可以使用“校内交通介绍”中提到的 APP 与/或小程序
 
-## 校内地图
+## 校内地图（静态版）
 
 [校内地图](https://www.tsinghua.edu.cn/zjqh/xyfg/xydt1.htm)
 
@@ -102,3 +102,23 @@
 ## eduroam
 
 访问 <https://guestman.tsinghua.edu.cn:8443/> 可注册。注：只可用于清华校外。
+
+## cksqs 查询GPA
+
+注：目前该方式已基本失效，只可以在二学位系统开放时访问
+
+登录过 INFO 后，访问 <http://jxgl.cic.tsinghua.edu.cn/jxpg/f/xssq/exwfx/xssqb/cksqs>，即可查看 GPA。
+
+## 清华大学后勤综合服务平台
+
+<https://pt.tsinghua.edu.cn/>
+
+其中包含
+
+### 校内各单位（包括校医院）电话号码
+### 校医院各科室挂号
+### 校园地图（动态版）
+可定位自身所在，可查看道路路障情况（针对机动车），可分类查找校内的各种设施。
+### 网上报修
+### 客房服务
+### 订车服务
