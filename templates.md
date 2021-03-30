@@ -22,8 +22,32 @@ A LaTeX beamer theme template for Tsinghua students.
 
 Overleaf模板位于：<https://www.overleaf.com/latex/templates/thu-beamer-theme/vwnqmzndvwyb> ，可以直接点开
 
+## 清华大学中文Beamer 模板
+
+<https://www.overleaf.com/latex/templates/qing-hua-da-xue-zhong-wen-beamer-mo-ban/djcnhxpwhrks>
+
+## TsinghuaBeamear
+
+<https://www.overleaf.com/latex/templates/tsinghuabeamer/gwchbskgbvrm>
+
+## Report Presentation for Tsinghua University
+
+<https://www.overleaf.com/latex/templates/report-presentation-for-tsinghua-university/yxcbdvyctybp>
+
 ## THU coursework Template
 
 LaTeX package for students in Tsinghua University to write coursework more efficiently, also can be used by students from other university.
 
 项目地址在[此](https://github.com/zhaofeng-shu33/THU-coursework-template)
+
+## 清华大学近代物理实验报告模版
+
+<https://www.overleaf.com/latex/templates/thu-emp-qing-hua-da-xue-jin-dai-wu-li-shi-yan-bao-gao-mo-ban/mbgqcryqhwqd>
+
+## THU Letter of Recommendation Template
+
+<https://www.overleaf.com/latex/templates/thu-letter-of-recommendation-template/ghjfgfhykprk>
+
+## A Simple Tsinghua Letterhead Template
+
+<https://www.overleaf.com/latex/templates/a-simple-tsinghua-letterhead-template/zhpywsjswnjs>

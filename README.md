@@ -67,7 +67,13 @@
         - 《如何使用 LaTeX 排版论文》讲稿
         - ThuThesis
         - THU-Beamer-Theme
+        - 清华大学中文Beamer 模板
+        - TsinghuaBeamear
+        - Report Presentation for Tsinghua University
         - THU coursework Template
+        - 清华大学近代物理实验报告模版
+        - THU Letter of Recommendation Template
+        - A Simple Tsinghua Letterhead Template
 - [utils.md](utils.md)
     - 一些脚本和工具
         - 一键评教
