@@ -31,6 +31,7 @@
             - 网上报修
             - 客房服务
             - 订车服务
+        - 邮编、邮寄地址及邮条
 - [services.md](services.md)
     - 清华服务使用指北（主要面向 Linux 用户）
         - SSLVPN

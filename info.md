@@ -122,3 +122,7 @@
 ### 网上报修
 ### 客房服务
 ### 订车服务
+
+## 邮编、邮寄地址及邮条
+
+<https://www.tsinghua.edu.cn/xssqglfwzx/info/1008/1009.htm>
