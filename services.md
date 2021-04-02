@@ -243,6 +243,35 @@ sysctl net/ipv6/conf/wlan0/forwarding=0
 
 以上命令的一些参数请按需替换。我们可以将以上命令放在启动脚本中，使得自动配置 token。
 
+#### 尝试获取某一特定IPv4、IPv6地址
+
+你校对于DHCP请求（v4与v6术语不同，不严谨表述）中的特定地址请求是宽容的。
+
+dhcpcd 配置
+
+```dhcpcd.conf
+interface enp3s0
+request 59.66.190.254
+ia_na 64:1a:ff:ff/2402:f000:4:3:888:1926:8:17
+```
+
+配置中某些信息已经经过编辑，请参考 man page 与实际网络环境来进行配置。
+
+以下附上一些 log，来探究该配置生效的过程。笔者认为，需要在旧 lease 失效或旧地址被人抢占后该配置才能使用。
+
+```
+Apr 02 07:00:21 Zenith dhcpcd[497]: enp3s0: IAID 64:1a:ff:ff
+Apr 02 07:00:22 Zenith dhcpcd[497]: enp3s0: soliciting a DHCP lease (requesting 59.66.190.254)
+Apr 02 07:00:22 Zenith dhcpcd[497]: enp3s0: offered 59.66.190.254 from 166.111.8.9
+Apr 02 07:00:22 Zenith dhcpcd[497]: enp3s0: probing address 59.66.190.254/24
+Apr 02 07:00:22 Zenith dhcpcd[497]: enp3s0: confirming prior DHCPv6 lease
+Apr 02 07:00:32 Zenith dhcpcd[497]: enp3s0: failed to confirm prior DHCPv6 address
+Apr 02 07:00:32 Zenith dhcpcd[497]: enp3s0: adding default route via fe80::9629:2fff:fe37:xxxx
+Apr 02 07:00:33 Zenith dhcpcd[497]: enp3s0: ADV 2402:f000:4:3:888:1926:8:17/128 from fe80::9629:2fff:fe37:xxxx
+Apr 02 07:00:34 Zenith dhcpcd[497]: enp3s0: REPLY6 received from fe80::9629:2fff:fe37:ffff
+Apr 02 07:00:34 Zenith dhcpcd[497]: enp3s0: adding address 2402:f000:4:3:888:1926:8:17/128
+```
+
 ### 不符合 RFC 的 DHCP
 
 你校的 DHCPv6 server 会不承认某些 DUID，对于这样的 DHCP 请求会不予回应。即使向学校反映该问题，学校尝试让厂商修复后，该问题仍然存在。
