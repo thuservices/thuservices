@@ -178,6 +178,7 @@ Roberts Holder 版本：项目地址在[此](https://github.com/rcy17/MOOC_subti
 | [tunet-c](https://github.com/robertying/tunet-c) | OpenWRT, Linux, macOS; CLI | C | 可用 | 提供认证相关库，二进制文件较小 |
 | [TsinghuaTunet](https://github.com/WhymustIhaveaname/TsinghuaTunet) | 支持 python 的平台， CLI | Python | 可用于特定子网 | 未调查 |
 | [THUNetwork](https://github.com/zhaofeng-shu33/THUNetwork) | 支持 python 的平台， CLI | Python | 不再维护 | 密码明文传入命令行，较为不安全 |
+| [tunet-rust](https://github.com/Berrysoft/tunet-rust) | Windows, Mac OS, Linux | Rust | 可用 | 流量与余额监控，准入与准出，v4与v6，提供认证相关库 |
 
 ## INFO/网络学堂 APP/插件
 
