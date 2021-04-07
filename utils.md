@@ -152,6 +152,12 @@ Roberts Holder 版本：项目地址在[此](https://github.com/rcy17/MOOC_subti
 
 项目地址在[此](https://github.com/lflame/TsinghuaBookCrawler)
 
+又有一种实现
+
+引用原文：自动下载书籍每一页的原图。
+
+项目地址在[此](https://github.com/i207M/reserves-lib-tsinghua-downloader)
+
 ## 课程地点分享
 
 在[https://wmcgcdn.rika.tech/](https://wmcgcdn.rika.tech/)中，其项目地址为[此](https://github.com/RikaKagurasaka/where-my-course-gone-backend)。
