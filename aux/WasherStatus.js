@@ -99,13 +99,13 @@ async function handleRequest(request) {
 
   // fix clerical errors
   const replaceMap = new Map([
+    [ /^清华大学|4G$/, "" ],
     [ /紫[荆金荊](:?公寓)?/, "紫荆" ],
     [ /紫荆1号楼([14])号机/, "紫荆1号楼1层$1号机" ],
     [ /层([34])号楼/, "层$1号机" ],
     [ "紫荆5号码", "紫荆5号楼" ],
     [ "三号院", "3号院" ],
     [ "七号楼", "7号楼" ],
-    [ "号机4G", "号机" ],
   ])
   for (const result of results.result)
     for (const [regexp, str] of replaceMap)
@@ -146,11 +146,11 @@ async function handleRequest(request) {
     }, buildings)
   }
   buildings.forEach((floors, i) => {
-    const buliding = "清华大学紫荆" + i + "号楼"
-    floors.forEach((machines, i) => {
+    const buliding = "紫荆" + i + "号楼"
+    floors.forEach((washers, i) => {
       const floor = i + "层"
-      const machine = machines.map((_, i) => i).filter(i => Number.isInteger(i)).join(", ") + "号机"
-      mergedResults.push({washerName: buliding + floor + machine, runingStatus: 48})
+      const washer = washers.map((_, i) => i).filter(i => Number.isInteger(i)).join(", ") + "号机"
+      mergedResults.push({washerName: buliding + floor + washer, runingStatus: 48})
     })
   })
 
