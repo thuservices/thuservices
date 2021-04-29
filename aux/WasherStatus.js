@@ -164,7 +164,7 @@ async function handleRequest(request) {
               ? "运行中... 剩余" + result.remainRunning + "分钟"
               : "空闲！"
           ) + "</li>"
-        ) + "</ul>"
+        ).join("") + "</ul>"
       : "无搜索结果"
   )
 
