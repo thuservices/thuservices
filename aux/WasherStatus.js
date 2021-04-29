@@ -57,11 +57,10 @@ async function gatherResponse(response) {
 
 async function handleRequest(request) {
 
-  const params = {}
+  const params = Object.create(null)
   const req_url = new URL(request.url)
-  const queryString = req_url.search.slice(1).split('&')
-  queryString.forEach(item => {
-    const kv = item.split('=')
+  const queryString = Array.from(req_url.searchParams)
+  queryString.forEach(kv => {
     if (kv[0]) {
       if (kv[0] in params) {
         params[kv[0]].push(kv[1] || true)
@@ -70,76 +69,112 @@ async function handleRequest(request) {
       }
     }
   })
-  
+
   //console.log(JSON.stringify(params))
 
-  kws = ["紫荆2号楼"]
-  if("s" in params)
-    kws = params["s"]
+  const allKws = "s" in params ? params["s"] : ["紫荆2号楼"]
 
-  var allResults = Array()
-  var results
-  for (i=0;i<kws.length;i++) {
+  const allResults = []
+  let results
+  for (const kws of allKws) {
     const init = {
       headers: {
         "content-type": "application/x-www-form-urlencoded",
         "cookie": "mopenid=",
       },
       method: "POST",
-      body: "regionId=3&searchKws="+kws[i]+"&pageSize=50&pageNo=1",
+      body: "regionId=3&searchKws=" + kws + "&pageSize=50&pageNo=1",
     }
     const response = await fetch(url, init)
     results = await gatherResponse(response)
-    const curTime = new Date().getTime()
-    for (j=0;j<results.result.length;j++)
-      if (results.result[j]['lastUpdateTime'] >= curTime - 86400 * 7 * 1000) // remove broken washers
-        allResults.push(results.result[j])
+    const curTime = Date.now()
+    for (const result of results.result)
+      if (result.lastUpdateTime >= curTime - 86400 * 7 * 1000) // remove broken washers
+        allResults.push(result)
   }
 
   results.result = allResults
   results.totalCount = allResults.length
   results.pageSize < results.totalCount ? results.pageSize = results.totalCount : 0
 
-  results["result"].sort((a,b) => a["washerName"].localeCompare(b["washerName"]))
+  // fix clerical errors
+  const replaceMap = new Map([
+    [ /^清华大学|4G$/, "" ],
+    [ /紫[荆金荊](:?公寓)?/, "紫荆" ],
+    [ /紫荆1号楼([14])号机/, "紫荆1号楼1层$1号机" ],
+    [ /层([34])号楼/, "层$1号机" ],
+    [ "紫荆5号码", "紫荆5号楼" ],
+    [ "三号院", "3号院" ],
+    [ "七号楼", "7号楼" ],
+  ])
+  for (const result of results.result)
+    for (const [regexp, str] of replaceMap)
+      result.washerName = result.washerName.replace(regexp, str)
 
-  if("j" in params){
+  // sort
+  results.result.sort((a, b) => a.washerName.localeCompare(b.washerName))
+
+  // JSON
+  if ("j" in params) {
     return new Response(JSON.stringify(results, null, 2), {
-        headers: {
-          "content-type": "application/json;charset=UTF-8",
-          "Access-Control-Allow-Origin": "*",
-        }
-      })
-  }
-  
-  // console.log(results.result)
-  
-  html_str = "<html><body>"
-  if(results["totalCount"]!=0){
-    const len = results["totalCount"]
-    for(i=0;i!=len;++i){
-      status_str = "<div>" + results["result"][i]["washerName"] + ": "
-      if(results["result"][i]["runingStatus"]!=48){
-        status_str += "运行中..."
-        status_str += " 剩余"+results["result"][i]["remainRunning"]+"分钟"
-      }else{
-        status_str += "空闲！"
+      headers: {
+        "Content-Type": "application/json;charset=UTF-8",
+        "Access-Control-Allow-Origin": "*",
       }
-      status_str += "</div>"
-      html_str += status_str
-    }
-  }else{
-    html_str += "无搜索结果"
+    })
   }
-  html_str += "</body></html>"
+
+  // console.log(results.result)
+
+  // HTML
+  const mergeableResults = []
+  const mergedResults = []
+  for (const result of results.result) (
+    result.runingStatus === 48 &&
+    /紫荆\d+号楼\d+层\d+号机/.test(result.washerName)
+      ? mergeableResults
+      : mergedResults
+  ).push(result)
+
+  const buildings = []
+  for (const result of mergeableResults) {
+    const nums = result.washerName.match(/\d+/g).map(str => Number.parseInt(str))
+    nums.reduce((parent, child) => {
+      if (!parent[child])
+        parent[child] = []
+      return parent[child]
+    }, buildings)
+  }
+  buildings.forEach((floors, i) => {
+    const buliding = "紫荆" + i + "号楼"
+    floors.forEach((washers, i) => {
+      const floor = i + "层"
+      const washer = washers.map((_, i) => i).filter(i => Number.isInteger(i)).join(", ") + "号机"
+      mergedResults.push({washerName: buliding + floor + washer, runingStatus: 48})
+    })
+  })
+
+  mergedResults.sort((a, b) => a.washerName.localeCompare(b.washerName))
+
+  const html_str = "<!DOCTYPE html>" + (
+    results.totalCount > 0
+      ? "<ul>" + mergedResults.map(result =>
+          "<li>" + result.washerName + ": " + (
+            result.runingStatus !== 48
+              ? "运行中... 剩余" + result.remainRunning + "分钟"
+              : "空闲！"
+          ) + "</li>"
+        ) + "</ul>"
+      : "无搜索结果"
+  )
+
   const initR = {
     headers: {
-      "content-type": "text/html;charset=UTF-8",
+      "Content-Type": "text/html;charset=UTF-8",
       "Access-Control-Allow-Origin": "*",
     },
   }
   return new Response(html_str, initR)
 }
 
-addEventListener("fetch", event => {
-  return event.respondWith(handleRequest(event.request))
-})
+addEventListener("fetch", event => event.respondWith(handleRequest(event.request)))
