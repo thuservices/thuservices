@@ -156,25 +156,46 @@ async function handleRequest(request) {
 
   mergedResults.sort((a, b) => a.washerName.localeCompare(b.washerName))
 
-  const html_str = "<!DOCTYPE html>" + (
-    results.totalCount > 0
-      ? "<ul>" + mergedResults.map(result =>
-          "<li>" + result.washerName + ": " + (
-            result.runingStatus !== 48
-              ? "运行中... 剩余" + result.remainRunning + "分钟"
-              : "空闲！"
-          ) + "</li>"
-        ).join("") + "</ul>"
-      : "无搜索结果"
-  )
-
-  const initR = {
-    headers: {
-      "Content-Type": "text/html;charset=UTF-8",
-      "Access-Control-Allow-Origin": "*",
-    },
+  if ("p" in params) {
+    // text/plain
+    const plain_str =
+      results.totalCount > 0
+        ? mergedResults.map(result =>
+            result.washerName + ": " + (
+              result.runingStatus !== 48
+                ? "运行中... 剩余" + result.remainRunning + "分钟"
+                : "空闲！"
+            )
+          ).join("\n")
+        : "无搜索结果"
+    const initR = {
+      headers: {
+        "Content-Type": "text/plain;charset=UTF-8",
+        "Access-Control-Allow-Origin": "*",
+      },
+    }
+    return new Response(plain_str, initR)
+  } else {
+    // text/html
+    const html_str = "<!DOCTYPE html>" + (
+      results.totalCount > 0
+        ? "<ul>" + mergedResults.map(result =>
+            "<li>" + result.washerName + ": " + (
+              result.runingStatus !== 48
+                ? "运行中... 剩余" + result.remainRunning + "分钟"
+                : "空闲！"
+            ) + "</li>"
+          ).join("") + "</ul>"
+        : "无搜索结果"
+    )
+    const initR = {
+      headers: {
+        "Content-Type": "text/html;charset=UTF-8",
+        "Access-Control-Allow-Origin": "*",
+      },
+    }
+    return new Response(html_str, initR)
   }
-  return new Response(html_str, initR)
 }
 
 addEventListener("fetch", event => event.respondWith(handleRequest(event.request)))
