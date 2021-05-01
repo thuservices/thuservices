@@ -8,3 +8,11 @@
 在 pre-commit hook 的作用下，README.md 是自动生成的，故如果需要在 README.md 中修改，请在 [aux 文件夹](https://github.com/ZenithalHourlyRate/thuservices/tree/master/aux)下进行。
 
 由于 Windows 文件系统的限制，文件夹名不能为 aux，请在非Windows环境（WSL也可以）下克隆该项目。
+
+### 编译
+
+```
+python3 -m pip install --user -r requirements.txt # 安装 Python 依赖包
+mkdocs serve # 直接在本地 serve，或者：
+mkdocs build --clean # 生成于 site/ 文件夹中
+```

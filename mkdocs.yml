@@ -1,0 +1,65 @@
+site_name: THU Services
+site_description: 'A yellow page for Tsinghua/THU service/info/utils'
+
+theme: 
+  name: 'material'
+  language: 'zh'
+  custom_dir: 'theme-override/'
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    # - navigation.tabs
+    # - navigation.instant
+
+repo_name: 'ZenithalHourlyRate/thuservices'
+repo_url: 'https://github.com/ZenithalHourlyRate/thuservices'
+
+extra:
+  pagetime: 'on'
+
+nav:
+  - THU Services:
+    - 目录: README.md
+    - 信息: info.md
+    - 服务: services.md
+    - 工具: utils.md
+    - 模板: templates.md
+
+extra_javascript:
+  - 'https://cdn.jsdelivr.net/npm/mathjax@2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      fallback_to_build_date: true
+  - git-authors:
+      show_contribution: true
+      show_line_count: true
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+      linenums: true
+  - footnotes
+  - def_list
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+

@@ -1,0 +1,49 @@
+name: Build documentation with mkdocs and Publish to another repo
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Build with mkdocs
+      run: mkdocs build
+    - name: Commit and publish
+      if: ${{ github.ref == 'refs/heads/master' }}
+      env: 
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        PUBLISH_REPOSITORY: ${{ secrets.PUBLISH_REPOSITORY }}
+        ACTOR: ${{ secrets.ACTOR }}
+      run: |
+        remote_repo="https://x-access-token:${ACCESS_TOKEN}@github.com/${PUBLISH_REPOSITORY}.git"
+        remote_branch="master"
+        git_commit_id=$(git rev-parse --short HEAD)
+        mkdir _site_remote && cd _site_remote
+        git init
+        git config user.name "${ACTOR}"
+        git config user.email "${ACTOR}@users.noreply.github.com"
+        git remote add origin $remote_repo
+        git pull origin $remote_branch
+        git rm -rf .
+        git clean -fxd
+        cp -ar ../site/* ../CNAME ./
+        touch .nojekyll
+        git add .
+        git commit -m "Github Action auto build for https://github.com/ZenithalHourlyRate/thuservices/commit/${git_commit_id}" --allow-empty
+        git push -u origin $remote_branch
+
