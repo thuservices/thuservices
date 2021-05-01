@@ -79,7 +79,6 @@
         - CV-tsinghua-template
 - [utils.md](utils.md)
     - 一些脚本和工具
-        - 一键评教
         - 选课冲突标记
         - INFO 网络学堂 Telegram 消息推送
         - 全校洗衣机状态
