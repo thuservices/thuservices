@@ -51,3 +51,7 @@ LaTeX package for students in Tsinghua University to write coursework more effic
 ## A Simple Tsinghua Letterhead Template
 
 <https://www.overleaf.com/latex/templates/a-simple-tsinghua-letterhead-template/zhpywsjswnjs>
+
+## CV-tsinghua-template
+
+<https://github.com/K-Wu/CV-tsinghua-template>

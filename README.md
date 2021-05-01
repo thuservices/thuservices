@@ -76,6 +76,7 @@
         - 清华大学近代物理实验报告模版
         - THU Letter of Recommendation Template
         - A Simple Tsinghua Letterhead Template
+        - CV-tsinghua-template
 - [utils.md](utils.md)
     - 一些脚本和工具
         - 一键评教
