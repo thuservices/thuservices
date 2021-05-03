@@ -10,7 +10,7 @@
 
 ## 本科专业培养方案
 
-[清华官网培养方案链接](https://www.tsinghua.edu.cn/jyjx1/bksjy/bkzy1.htm)
+[清华官网培养方案链接](https://2020.tsinghua.edu.cn/jyjx1/bksjy/bkzy1.htm)
 
 [计算机系 19 级培养方案 info 版本（需要已经登录 info）](http://zhjw.cic.tsinghua.edu.cn/jhBks.vjhBksPyfakzbBs.do?m=pyfakzFrame&fajhh=193024111&theModule=pyfa)
 
@@ -23,12 +23,20 @@
 
 ## 学校宣传资料
 
+### INFO 版本
+
 包括清华大学校标、校徽、校色，清华大学校歌、歌词，清华展览，清华概览中文版、清华
 英文宣传册，清华大学宣传片中文版、英文版，以及清华大学二级单位标志规范相关材料。
 
 快速访问路径：INFO -> 首页 -> 页面底部中间
 
 [学校宣传资料（校外需要 VPN）](http://info.tsinghua.edu.cn/html/xxxczl/xczlxz.htm)
+
+### 主页版本
+
+清华概况、宣传册、校歌、宣传片。
+
+[学校宣传资料](https://www.tsinghua.edu.cn/zjqh/syxx/xczy.htm)
 
 ## 选课时间表
 
@@ -76,14 +84,14 @@
 
 ## 校内校车
 
-[校内交通介绍](https://www.tsinghua.edu.cn/zjqh/syxx1/xyjt1.htm)
+[校内交通介绍](https://2020.tsinghua.edu.cn/zjqh/syxx1/xyjt1.htm)
 [校车交通路线图](https://www.tsinghua.edu.cn/__local/3/BB/BE/7260A578E48A6BA827528DE4F74_004A1626_73CEC.png)
 
 校车实时运行情况可以使用“校内交通介绍”中提到的 APP 与/或小程序
 
 ## 校内地图（静态版）
 
-[校内地图](https://www.tsinghua.edu.cn/zjqh/xyfg/xydt1.htm)
+[校内地图](https://2020.tsinghua.edu.cn/zjqh/xyfg/xydt1.htm)
 
 ## 清华大学调查问卷系统
 
@@ -125,4 +133,10 @@
 
 ## 邮编、邮寄地址及邮条
 
-<https://www.tsinghua.edu.cn/xssqglfwzx/info/1008/1009.htm>
+<https://www.tsinghua.edu.cn/xssqglfwzx/info/1043/1174.htm>
+
+虽然标注了：「在注册过程中，同学如留有Email地址，那么，当同学有新邮条或汇款单时，系统会通过Email自动通知同学」，但笔者并未收到过相关邮件。
+
+## 清华大学校园一卡通自助查询系统
+
+<http://ecard.tsinghua.edu.cn/user/Index.do>
