@@ -140,3 +140,7 @@
 ## 清华大学校园一卡通自助查询系统
 
 <http://ecard.tsinghua.edu.cn/user/Index.do>
+
+## ACM/IEEE/知网等论文下载（Shibboleth或OpenAthens）
+
+参考 <http://lib.tsinghua.edu.cn/tjfw/xwfw.htm> 中的机构身份认证。

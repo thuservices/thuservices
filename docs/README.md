@@ -35,6 +35,7 @@
             - 订车服务
         - 邮编、邮寄地址及邮条
         - 清华大学校园一卡通自助查询系统
+        - ACM/IEEE/知网等论文下载（Shibboleth或OpenAthens）
 - [services.md](services.md)
     - 清华服务使用指北（主要面向 Linux 用户）
         - SSLVPN
