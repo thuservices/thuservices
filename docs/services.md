@@ -38,6 +38,8 @@ $ openconnect --juniper https://sslvpn.tsinghua.edu.cn
 
 [清华大学校园网使用简介](https://its.tsinghua.edu.cn/helpsystem/train/CampusNetworkLectureNotes201909.pdf)（由于网页升级链接已失效，可参阅本站的[备份](file/CampusNetworkLectureNotes201909.pdf)）
 
+[准入上网使用说明](http://166.111.5.8/commsoft/helpsystem/wirednetwork/RealNameAuthentication20190121.pdf)（本站[备份](file/RealNameAuthentication20190121.pdf)）
+
 [清华大学校园网有线局域网用户准入系统使用说明（问与答）](https://its.tsinghua.edu.cn/helpsystem/wirednetwork/RealNameAuthenticationFAQ20190614.pdf)（由于网页升级链接已失效，可参阅本站的[备份](file/RealNameAuthenticationFAQ20190614.pdf)）
 
 上述文件太长不看版：在校园网中上网分为两步，一步是准入，另一步是准出。
@@ -126,7 +128,7 @@ ssh -D <port> host
 
 如果是校内环境，首先连接 `Tsinghua-Secure无线网使用指南` 进入 [usereg.tsinghua.edu.cn](https://usereg.tsinghua.edu.cn) , 登录后在 `自注册及修改口令处` 设置 Tsinghua-Secure 使用的密码，此密码不需要与 info 密码相同。
 
-设置好后，可以使用 `NetworkManager` 连接该 Wifi，可以参考 its 的文档 [清华大学无线校园网 802.1x 认证登录客户端配置说明](https://its.tsinghua.edu.cn/upload_files/file/20181218/1545119054386022345.pdf)（由于网页升级链接已失效）
+设置好后，可以使用 `NetworkManager` 连接该 Wifi，可以参考 its 的文档 [清华大学无线校园网 802.1x 认证登录客户端配置说明](https://its.tsinghua.edu.cn/info/1333/2318.htm)（本站[备份](file/tsinghua-secure-config.pdf)）
 
 也可使用 `wpa_supplicant` 完成相应 wifi 连接。安装 `wpa_supplicant`，编辑 `/etc/wpa_supplicant/wpa_supplicant-nl80211-XXXX.conf`， 其中 `XXXX` 是本机网卡名称，输入以下配置
 
@@ -286,6 +288,10 @@ $ cat /var/lib/dhcpcd/duid
 ```
 
 若以 `00:01` 开头，则表明为 DUID-LLT，否则（或文件不存在）需要改为上述格式。同时需要检查一下最后的 `ff:ff:ff:ff:ff:ff` 是否为相关网卡的MAC地址，如果不是需要更改为相应地址。
+
+### 30分钟无流量掉准入
+
+根据之前提到的《准入上网使用说明》，计算机长时间（目前为 30 分钟）不使用网络时，认证系统会关闭其网络连接；服务器如有必要可每 10 分钟 ping 1 次 ping.tsinghua.edu.cn。
 
 ### 掉准出后无法准出
 
