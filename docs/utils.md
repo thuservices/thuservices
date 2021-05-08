@@ -216,3 +216,9 @@ Roberts Holder 版本：项目地址在[此](https://github.com/rcy17/MOOC_subti
 面向全校同学的课程攻略共享计划，旨在消除学习资源的信息不对称，促进学习资源和资料的开放共享。项目[在此](https://closed.social/pastExam/)。相较之 GitHub，分享与下载操作对不熟悉技术的同学都更加友好，欢迎分享！
 
 ![华清大学课程攻略共享计划](image/course_strategy.jpg)
+
+## 雨课堂课件下载器
+
+目前仅适用于「长江雨课堂」，不过改改就可以用于荷塘雨课堂。
+
+项目地址在[此](https://github.com/ShevonKuan/yuektang_ppt2pdf)。
