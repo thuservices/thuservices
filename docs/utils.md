@@ -129,6 +129,8 @@ Rabbit Hu 版本：脚本在[此](https://greasyfork.org/zh-CN/scripts/408878-xu
 
 Roberts Holder 版本：项目地址在[此](https://github.com/rcy17/MOOC_subtitle_spider)
 
+Rynco Maekawa 版本：项目地址在[此](https://github.com/lynzrand/xuetangx_sub)
+
 ## 清华教学参考书爬取
 
 引自原文：最近疫情严重，购买教材较为困难，为了方便大家在线学习，写了一个爬取清华教参的 python 脚本。
