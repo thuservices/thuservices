@@ -153,6 +153,16 @@ Rynco Maekawa 版本：项目地址在[此](https://github.com/lynzrand/xuetangx
 
 [GitHub地址](https://github.com/PKUanonym/REKCARC-TSC-UHT)与[校内地址](https://git.tsinghua.edu.cn/pkuanonym/REKCARC-TSC-UHT)
 
+## 清华软院课程攻略
+
+[GitHub地址](https://github.com/SerCharles/THSS-CRACKER)
+
+## 华清大学课程攻略共享计划
+
+面向全校同学的课程攻略共享计划，旨在消除学习资源的信息不对称，促进学习资源和资料的开放共享。项目[在此](https://closed.social/pastExam/)。相较之 GitHub，分享与下载操作对不熟悉技术的同学都更加友好，欢迎分享！
+
+![华清大学课程攻略共享计划](image/course_strategy.jpg)
+
 ## 校园网认证工具汇总
 
 本着用轮子不如造轮子的精神，一代代清华人与校园网斗智斗勇，开发了无数认证工具，我们在此尽可能列出它们，供大家根据喜好选用。
@@ -213,12 +223,6 @@ Rynco Maekawa 版本：项目地址在[此](https://github.com/lynzrand/xuetangx
 小程序二维码
 
 ![](https://raw.githubusercontent.com/SuXY15/MyPic/master/RandomCanteen/RandomCanteen.jpg)
-
-## 华清大学课程攻略共享计划
-
-面向全校同学的课程攻略共享计划，旨在消除学习资源的信息不对称，促进学习资源和资料的开放共享。项目[在此](https://closed.social/pastExam/)。相较之 GitHub，分享与下载操作对不熟悉技术的同学都更加友好，欢迎分享！
-
-![华清大学课程攻略共享计划](image/course_strategy.jpg)
 
 ## 雨课堂课件下载器
 
