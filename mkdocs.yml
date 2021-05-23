@@ -24,6 +24,8 @@ nav:
     - 服务: services.md
     - 工具: utils.md
     - 模板: templates.md
+    - 网站: websites.md
+    - 公号: accounts.md
 
 extra_javascript:
   - 'https://cdn.jsdelivr.net/npm/mathjax@2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'

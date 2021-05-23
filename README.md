@@ -5,6 +5,10 @@
 [选课登录（校内或 SSLVPN）（选课时段内有效）](http://zhjwxk.cic.tsinghua.edu.cn/xklogin.do)
 
 ## 文件内容
+- [accounts.md](accounts.md)
+    - 公众帐号们
+        - 微信公众号
+        - 知乎
 - [info.md](info.md)
     - INFO重要信息集合
         - 校历
