@@ -109,6 +109,12 @@ iOS 12 以上的用户可以透过此[链接](https://www.icloud.com/shortcuts/f
 
 在「INFO-全部成绩」页面计算各个学期以及总的的必限以及必限任的GPA。脚本地址在[此](https://greasyfork.org/zh-CN/scripts/420540-清华大学gpa查询)
 
+## Rain Classroom Helper
+
+该用户脚本旨在为大屏幕设备（PC、平板）提供更好的雨课堂学生端使用体验。
+
+项目地址在[此](https://github.com/RainEggplant/rain-classroom-helper)
+
 ## 清华大学一体化平台视频自动播放
 
 脚本在[此](https://github.com/Co1lin/Tsinghua-Yukuotang-Autoplay)，可自动播放 [tsinghua.yuketang.cn](https://github.com/Co1lin/Tsinghua-Yukuotang-Autoplay/blob/main/tsinghua.yuketang.cn) 上的课程视频。
