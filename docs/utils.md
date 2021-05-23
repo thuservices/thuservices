@@ -1,5 +1,38 @@
 # 一些脚本和工具
 
+## 校园网认证工具汇总
+
+本着用轮子不如造轮子的精神，一代代清华人与校园网斗智斗勇，开发了无数认证工具，我们在此尽可能列出它们，供大家根据喜好选用。
+
+| 项目链接 | 支持平台 | 实现语言 | 目前是否可用（是否被维护）| 特性 |
+| --- | --- | --- | --- | --- |
+| [Tunet-2018 (official)](https://its.tsinghua.edu.cn/xywl/xywsyzn/yxw_hkhd_/khdxz.htm) | Windows-GUI, Linux-CLI | 未知 | 在2020年暑假的`ac_id`升级后不可用 | 未调查 |
+| [GoAuthing](https://github.com/z4yx/GoAuthing/) | Linux-CLI (x86\_64, arm, mips, ppc), Windows-CLI, Mac OS-CLI (Intel, Apple) | Go | 可用 | 全平台全架构，准入与准出，v4和v6，systemd 服务，TUNA 提供[镜像](https://mirrors.tuna.tsinghua.edu.cn/github-release/z4yx/GoAuthing/LatestRelease/)可以在未认证时下载认证工具，提供认证相关库 |
+| [tunet-python](https://github.com/yuantailing/tunet-python) | 支持 python 的平台，CLI | Python | 可用 | v4与v6，准入与准出，流量与准入出状态监控 |
+| [auth-tsinghua](https://github.com/jiegec/auth-tsinghua) | 支持 node.js 的平台, CLI | Javascript | 不再维护 | 已经重定向至 GoAuthing |
+| [TsinghuaNet](https://github.com/Berrysoft/TsinghuaNet) | Windows, Mac OS, Linux, UWP, Android, iOS | .NET | 可用 | 真全平台，流量与余额监控，准入与准出，v4与v6，提供认证相关库 |
+| [tunet-cli](https://github.com/syimyuzya/tunet-cli) | 支持 python 的平台，CLI | Python | 不再维护，上个 commit 在2017年 | 未调查 |
+| [Tsinghua-Online](https://github.com/xxr3376/Tsinghua-Online) | 浏览器插件，在[Chrome 商店](https://chrome.google.com/webstore/detail/tsinghua-online/elkbekfdkihpbcbacmppemegcekohkjo)中 | Javascript | 不再维护，上个 commit 在2013年 | 浏览器插件 |
+| [tunet-c](https://github.com/robertying/tunet-c) | OpenWRT, Linux, macOS; CLI | C | 可用 | 提供认证相关库，二进制文件较小 |
+| [TsinghuaTunet](https://github.com/WhymustIhaveaname/TsinghuaTunet) | 支持 python 的平台， CLI | Python | 可用于特定子网 | 未调查 |
+| [THUNetwork](https://github.com/zhaofeng-shu33/THUNetwork) | 支持 python 的平台， CLI | Python | 不再维护 | 密码明文传入命令行，较为不安全 |
+| [tunet-rust](https://github.com/Berrysoft/tunet-rust) | Windows, Mac OS, Linux | Rust | 可用 | 流量与余额监控，准入与准出，v4与v6，提供认证相关库 |
+
+## INFO/网络学堂 APP/插件
+
+本着用轮子不如造轮子的精神，一代代清华人与INFO与网络学堂斗智斗勇，开发了无数易用工具，我们在此尽可能列出它们，供大家根据喜好选用。
+
+| 项目链接 | 支持平台 | 实现语言 | 目前是否可用（是否被维护）| 特性 |
+| --- | --- | --- | --- | --- |
+| [INFO](http://info.tsinghua.edu.cn/) | 网页 | 未调查 | 能用 | 官方网页 |
+| [LEARN](http://learn.tsinghua.edu.cn/) | 网页 | 未调查 | 能用 | 官方网页 |
+| [Learn-Project](https://github.com/xxr3376/Learn-Project) | 浏览器插件 | Typescript | 可用 | 按照时间线与种类排列网络学堂项目，在谷歌，火狐以及 Edge 的插件商店中，现代前端 |
+| [LearnX](https://github.com/robertying/learnX) | iOS,ipad OS, macOS, Android | React | 可用 | 项目开源许可证，其余参见项目介绍 |
+| [THUInfo](https://github.com/UNIDY2002/THUInfo) | 移动端APP | Typescript | 可用 | 拥有苹果应用商店分发，包括家园，学生部（教室），图书馆的项目，支持树洞 |
+| AtTsinghua | 移动端APP | 未知 | 未知 | 拥有苹果应用商店分发，其余未调查，为某实验室校庆作品 |
+| [learn2018-autodown](https://github.com/Trinkle23897/learn2018-autodown) | 支持 Python 的平台 | Python | 可用 | 真全部信息/文件下载（其余详见项目介绍） |
+| [THUCourseHelper](https://github.com/Starrah/THUCourseHelper) | Android | Kotlin | 未知 | 课程表 |
+
 ## 选课冲突标记
 
 你还在为抢课时满怀期待提交选课，却发现时间冲突而错失选课吗？
@@ -137,6 +170,12 @@ Roberts Holder 版本：项目地址在[此](https://github.com/rcy17/MOOC_subti
 
 Rynco Maekawa 版本：项目地址在[此](https://github.com/lynzrand/xuetangx_sub)
 
+## 雨课堂课件下载器
+
+目前仅适用于「长江雨课堂」，不过改改就可以用于荷塘雨课堂。
+
+项目地址在[此](https://github.com/ShevonKuan/yuektang_ppt2pdf)。
+
 ## 清华教学参考书爬取
 
 引自原文：最近疫情严重，购买教材较为困难，为了方便大家在线学习，写了一个爬取清华教参的 python 脚本。
@@ -154,53 +193,6 @@ Rynco Maekawa 版本：项目地址在[此](https://github.com/lynzrand/xuetangx
 在[https://wmcgcdn.rika.tech/](https://wmcgcdn.rika.tech/)中，其项目地址为[此](https://github.com/RikaKagurasaka/where-my-course-gone-backend)。
 
 目前已经停止维护与运营。
-
-## 清华大学计算机系课程攻略
-
-[GitHub地址](https://github.com/PKUanonym/REKCARC-TSC-UHT)与[校内地址](https://git.tsinghua.edu.cn/pkuanonym/REKCARC-TSC-UHT)
-
-## 清华软院课程攻略
-
-[GitHub地址](https://github.com/SerCharles/THSS-CRACKER)
-
-## 华清大学课程攻略共享计划
-
-面向全校同学的课程攻略共享计划，旨在消除学习资源的信息不对称，促进学习资源和资料的开放共享。项目[在此](https://closed.social/pastExam/)。相较之 GitHub，分享与下载操作对不熟悉技术的同学都更加友好，欢迎分享！
-
-![华清大学课程攻略共享计划](image/course_strategy.jpg)
-
-## 校园网认证工具汇总
-
-本着用轮子不如造轮子的精神，一代代清华人与校园网斗智斗勇，开发了无数认证工具，我们在此尽可能列出它们，供大家根据喜好选用。
-
-| 项目链接 | 支持平台 | 实现语言 | 目前是否可用（是否被维护）| 特性 |
-| --- | --- | --- | --- | --- |
-| [Tunet-2018 (official)](https://its.tsinghua.edu.cn/xywl/xywsyzn/yxw_hkhd_/khdxz.htm) | Windows-GUI, Linux-CLI | 未知 | 在2020年暑假的`ac_id`升级后不可用 | 未调查 |
-| [GoAuthing](https://github.com/z4yx/GoAuthing/) | Linux-CLI (x86\_64, arm, mips, ppc), Windows-CLI, Mac OS-CLI (Intel, Apple) | Go | 可用 | 全平台全架构，准入与准出，v4和v6，systemd 服务，TUNA 提供[镜像](https://mirrors.tuna.tsinghua.edu.cn/github-release/z4yx/GoAuthing/LatestRelease/)可以在未认证时下载认证工具，提供认证相关库 |
-| [tunet-python](https://github.com/yuantailing/tunet-python) | 支持 python 的平台，CLI | Python | 可用 | v4与v6，准入与准出，流量与准入出状态监控 |
-| [auth-tsinghua](https://github.com/jiegec/auth-tsinghua) | 支持 node.js 的平台, CLI | Javascript | 不再维护 | 已经重定向至 GoAuthing |
-| [TsinghuaNet](https://github.com/Berrysoft/TsinghuaNet) | Windows, Mac OS, Linux, UWP, Android, iOS | .NET | 可用 | 真全平台，流量与余额监控，准入与准出，v4与v6，提供认证相关库 |
-| [tunet-cli](https://github.com/syimyuzya/tunet-cli) | 支持 python 的平台，CLI | Python | 不再维护，上个 commit 在2017年 | 未调查 |
-| [Tsinghua-Online](https://github.com/xxr3376/Tsinghua-Online) | 浏览器插件，在[Chrome 商店](https://chrome.google.com/webstore/detail/tsinghua-online/elkbekfdkihpbcbacmppemegcekohkjo)中 | Javascript | 不再维护，上个 commit 在2013年 | 浏览器插件 |
-| [tunet-c](https://github.com/robertying/tunet-c) | OpenWRT, Linux, macOS; CLI | C | 可用 | 提供认证相关库，二进制文件较小 |
-| [TsinghuaTunet](https://github.com/WhymustIhaveaname/TsinghuaTunet) | 支持 python 的平台， CLI | Python | 可用于特定子网 | 未调查 |
-| [THUNetwork](https://github.com/zhaofeng-shu33/THUNetwork) | 支持 python 的平台， CLI | Python | 不再维护 | 密码明文传入命令行，较为不安全 |
-| [tunet-rust](https://github.com/Berrysoft/tunet-rust) | Windows, Mac OS, Linux | Rust | 可用 | 流量与余额监控，准入与准出，v4与v6，提供认证相关库 |
-
-## INFO/网络学堂 APP/插件
-
-本着用轮子不如造轮子的精神，一代代清华人与INFO与网络学堂斗智斗勇，开发了无数易用工具，我们在此尽可能列出它们，供大家根据喜好选用。
-
-| 项目链接 | 支持平台 | 实现语言 | 目前是否可用（是否被维护）| 特性 |
-| --- | --- | --- | --- | --- |
-| [INFO](http://info.tsinghua.edu.cn/) | 网页 | 未调查 | 能用 | 官方网页 |
-| [LEARN](http://learn.tsinghua.edu.cn/) | 网页 | 未调查 | 能用 | 官方网页 |
-| [Learn-Project](https://github.com/xxr3376/Learn-Project) | 浏览器插件 | Typescript | 可用 | 按照时间线与种类排列网络学堂项目，在谷歌，火狐以及 Edge 的插件商店中，现代前端 |
-| [LearnX](https://github.com/robertying/learnX) | iOS,ipad OS, macOS, Android | React | 可用 | 项目开源许可证，其余参见项目介绍 |
-| [THUInfo](https://github.com/UNIDY2002/THUInfo) | 移动端APP | Typescript | 可用 | 拥有苹果应用商店分发，包括家园，学生部（教室），图书馆的项目，支持树洞 |
-| AtTsinghua | 移动端APP | 未知 | 未知 | 拥有苹果应用商店分发，其余未调查，为某实验室校庆作品 |
-| [learn2018-autodown](https://github.com/Trinkle23897/learn2018-autodown) | 支持 Python 的平台 | Python | 可用 | 真全部信息/文件下载（其余详见项目介绍） |
-| [THUCourseHelper](https://github.com/Starrah/THUCourseHelper) | Android | Kotlin | 未知 | 课程表 |
 
 ## 注册标志（用于火车票）
 
@@ -230,8 +222,17 @@ Rynco Maekawa 版本：项目地址在[此](https://github.com/lynzrand/xuetangx
 
 ![](https://raw.githubusercontent.com/SuXY15/MyPic/master/RandomCanteen/RandomCanteen.jpg)
 
-## 雨课堂课件下载器
+## 清华大学计算机系课程攻略
 
-目前仅适用于「长江雨课堂」，不过改改就可以用于荷塘雨课堂。
+[GitHub地址](https://github.com/PKUanonym/REKCARC-TSC-UHT)与[校内地址](https://git.tsinghua.edu.cn/pkuanonym/REKCARC-TSC-UHT)
 
-项目地址在[此](https://github.com/ShevonKuan/yuektang_ppt2pdf)。
+## 清华软院课程攻略
+
+[GitHub地址](https://github.com/SerCharles/THSS-CRACKER)
+
+## 华清大学课程攻略共享计划
+
+面向全校同学的课程攻略共享计划，旨在消除学习资源的信息不对称，促进学习资源和资料的开放共享。项目[在此](https://closed.social/pastExam/)。相较之 GitHub，分享与下载操作对不熟悉技术的同学都更加友好，欢迎分享！
+
+![华清大学课程攻略共享计划](image/course_strategy.jpg)
+
