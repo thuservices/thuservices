@@ -14,6 +14,14 @@ ThuThesis 是 Tsinghua University Thesis LaTeX Template 的缩写。
 
 项目地址在[此](https://github.com/tuna/thuthesis)
 
+## ThuWordThesis
+
+清华本科毕业论文Word模板
+
+项目地址在[此](https://github.com/qbh16/ThuWordThesis)
+
+[清华云盘下载](https://cloud.tsinghua.edu.cn/d/5e264d25ce124695b3de)
+
 ## THU-Beamer-Theme
 
 A LaTeX beamer theme template for Tsinghua students.

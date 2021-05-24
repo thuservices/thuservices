@@ -77,6 +77,7 @@
     - LaTeX 等模板
         - 《如何使用 LaTeX 排版论文》讲稿
         - ThuThesis
+        - ThuWordThesis
         - THU-Beamer-Theme
         - 清华大学中文Beamer 模板
         - TsinghuaBeamear
