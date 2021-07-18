@@ -144,3 +144,7 @@
 ## ACM/IEEE/知网等论文下载（Shibboleth或OpenAthens）
 
 参考 <http://lib.tsinghua.edu.cn/tjfw/xwfw.htm> 中的机构身份认证。
+
+## 火车票报销凭证
+
+在紫荆一号楼的东侧，通往桃李的路上，有一台取火车票报销凭证机器
