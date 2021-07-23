@@ -17,8 +17,6 @@
 
 <https://thu.closed.social/>
 
-本站同时收录了闭社的「华清大学课程攻略共享计划」，可参考 <utils.md>
-
 ## 在线退学
 
 <https://tuixue.online/>
