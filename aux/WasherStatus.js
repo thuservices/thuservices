@@ -268,6 +268,7 @@ async function handleRequest(request) {
       if (washerName.includes(kws))
         matchedNewWashers.push(MAP[washerName])
 
+  const newWasherRequests = []
   for (const washerMac of matchedNewWashers) {
     const init = {
       headers: {
@@ -276,15 +277,19 @@ async function handleRequest(request) {
       method: "POST",
       body: JSON.stringify({"data":washerMac}),
     }
-    const response = await fetch("https://api.cleverschool.cn/washapi4/washMac/doGetWashMacByCode.json", init)
-    const result = await gatherResponse(response)
-    const resultData = result.data
-    resultData.washerName = "（新）" + result.data.location
-    resultData.runingStatus = result.code === null ? 48 : 51
-    resultData.remainRunning = result.errorMsg
-    // FIXME: should remove broken washers as above!
-    allResults.push(resultData)
+    newWasherRequests.push(fetch("https://api.cleverschool.cn/washapi4/washMac/doGetWashMacByCode.json", init))
   }
+  await Promise.all(newWasherRequests).then(async (newWashers) => {
+    for (const newWasher of newWashers) {
+      const result = await gatherResponse(newWasher)
+      const resultData = result.data
+      resultData.washerName = "（新）" + result.data.location
+      resultData.runingStatus = result.code === null ? 48 : 51
+      resultData.remainRunning = result.errorMsg
+      // FIXME: should remove broken washers as above!
+      allResults.push(resultData)
+    }
+  });
 
   results.result = allResults
   results.totalCount = allResults.length
