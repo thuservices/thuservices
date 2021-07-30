@@ -25,10 +25,12 @@
 import requests
 import bs4
 import argparse
+import time
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--name', type=str, required=True)
 parser.add_argument('--password', type=str, required=True)
+parser.add_argument('--influxdb', action='store_true')
 args = parser.parse_args()
 
 session = requests.session()
@@ -72,10 +74,18 @@ data['net_Default_LoginCtrl1$txtUserName'] = args.name
 data['net_Default_LoginCtrl1$txtUserPwd'] = args.password
 
 for k in data.keys():
+    if data[k] == None:
+        data[k] = ''
     data[k] = data[k].encode('gbk')
 
 res = session.post('http://myhome.tsinghua.edu.cn/default.aspx', data=data)
 res = session.get('http://myhome.tsinghua.edu.cn/Netweb_List/Netweb_Home_electricity_Detail.aspx')
 res.encoding = 'gbk'
 soup = bs4.BeautifulSoup(res.text, features='html.parser')
-print(soup.find('span', {'id': 'Netweb_Home_electricity_DetailCtrl1_lblele'}).text)
+reading = soup.find('span', {'id': 'Netweb_Home_electricity_DetailCtrl1_lblele'}).text
+
+# InfluxDB Line Protocol
+if args.influxdb:
+    print('tsinghua_electricity_bill,user={} reading={} {}'.format(args.name, reading, time.time_ns()))
+else:
+    print(reading)
