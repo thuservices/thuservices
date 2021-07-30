@@ -72,6 +72,8 @@ data['net_Default_LoginCtrl1$txtUserName'] = args.name
 data['net_Default_LoginCtrl1$txtUserPwd'] = args.password
 
 for k in data.keys():
+    if data[k] == None:
+        data[k] = ''
     data[k] = data[k].encode('gbk')
 
 res = session.post('http://myhome.tsinghua.edu.cn/default.aspx', data=data)
