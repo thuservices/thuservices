@@ -359,4 +359,4 @@ cmd> nslookup -q=TXT win10.harrychen.xyz
 
 ### TUNA
 
-访问 <https://mirrors.tsinghua.edu.cn> ，点击获取下载链接即可。
+访问 <https://mirrors.tuna.tsinghua.edu.cn> ，点击获取下载链接即可。
