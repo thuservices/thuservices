@@ -236,3 +236,8 @@ Rynco Maekawa 版本：项目地址在[此](https://github.com/lynzrand/xuetangx
 
 ![华清大学课程攻略共享计划](image/course_strategy.jpg)
 
+## 校园评教平台
+
+Colleguide: A platform to rate schools, professors, and courses
+
+<https://www.colleguide.com/>
