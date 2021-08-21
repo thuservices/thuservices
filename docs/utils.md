@@ -204,7 +204,15 @@ Rynco Maekawa 版本：项目地址在[此](https://github.com/lynzrand/xuetangx
 
 也有另一种实现，参考 aux 目录中的 `TsinghuaElectricityBillChecker.py`，用户需要修改一些内嵌的参数。
 
+也有另一种实现，参考 aux 目录中的 `TsinghuaBills.py`。
+
 通过这些脚本可以将数据灌入 grafana 中，实现电费监控与报警。
+
+## 校园卡水费查询
+
+参考 aux 目录中的 `TsinghuaBills.py`。
+
+该脚本可以将数据灌入 grafana 中，实现电费监控与报警。
 
 ## 清华上下课铃声
 
