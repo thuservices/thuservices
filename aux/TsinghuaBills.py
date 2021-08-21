@@ -3,6 +3,7 @@
 # MIT License
 # 
 # Copyright (c) 2021 Fugoes
+# Copyright (c) 2021 bryango
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -26,32 +27,59 @@ import requests
 import bs4
 import argparse
 import time
+import urllib3
+import re
+
+# login with https
+login_page = 'https://m.myhome.tsinghua.edu.cn/weixin/weixin_user_authenticate.aspx'
+
+targets = {
+    'power': {
+        'url': 'http://m.myhome.tsinghua.edu.cn/weixin/weixin_student_electricity_search.aspx',
+        'id': 'weixin_student_electricity_searchCtrl1_lblele',
+        'influxid': 'tsinghua_electricity_bill',
+        'regex': (r'', '')  # (r'$','度')
+    },
+    'water': {
+        'url': 'http://m.myhome.tsinghua.edu.cn/weixin/weixin_student_water_search.aspx',
+        'id': 'weixin_student_water_searchCtrl1_lblele',
+        'influxid': 'tsinghua_water_bill',
+        'regex': (r'元', '')  # regex applied to the output
+    }
+}
+choices = ['all'] + list(targets.keys())
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--name', type=str, required=True)
 parser.add_argument('--password', type=str, required=True)
+parser.add_argument('--find', type=str, default='power', choices=choices)
+parser.add_argument('--pretty', action='store_true', help='pretty print the response')
 parser.add_argument('--influxdb', action='store_true')
 args = parser.parse_args()
 
-session = requests.session()
+try:
+    import requests_cache
+    requests_cache.install_cache()
+except Exception:
+    pass
 
-res = session.get('http://myhome.tsinghua.edu.cn')
+session = requests.session()
+session.verify = False  # ignore certificate error
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+session.get('https://m.myhome.tsinghua.edu.cn/weixin/index.aspx')
+res = session.get(login_page)
 res.encoding = 'gbk'
 soup = bs4.BeautifulSoup(res.text, features='html.parser')
 inputs = soup.find_all('input', recursive=True)
 
 keys = [
-    'net_Default_LoginCtrl1$lbtnLogin.x',
-    '__VIEWSTATEGENERATOR',
     '__VIEWSTATE',
-    'Home_Img_ActivityCtrl1$hfScript',
-    'Home_Vote_InfoCtrl1$Repeater1$ctl01$hfID',
-    'net_Default_LoginCtrl1$lbtnLogin.y',
-    'net_Default_LoginCtrl1$txtUserName',
-    'Home_Vote_InfoCtrl1$Repeater1$ctl01$rdolstSelect',
-    'Home_Img_NewsCtrl1$hfJsImg',
-    'net_Default_LoginCtrl1$txtSearch1',
-    'net_Default_LoginCtrl1$txtUserPwd'
+    '__VIEWSTATEGENERATOR',
+    '__EVENTVALIDATION',
+    'weixin_user_authenticateCtrl1$txtUserName',
+    'weixin_user_authenticateCtrl1$txtPassword',
+    'weixin_user_authenticateCtrl1$btnLogin'
 ]
 
 data = dict()
@@ -67,25 +95,40 @@ for x in inputs:
         except KeyError:
             pass
 
-data['net_Default_LoginCtrl1$lbtnLogin.x'] = '22'
-data['net_Default_LoginCtrl1$lbtnLogin.y'] = '12'
-data['net_Default_LoginCtrl1$txtSearch1'] = ''
-data['net_Default_LoginCtrl1$txtUserName'] = args.name
-data['net_Default_LoginCtrl1$txtUserPwd'] = args.password
+data['weixin_user_authenticateCtrl1$btnLogin'] = '%B5%C7%C2%BC'
+data['weixin_user_authenticateCtrl1$txtUserName'] = args.name
+data['weixin_user_authenticateCtrl1$txtPassword'] = args.password
 
 for k in data.keys():
-    if data[k] == None:
+    if data[k] is None:
         data[k] = ''
     data[k] = data[k].encode('gbk')
 
-res = session.post('http://myhome.tsinghua.edu.cn/default.aspx', data=data)
-res = session.get('http://myhome.tsinghua.edu.cn/Netweb_List/Netweb_Home_electricity_Detail.aspx')
-res.encoding = 'gbk'
-soup = bs4.BeautifulSoup(res.text, features='html.parser')
-reading = soup.find('span', {'id': 'Netweb_Home_electricity_DetailCtrl1_lblele'}).text
-
-# InfluxDB Line Protocol
-if args.influxdb:
-    print('tsinghua_electricity_bill,user={} reading={} {}'.format(args.name, reading, time.time_ns()))
+if 'weixin_user_authenticateCtrl1$txtUserName' not in [
+    x['name'] for x in inputs
+]:
+    pass  # already logged in!
 else:
-    print(reading)
+    res = session.post(login_page, data=data)
+
+if args.find == 'all':
+    args.pretty = True
+else:
+    targets = { args.find: targets[args.find] }
+
+for key, target in targets.items():
+    res = session.get(target['url'])
+    res.encoding = 'gbk'
+    soup = bs4.BeautifulSoup(res.text, features='html.parser')
+    reading = soup.find('span', {'id': target['id']}).text
+    target['reading'] = re.sub(*target['regex'], reading)
+
+    # InfluxDB Line Protocol
+    if args.influxdb:
+        print('{},user={} reading={} {}'.format(
+            target['influxid'], args.name, target['reading'], time.time_ns())
+        )
+    elif args.pretty:
+        print(key, target['reading'], sep='\t')
+    else:
+        print(target['reading'])
