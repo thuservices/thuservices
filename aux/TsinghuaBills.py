@@ -29,6 +29,9 @@ import argparse
 import time
 import urllib3
 import re
+import pickle
+
+cookie_file = '.thb_cookie'
 
 # login with https
 login_page = 'https://m.myhome.tsinghua.edu.cn/weixin/weixin_user_authenticate.aspx'
@@ -57,15 +60,15 @@ parser.add_argument('--pretty', action='store_true', help='pretty print the resp
 parser.add_argument('--influxdb', action='store_true')
 args = parser.parse_args()
 
-try:
-    import requests_cache
-    requests_cache.install_cache()
-except Exception:
-    pass
-
 session = requests.session()
 session.verify = False  # ignore certificate error
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+try:  # to load cookie
+    with open(cookie_file, 'rb') as f:
+        session.cookies.update(pickle.load(f))
+except Exception:
+    pass
 
 session.get('https://m.myhome.tsinghua.edu.cn/weixin/index.aspx')
 res = session.get(login_page)
@@ -110,6 +113,12 @@ if 'weixin_user_authenticateCtrl1$txtUserName' not in [
     pass  # already logged in!
 else:
     res = session.post(login_page, data=data)
+
+try:  # to save cookie
+    with open(cookie_file, 'wb') as f:
+        pickle.dump(session.cookies, f)
+except Exception:
+    pass
 
 if args.find == 'all':
     args.pretty = True
