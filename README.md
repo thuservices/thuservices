@@ -43,6 +43,7 @@
         - 火车票报销凭证
 - [services.md](services.md)
     - 清华服务使用指北（主要面向 Linux 用户）
+        - DNS/NTP
         - SSLVPN
         - 上网认证
             - 校园网基础知识
