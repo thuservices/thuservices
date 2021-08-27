@@ -45,7 +45,7 @@ async function handleRequest(request) {
 
   const allKws = "s" in params ? params["s"] : ["紫荆2号楼"]
 
-  const allResults = []
+  let allResults = []
 
   // New Washers
   const init = {
@@ -71,7 +71,7 @@ async function handleRequest(request) {
     for (const building of buildings) {
       const result = await gatherResponse(building)
       const resultData = result.data
-      allResults.concat(resultData)
+      allResults = allResults.concat(resultData)
     }
   });
 
@@ -112,7 +112,7 @@ async function handleRequest(request) {
     // text/html
     const html_str = "<!DOCTYPE html>" + (
       results.totalCount > 0
-        ? "<ul>" + mergedResults.map(result =>
+        ? "<ul>" + allResults.map(result =>
             "<li>" + result.tower + result.floorName + " " + result.macUnionCode + " " + result.status + "</li>"
           ).join("") + "</ul>"
         : "无搜索结果"
