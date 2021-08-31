@@ -315,6 +315,12 @@ $ cat /var/lib/dhcpcd/duid
 
 上文中我们提到了 Tsinghua-Secure 仅校内登录的方法，命令行（请查阅相关参数）与网页端（准入界面的仅校内复选框）也有相应的仅校内登录方案。但是有同学观测到在仅校内登录后，通过 net.tsinghua.edu.cn 来进行准出无法准出，usereg 准出也无法成功。这与上面的问题一样应该也是某些设备状态的问题，目前无解。
 
+### 未准入时其他机器能 ping 通，但不能 ssh
+
+不能 ssh 是预策略（参考本章校园网基础知识一节中的《清华大学校园网有线局域网用户准入系统使用说明（问与答）》）决定的
+
+能 ping 通也是预策略决定的，不过这一点没有文档；即，未准入时放行 ICMP reply 包。
+
 ## 清华云盘
 
 建议使用 [seafile.com/download](https://seafile.com/download) 中的 Linux 客户端，而不是 Terminal 客户端，因为 Terminal 客户端需要独立密码，此密码不同于 INFO 密码，不能获得，故不能通过 Terminal 客户端登录。
