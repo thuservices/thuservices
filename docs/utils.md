@@ -256,3 +256,7 @@ Rynco Maekawa 版本：项目地址在[此](https://github.com/lynzrand/xuetangx
 Colleguide: A platform to rate schools, professors, and courses
 
 <https://www.colleguide.com/>
+
+## 有关计算机系的事实
+
+<https://github.com/jiegec/dcst-facts>
