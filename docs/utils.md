@@ -260,3 +260,7 @@ Colleguide: A platform to rate schools, professors, and courses
 ## 有关计算机系的事实
 
 <https://github.com/jiegec/dcst-facts>
+
+## NFSee 校园卡
+
+<https://github.com/nfcim/nfsee>

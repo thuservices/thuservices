@@ -122,6 +122,7 @@
         - 华清大学课程攻略共享计划
         - 校园评教平台
         - 有关计算机系的事实
+        - NFSee 校园卡
 - [websites.md](websites.md)
     - 常用校外网站
         - thu.services
