@@ -96,15 +96,15 @@ auth-thu online # 保持机器在线
 
 下载好文件以后请合理放置在相应目录（如 /usr/local/bin）下，同时将配置文件放在合理目录下，即可使用
 
-要做到自动 **准入**，需将其中附带的 `goauthing.service` 与 `goauthing.timer` 放置 `/usr/lib/systemd/system/` 文件夹下 ，并调整相应内容以符合程序文件以及配置文件的路径，使用
+要做到自动 **准出**，需将其中附带的 `goauthing.service` 或 `goauthing@.service` 放置 `/etc/systemd/system/` 文件夹下 ，并调整相应内容以符合程序文件以及配置文件的路径，使用
 
 ``` bash
-$ systemctl enable goauthing.service goauthing.timer
+$ systemctl enable goauthing.service
 ```
 
-启动相应服务，即可达到自动认证的目的。如果要实现账户信息储存在用户家目录中而不是 `/etc` 中，可以参考 `goauthing@.{service,timer}`。
+启动相应服务，即可达到自动认证的目的。如果要实现账户信息储存在用户家目录中而不是 `/etc` 中，可以参考 `goauthing@.service`。
 
-如果要实现 `v6` 的自动准入，可以拷贝并调整这些服务文件的一些参数，需要调整的参数请参考软件的文档。如果要实现自动准出，同样请参考相应参数修改。
+如果要实现 `v6` 的自动准入，可参考 `goauthing6.service` 和 `goauthing6@.service`。如果只要 v4 的自动准入，需要将 `goauthing.service` 中的 `auth` 变为 `auth -C`，且删除 `login` 一行。
 
 如果有打包者将此打包，请 PR。目前在 AUR 中已存在 `auth-thu` 包。
 
