@@ -43,3 +43,12 @@
 
 由于相关策略，本站不收录常用 PT 站
 
+## 星期四 Thursday
+
+https://tsinghua.app/
+
+内含
+
+* 星期四 多功能社区
+* courseX
+* learnX

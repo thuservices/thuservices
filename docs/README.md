@@ -125,6 +125,7 @@
         - 校园评教平台
         - 有关计算机系的事实
         - NFSee 校园卡
+        - 课程信息共享计划
 - [websites.md](websites.md)
     - 常用校外网站
         - thu.services
@@ -135,6 +136,7 @@
         - 水木 BBS
         - 沙雕园的博客
         - PT 站
+        - 星期四 Thursday
 
 ## 知道某个重要信息，但repo中未列出？
 

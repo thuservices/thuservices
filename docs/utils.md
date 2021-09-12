@@ -264,3 +264,7 @@ Colleguide: A platform to rate schools, professors, and courses
 ## NFSee 校园卡
 
 <https://github.com/nfcim/nfsee>
+
+## 课程信息共享计划
+
+https://tsinghua.app/courses
