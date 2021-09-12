@@ -152,3 +152,9 @@
 ## DIVI 注册设备
 
 在连接 DIVI 后访问 register.your.device
+
+## 清华大学校友邮箱
+
+访问 https://mailservice.tsinghua.org.cn/ 即可激活。
+
+可获得 username@tsinghua.org.cn 的邮箱。
