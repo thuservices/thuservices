@@ -153,8 +153,20 @@
 
 在连接 DIVI 后访问 register.your.device
 
-## 清华大学校友邮箱
+## 清华大学邮箱
+
+学生邮箱为 abbr@mails.tsinghua.edu.cn ，同时可以用 abbr@mails.thu.edu.cn 收到邮件。
+
+教师邮箱为 abbr@mail.tsinghua.edu.cn ，同时可以用 abbr@tsinghua.edu.cn ，两者等价。
+
+没有特别的邮件列表实现，一般使用教师邮箱并用群组转发实现邮件列表。
+
+没有 abbr@thu.edu.cn 。
+
+清华同时有 tsinghua.edu 的域名，尽管有解析，未见使用（注：隔壁 ustc.edu 被用作校友邮箱）
+
+### 清华大学校友邮箱
 
 访问 https://mailservice.tsinghua.org.cn/ 即可激活。
 
-可获得 username@tsinghua.org.cn 的邮箱。
+可获得 abbr@tsinghua.org.cn 的邮箱。
