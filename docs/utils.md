@@ -227,7 +227,7 @@ Rynco Maekawa 版本：项目地址在[此](https://github.com/lynzrand/xuetangx
 
 目前有 macOS 版本，项目[在此](https://github.com/LyricZhao/THU-Bell)
 
-## 随机选择校内餐厅
+## 随机选择校内餐厅 - 微信小程序
 
 食堂太多不知道去哪吃？随机数发生器帮您忙！
 
@@ -236,6 +236,16 @@ Rynco Maekawa 版本：项目地址在[此](https://github.com/lynzrand/xuetangx
 小程序二维码
 
 ![](https://raw.githubusercontent.com/SuXY15/MyPic/master/RandomCanteen/RandomCanteen.jpg)
+
+## 随机选择校内餐厅 - Telegram Bot
+
+同上。
+
+项目地址在[此](https://github.com/Lancern/thufood-tgbot)
+
+BOT 地址为 <https://t.me/thufood_bot>
+
+类似的有 <https://t.me/thufoodbot>
 
 ## 清华大学计算机系课程攻略
 
