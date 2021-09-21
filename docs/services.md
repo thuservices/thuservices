@@ -333,9 +333,43 @@ pacman -S seafile-client
 
 而非 `pacman -S seafile`，此包为 Terminal 客户端。其余发行版请自行找到对应包。
 
-### 魔改 Terminal 客户端
+### 使用 Terminal 客户端
 
-在[该项目](https://github.com/prnake/Thu-Toolbox)中存在一个文件夹 seafile，其中指出了使用 Token 登录清华云盘的办法，可以避免使用独立密码。
+Terminal 客户端在 8.0.4 版本后以后支持使用 Token 进行同步，你可以在 [install_linux_client](https://help.seafile.com/syncing_client/install_linux_client/) 中找到大部分发行版 AMD64 架构的源，如果你所使用的包管理器中 `seafile` 或 `seafile-cli` 版本号低于 `8.0.4`，可以安装并参考后面替换部分文件的方法，也可以直接手动编译最新版。
+
+#### 获取 Token
+
+在浏览器中登录清华云盘，Cookie 中的 `seahub_auth` 应该为 `用户名（学号@tsinghua.edu.cn）@Token` 的模式，最后一段即为 Token 。每个账户的 Token 是唯一的，并且不会过期。
+
+在能正常运行 `seaf-cli` 后，可以使用命令行进行同步操作
+
+```
+seaf-cli init -d ~
+seaf-cli start
+seaf-cli sync -l <library-id> -s https://cloud.tsinghua.edu.cn -d <place-directory> -T <token>
+seaf-cli desync -d <existing-folder>
+```
+
+#### 替换部分文件实现 Token 登录
+
+`seaf-cli` 实质上是通过 `pysearpc` 与 `seaf-daemon` 通讯，因此大部分发行版默认源中较低版本的 `seafile` 在只替换 `seaf-cli` 的情况下也能正常工作。这里提供一种安装 Terminal 客户端后替换 `seaf-cli` 实现 Token 登录的简单办法。
+
+```
+git clone https://github.com/haiwen/seafile
+cd seafile
+cp app/seaf-cli /usr/bin/seaf-cli
+chmod +x /usr/bin/seaf-cli
+cp -r python/seafile $(python3 -m site --user-site)
+```
+
+#### 编译 Terminal 客户端
+
+具体的编译流程可以参考 [build_seafile](https://manual.seafile.com/build_seafile/linux/)，但要注意几点：
+
+- 下载并编译每个仓库中的最新源码或最新的 release
+- 可以忽略文档中的 `ccnet` 部分，仓库已经消失并且不存在相关依赖
+- make 有概率失败，可以多来几次
+- 如果安装完成后 `seaf-cli` 报错，例如 `No module named 'seafile'` 可以参考上一节手动复制 `seafile` 包
 
 ### Chrome 提醒下载的文件危险
 
