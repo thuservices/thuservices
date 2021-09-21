@@ -71,7 +71,10 @@
             - 准入后（仅校内登录后）无法准出
             - 未准入时其他机器能 ping 通，但不能 ssh
         - 清华云盘
-            - 魔改 Terminal 客户端
+            - 使用 Terminal 客户端
+                - 获取 Token
+                - 替换部分文件实现 Token 登录
+                - 编译 Terminal 客户端
             - Chrome 提醒下载的文件危险
         - ISATAP 
             - 获取IPv6挂PT
