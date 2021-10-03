@@ -104,7 +104,7 @@ https://washer.sdevs.top/
 
 ### 全校洗衣机状态 - iOS 快捷方式（不可用）
 
-iOS 12 以上的用户可以透过此[链接](https://www.icloud.com/shortcuts/ffc9d9fff7e140ec9e5a92e5f7d16ae0)安装快捷方式以实现快速查询空闲洗衣机。目前仅支持精确度至楼层的查询。 
+iOS 12 以上的用户可以透过此[链接](https://www.icloud.com/shortcuts/ffc9d9fff7e140ec9e5a92e5f7d16ae0)安装快捷方式以实现快速查询空闲洗衣机。目前仅支持精确度至楼层的查询。
 
 ### 全校洗衣机状态 - Telegram Bot 二哈（不可用）
 
@@ -240,6 +240,8 @@ Rynco Maekawa 版本：项目地址在[此](https://github.com/lynzrand/xuetangx
 ## 随机选择校内餐厅 - Telegram Bot
 
 同上。
+
+另外，Telegram Bot 还提供线上喝奶茶、线上喝卡布奇诺、线上生产饮品等互动功能。
 
 项目地址在[此](https://github.com/Lancern/thufood-tgbot)
 
