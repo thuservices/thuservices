@@ -160,3 +160,9 @@ python3 -m pip install --user -r requirements.txt # 安装 Python 依赖包
 mkdocs serve # 直接在本地 serve，或者：
 mkdocs build --clean # 生成于 site/ 文件夹中
 ```
+
+## LICENSE
+
+本站的文本遵循 CC BY-NC 4.0
+
+本项目内的存放的代码遵循代码文件内自带的 LICENSE。若代码文件中未附带 LICENSE，则认为该文件暂无 LICENSE，有需求者可以联系相应 committer。
