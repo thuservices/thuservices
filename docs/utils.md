@@ -280,3 +280,7 @@ Colleguide: A platform to rate schools, professors, and courses
 ## 课程信息共享计划
 
 https://tsinghua.app/courses
+
+## 清华大学计算机专业912考研资料
+
+https://github.com/Wsky51/THU-CS912-kaoyan

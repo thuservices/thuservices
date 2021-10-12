@@ -131,6 +131,7 @@
         - 有关计算机系的事实
         - NFSee 校园卡
         - 课程信息共享计划
+        - 清华大学计算机专业912考研资料
 - [websites.md](websites.md)
     - 常用校外网站
         - thu.services
