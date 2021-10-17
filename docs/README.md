@@ -44,6 +44,7 @@
         - DIVI 注册设备
         - 清华大学邮箱
             - 清华大学校友邮箱
+            - 清华大学 Overleaf 服务
 - [services.md](services.md)
     - 清华服务使用指北（主要面向 Linux 用户）
         - DNS/NTP
