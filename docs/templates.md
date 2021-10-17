@@ -1,5 +1,7 @@
 # LaTeX 等模板
 
+以下模板均可在 <https://overleaf.tsinghua.edu.cn/templates/> 中找到并使用。
+
 ## 《如何使用 LaTeX 排版论文》讲稿
 
 2015 年起，每年 4 月、11 月清华大学图书馆专题培训讲座 《如何使用 LaTeX 排版论文》
