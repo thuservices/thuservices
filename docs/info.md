@@ -174,3 +174,7 @@
 ### 清华大学 Overleaf 服务
 
 访问 https://overleaf.tsinghua.edu.cn/ 即可。
+
+### LibGuides at Tsinghua University
+
+<https://tsinghua.cn.libguides.com/>
