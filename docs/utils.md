@@ -284,3 +284,12 @@ https://tsinghua.app/courses
 ## 清华大学计算机专业912考研资料
 
 https://github.com/Wsky51/THU-CS912-kaoyan
+
+## 清华成绩刮刮乐
+
+<https://github.com/summivox/thu-scratch>
+
+* 安装Chrome插件或Userscript
+* 登录info
+* 原来可以看成绩的地方已经被挡住啦～
+* 心里「ドキドキ」地刮之
