@@ -192,11 +192,15 @@ const resultParsers = (() => {
 
   // $(tagName: string, text: string): html: string
   const $ = (tagName, text) => `<${tagName}>${
-    htmlEntities.reduce((str, []) => str.replaceAll(char, entity), text)
+    htmlEntities.reduce((str, [char, entity]) => str.replaceAll(char, entity), text)
   }</${tagName}>`
 
   // title(text: string): html: string
   const title = text => $("title", `${text}${htmlTitleSuffix}`)
+
+  // title(text: string): html: string
+  // No escape here otherwise <li> would be escaped into &lt;li&gt;
+  const ul = text => `<ul>${text}</ul>`
 
   // washerToStr(washer): washerStr: string
   const washerToStr = washer => [
@@ -214,7 +218,7 @@ const resultParsers = (() => {
       result.length > 0
       ? (
         title(`${result.length} 条结果`) + "\n" +
-        $("ul", result.map(
+        ul(result.map(
           washer => $("li", washerToStr(washer))
         ).join("\n"))
       )
