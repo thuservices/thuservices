@@ -183,6 +183,8 @@ Rynco Maekawa 版本：项目地址在[此](https://github.com/lynzrand/xuetangx
 
 ## 清华教学参考书爬取
 
+项目在[此](https://github.com/libthu/reserves-lib-tsinghua-downloader)。下方两个项目由于 API 变动不可用。
+
 引自原文：最近疫情严重，购买教材较为困难，为了方便大家在线学习，写了一个爬取清华教参的 python 脚本。
 
 项目地址在[此](https://github.com/lflame/TsinghuaBookCrawler)
