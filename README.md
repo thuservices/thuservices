@@ -136,6 +136,8 @@
         - 课程信息共享计划
         - 清华大学计算机专业912考研资料
         - 清华成绩刮刮乐
+        - thuhole memories
+        - thuhole database backup
 - [websites.md](websites.md)
     - 常用校外网站
         - thu.services

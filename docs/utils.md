@@ -295,3 +295,15 @@ https://github.com/Wsky51/THU-CS912-kaoyan
 * 登录info
 * 原来可以看成绩的地方已经被挡住啦～
 * 心里「ドキドキ」地刮之
+
+## thuhole memories
+
+全部内容来源精品洞和个人收藏。
+
+<https://github.com/pb0316/thuhole_memories>
+
+## thuhole database backup
+
+在洗完数据后，大部分不涉及个人隐私的有意义的树洞备份在此GitHub仓库。
+
+<https://github.com/thuhole/database_backup>
