@@ -67,7 +67,7 @@
             - 动态 IP
                 - IPv6 静态后缀或短 IPv6 地址
                 - 尝试获取某一特定IPv4、IPv6地址
-            - 院系网（三层接入）和 Tsinghua-Secure 的 IPv6
+            - 院系网（三层接入）的 IPv6
             - 不符合 RFC 的 DHCPv6
             - 30分钟无流量掉准入
             - 掉准出后无法准出

@@ -286,9 +286,9 @@ Apr 02 07:00:34 Zenith dhcpcd[497]: enp3s0: REPLY6 received from fe80::9629:2fff
 Apr 02 07:00:34 Zenith dhcpcd[497]: enp3s0: adding address 2402:f000:4:3:888:1926:8:17/128
 ```
 
-### 院系网（三层接入）和 Tsinghua-Secure 的 IPv6
+### 院系网（三层接入）的 IPv6
 
-有些院系网是三层接入的校园网，和 Tsinghua-Secure 一样，在网内配置的是 SLAAC。
+有些院系网是三层接入的校园网在网内配置的是 SLAAC。
 
 一些机器（例如 Windows 的默认设置和一些 Linux 的默认设置）配置了隐私扩展后，在 SLAAC 环境下其 IPv6 地址会不断改变，由于学校的准入是对 IPv6 地址进行的，具体表现就是在用 auth6 准入 IPv6 一段时间后就失去了准入，需要重新登录 auth6。
 
