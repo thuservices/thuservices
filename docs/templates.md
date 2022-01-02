@@ -1,5 +1,8 @@
 # LaTeX 等模板
 
+
+ppt 模板：<https://github.com/atomiechen/THU-PPT-Theme>
+
 以下模板均可在 <https://overleaf.tsinghua.edu.cn/templates/> 中找到并使用。
 
 ## 《如何使用 LaTeX 排版论文》讲稿
