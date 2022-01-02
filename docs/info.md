@@ -178,3 +178,7 @@
 ### LibGuides at Tsinghua University
 
 <https://tsinghua.cn.libguides.com/>
+
+### 清新时报
+
+<https://qxcm.tsjc.tsinghua.edu.cn/pc/folder120>
