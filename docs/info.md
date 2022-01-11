@@ -8,6 +8,8 @@
 
 ![2021 - 2022 学年 秋季](image/cal/2021-2022-1-cn.jpg)
 
+![2021 - 2022 学年 春季](image/cal/2021-2022-2-cn.jpg)
+
 ## 本科专业培养方案
 
 [清华官网培养方案链接](https://2020.tsinghua.edu.cn/jyjx1/bksjy/bkzy1.htm)
