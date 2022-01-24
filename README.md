@@ -140,6 +140,7 @@
         - 清华成绩刮刮乐
         - thuhole memories
         - thuhole database backup
+        - 计算机系学生科协技能引导文档
 - [websites.md](websites.md)
     - 常用校外网站
         - thu.services
