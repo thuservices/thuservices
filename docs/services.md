@@ -391,7 +391,7 @@ cp -r python/seafile $(python3 -m site --user-site)
 
 ## ISATAP 
   
-参考 [ipv6.tsinghua.edu.cn](https://ipv6.tsinghua.edu.cn)
+参考 [ipv6.tsinghua.edu.cn](https://ipv6.tsinghua.edu.cn)。另有 [AUR 包 thu-isatap](https://aur.archlinux.org/packages/thu-isatap) 供参考。
 
 目前只有校内公网IPv4的可使用该服务，校外不可。注意 `166.111.21.1` 这个IP是不会回应ping包的。
 
