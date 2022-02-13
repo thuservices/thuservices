@@ -199,9 +199,11 @@ c7w 版本：项目地址在[此](https://github.com/c7w/TsinghuaMoocCaptionCraw
 
 ## 课程地点分享
 
-在[https://wmcgcdn.rika.tech/](https://wmcgcdn.rika.tech/)中，其项目地址为[此](https://github.com/RikaKagurasaka/where-my-course-gone-backend)。
+当前可用：由 learnX 开发团队维护的 [courseX 课程信息共享计划](https://tsinghua.app/courses)
 
-目前已经停止维护与运营。
+以下项目目前已经停止维护与运营：
+
+在[https://wmcgcdn.rika.tech/](https://wmcgcdn.rika.tech/)中，其项目地址为[此](https://github.com/RikaKagurasaka/where-my-course-gone-backend)。
 
 ## 注册标志（用于火车票）
 
