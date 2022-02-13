@@ -175,6 +175,8 @@ Roberts Holder 版本：项目地址在[此](https://github.com/rcy17/MOOC_subti
 
 Rynco Maekawa 版本：项目地址在[此](https://github.com/lynzrand/xuetangx_sub)
 
+c7w 版本：项目地址在[此](https://github.com/c7w/TsinghuaMoocCaptionCrawler)
+
 ## 雨课堂课件下载器
 
 目前仅适用于「长江雨课堂」，不过改改就可以用于荷塘雨课堂。
