@@ -185,17 +185,29 @@ c7w 版本：项目地址在[此](https://github.com/c7w/TsinghuaMoocCaptionCraw
 
 ## 清华教学参考书爬取
 
-项目在[此](https://github.com/libthu/reserves-lib-tsinghua-downloader)。下方两个项目由于 API 变动不可用。
+校图书馆购买了许多的[图书资源](https://nav.lib.tsinghua.edu.cn/cgi-bin/searchuse.cgi?c=7)，推荐优先使用[清华大学教参服务平台](http://reserves.lib.tsinghua.edu.cn/)和[文泉学堂-清华大学出版社电子图书数据库](https://lib-tsinghua.wqxuetang.com/)寻找中文教材。
+
+### 清华大学教参服务平台
+
+清华大学教参服务平台在版权允许范围内（在线浏览）提供课程教材和教参的扫描电子版，如果需要平台上没有的教材，可以直接邮件或电话联系[相关部门](https://lib.tsinghua.edu.cn/info/1184/3617.htm)进行扫描。
+
+推荐使用[reserves-lib-tsinghua-downloader](https://github.com/libthu/reserves-lib-tsinghua-downloader)进行下载。
+
+在 [thu-info-lib](https://github.com/thu-info-community/thu-info-lib) 中也实现了下载功能。
+
+下方两个项目由于 API 变动不可用。
 
 引自原文：最近疫情严重，购买教材较为困难，为了方便大家在线学习，写了一个爬取清华教参的 python 脚本。
 
 项目地址在[此](https://github.com/lflame/TsinghuaBookCrawler)
 
-又有一种实现
-
 引用原文：自动下载书籍每一页的原图。
 
 项目地址在[此](https://github.com/i207M/reserves-lib-tsinghua-downloader)
+
+### 文泉学堂
+
+文泉学堂用来搜索清华大学出版社的图书，反爬严格，可以使用[这个](https://greasyfork.org/zh-CN/scripts/437737-%E6%96%87%E6%B3%89%E5%AD%A6%E5%A0%82pdf%E4%B8%8B%E8%BD%BD%E4%BF%AE%E5%A4%8D%E7%89%88)脚本下载。
 
 ## 课程地点分享
 
