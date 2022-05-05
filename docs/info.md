@@ -86,14 +86,14 @@
 
 ## 校内校车
 
-[校内交通介绍](https://2020.tsinghua.edu.cn/zjqh/syxx1/xyjt1.htm)
+[校内交通介绍](https://www.tsinghua.edu.cn/zjqh/syxx/xyjt.htm)
 [校车交通路线图](https://www.tsinghua.edu.cn/__local/3/BB/BE/7260A578E48A6BA827528DE4F74_004A1626_73CEC.png)
 
 校车实时运行情况可以使用“校内交通介绍”中提到的 APP 与/或小程序
 
 ## 校内地图（静态版）
 
-[校内地图](https://2020.tsinghua.edu.cn/zjqh/xyfg/xydt1.htm)
+[校内地图](https://www.tsinghua.edu.cn/zjqh/xyfg/xydt.htm)
 
 ## 清华大学调查问卷系统
 
