@@ -143,6 +143,7 @@
         - thuhole memories
         - thuhole database backup
         - 计算机系学生科协技能引导文档
+        - 清华大学研究生社会实践系统爬虫
 - [websites.md](websites.md)
     - 常用校外网站
         - thu.services

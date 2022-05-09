@@ -329,3 +329,9 @@ https://github.com/Wsky51/THU-CS912-kaoyan
 本技能引导文档由清华大学计算机系学生科协维护，目标在于让计算机类与计算机系的学生能够快速地掌握某些特定的技能，并且通过给出这些技能在课程、科研与实习中可能运用的方式，节省同学们收集相关资料的时间，同时提升同学们学习新技能的能力。
 
 <https://docs.net9.org/>
+
+## 清华大学研究生社会实践系统爬虫
+
+Crawl structured data from https://thshijian.tsinghua.edu.cn (清华大学研究生社会实践系统). Use at your own risk.
+
+<https://github.com/Harry-Chen/thshijian-crawler>
