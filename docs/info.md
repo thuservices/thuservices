@@ -12,7 +12,7 @@
 
 ## 本科专业培养方案
 
-[清华官网培养方案链接](https://2020.tsinghua.edu.cn/jyjx1/bksjy/bkzy1.htm)
+[清华官网培养方案链接](https://www.tsinghua.edu.cn/jyjx/bksjy/bkzy.htm)
 
 [计算机系 19 级培养方案 info 版本（需要已经登录 info）](http://zhjw.cic.tsinghua.edu.cn/jhBks.vjhBksPyfakzbBs.do?m=pyfakzFrame&fajhh=193024111&theModule=pyfa)
 
