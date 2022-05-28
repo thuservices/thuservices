@@ -184,3 +184,7 @@
 ### 清新时报
 
 <https://qxcm.tsjc.tsinghua.edu.cn/pc/folder120>
+
+### 各食堂进入人数
+
+微信->清华大学信息服务->学生食堂进入人数
