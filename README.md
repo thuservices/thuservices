@@ -102,6 +102,7 @@
         - THU Letter of Recommendation Template
         - A Simple Tsinghua Letterhead Template
         - CV-tsinghua-template
+        - THU-Exam-LaTeX-Template
 - [utils.md](utils.md)
     - 一些脚本和工具
         - 校园网认证工具汇总
