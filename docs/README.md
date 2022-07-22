@@ -82,7 +82,7 @@
                 - 替换部分文件实现 Token 登录
                 - 编译 Terminal 客户端
             - Chrome 提醒下载的文件危险
-        - ISATAP 
+        - ISATAP（已停止）
             - 获取IPv6挂PT
         - WIN 10 激活
         - 正版操作系统与软件下载

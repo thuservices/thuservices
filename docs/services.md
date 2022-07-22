@@ -389,7 +389,9 @@ cp -r python/seafile $(python3 -m site --user-site)
 
 请忽略此提醒。当然，如果您下载的真的是奇妙的文件，请您自查。
 
-## ISATAP 
+## ISATAP（已停止）
+
+目前，该服务已停止。
   
 参考 [ipv6.tsinghua.edu.cn](https://ipv6.tsinghua.edu.cn)。另有 [AUR 包 thu-isatap](https://aur.archlinux.org/packages/thu-isatap) 供参考。
 
