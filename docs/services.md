@@ -106,7 +106,7 @@ $ systemctl enable goauthing.service
 
 如果要实现 `v6` 的自动准入，可参考 `goauthing6.service` 和 `goauthing6@.service`。如果只要 v4 的自动准入，需要将 `goauthing.service` 中的 `auth` 变为 `auth -C`，且删除 `login` 一行。
 
-如果有打包者将此打包，请 PR。目前在 AUR 中已存在 `auth-thu` 包。
+如果有打包者将此打包，请 PR。目前在 AUR 中存在 `auth-thu-bin` 包（`auth-thu` 包已经过时）。
 
 ### 远端服务器代认证
 
