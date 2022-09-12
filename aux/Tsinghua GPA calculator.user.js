@@ -2,7 +2,7 @@
 // @name         Tsinghua GPA calculator
 // @namespace    https://github.com/ZenithalHourlyRate
 // @homepageURL  https://github.com/ZenithalHourlyRate/thuservices
-// @version      1.1
+// @version      1.2
 // @description  Calculate the gpa on page
 // @author       Zenithal, SuXY15
 // @match        http://zhjw.cic.tsinghua.edu.cn/cj.cjCjbAll.do?m=*_yxkccj*
@@ -30,8 +30,7 @@ var new_gpa_dict = new Proxy({
     'C+': 2.6, 'C': 2.3, 'C-': 2.0,
     'D+': 1.6, 'D': 1.3, 'F':  0
 }, handler);
-
-(function() {
+function calc() {
     var table = document.getElementsByClassName('table')[0];
     var oldSum=0, newSum=0, credit=0;
     var rOldSum=0, rNewSum=0, rCredit=0; // Required and Restricted selective
@@ -39,6 +38,9 @@ var new_gpa_dict = new Proxy({
     for(var i=1; i<table.rows.length; ++i){ // skip the first row
         var r = table.rows[i]
         if(r.cells.length != 12) { // make sure current row has course data
+            continue;
+        }
+        if(!table.rows[i].cells[0].querySelector("input").checked){
             continue;
         }
         var c = parseInt(r.cells[3].innerText);
@@ -56,13 +58,38 @@ var new_gpa_dict = new Proxy({
             }
         }
     }
-
+    var rdiv=document.getElementById('result');
     var s = "New " + (newSum/credit).toString() + "\n" +
             "Old " + (oldSum/credit).toString() + "\n";
     if(rCredit > 0){ // there is no "必修"/"限选" for graduate students
         s+= "R New " + (rNewSum/rCredit).toString() + "\n" +
             "R Old " + (rOldSum/rCredit).toString();
     }
+    rdiv.innerText=s;
+};
 
-    alert(s);
-})();
+function init(){
+    var table = document.getElementsByClassName('table')[0];
+    for(var i=1; i<table.rows.length; ++i){ // skip the first row
+        var r=table.rows[i];
+        if(r.cells.length != 12) { // make sure current row has course data
+            continue;
+        }
+        var d=r.cells[0].firstChild;
+        var cb= document.createElement("input");
+        cb.setAttribute("type","checkbox");
+        cb.setAttribute("style","vertical-align: top;");
+        cb.checked=true;
+        cb.onchange=calc;
+        d.insertBefore(cb,d.firstChild);
+    }
+    var div= document.createElement("div")
+    div.setAttribute("style","font-size:18px;");
+    div.setAttribute("align","center");
+    div.setAttribute("id","result");
+    var text= document.createTextNode("text");
+    div.appendChild(text);
+    table.parentNode.insertBefore(div,table.nextSibling);
+    calc();
+};
+init();
