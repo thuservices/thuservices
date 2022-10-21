@@ -140,7 +140,52 @@ ssh -D <port> host
 
 如果是校内环境，首先连接 `Tsinghua-Secure无线网使用指南` 进入 [usereg.tsinghua.edu.cn](https://usereg.tsinghua.edu.cn) , 登录后在 `自注册及修改口令处` 设置 Tsinghua-Secure 使用的密码，此密码不需要与 info 密码相同。
 
+#### NetworkManager
+
 设置好后，可以使用 `NetworkManager` 连接该 Wifi，可以参考 its 的文档 [清华大学无线校园网 802.1x 认证登录客户端配置说明](https://its.tsinghua.edu.cn/info/1333/2318.htm)（本站[备份](file/tsinghua-secure-config.pdf)）
+
+样例配置 `/etc/NetworkManager/system-connections/Tsinghua-Secure.nmconnection` 如下
+
+```
+[connection]
+id=Tsinghua-Secure
+uuid=44638cf4-782e-4aaa-9ab9-f7a7e68de54c
+type=wifi
+permissions=
+timestamp=1661836652
+
+[wifi]
+mac-address-blacklist=
+mode=infrastructure
+seen-bssids=30:7B:AC:09:BF:EB;30:7B:AC:09:DD:8B;30:7B:AC:09:EF:CB;30:7B:AC:0A:18:2B;30:7B:AC:40:7F:CC;30:7B:AC:40:80:AC;30:7B:AC:40:A0:8A;30:7B:AC:65:0D:2B;30:7B:AC:65:22:6B;30:7B:AC:67:A5:4A;30:7B:AC:67:ED:8A;30:7B:AC:67:F5:8A;30:7B:AC:67:FC:4A;30:7B:AC:67:FC:59;30:7B:AC:92:ED:0C;30:7B:AC:93:08:8A;30:7B:AC:93:0F:CC;30:7B:AC:93:1D:6C;30:7B:AC:93:1D:7A;30:7B:AC:93:2B:2C;30:7B:AC:93:32:2C;30:7B:AC:93:33:2C;30:7B:AC:98:C0:CA;30:7B:AC:98:C1:0C;30:7B:AC:98:C1:CA;30:7B:AC:98:C5:6A;30:7B:AC:98:C8:0A;70:D9:31:23:AF:D2;94:28:2E:3F:ED:CA;94:28:2E:40:0E:CA;A8:58:40:5A:66:B2;A8:58:40:5B:7A:D2;A8:58:40:D5:D1:12;A8:58:40:D5:D3:22;A8:58:40:D5:D3:32;A8:58:40:D6:03:F2;A8:58:40:D6:25:F2;A8:58:40:D6:3C:F2;A8:58:40:D6:3F:52;A8:58:40:D6:44:B2;A8:58:40:D6:45:72;A8:58:40:D6:97:12;A8:58:40:D7:14:D2;
+ssid=Tsinghua-Secure
+
+[wifi-security]
+key-mgmt=wpa-eap
+
+[802-1x]
+eap=peap;
+identity=<username>@tsinghua
+password=<redacted>
+phase2-auth=mschapv2
+
+[ipv4]
+dns-search=
+method=disabled
+
+[ipv6]
+addr-gen-mode=eui64
+dns-search=
+ignore-auto-dns=true
+method=auto
+token=::114:514:1919:810
+
+[proxy]
+```
+
+该样例配置仅启用了 IPv6 并获取特定后缀（请自行挑选后缀以免地址相撞），同时使用了 `@tsinghua` 的 `identity` 以保证不占用准出名额。
+
+#### wpa_supplicant
 
 也可使用 `wpa_supplicant` 完成相应 wifi 连接。安装 `wpa_supplicant`，编辑 `/etc/wpa_supplicant/wpa_supplicant-nl80211-XXXX.conf`， 其中 `XXXX` 是本机网卡名称，输入以下配置
 
@@ -170,6 +215,36 @@ $ systemctl enable --now wpa_supplicant-nl80211@XXXX.service
 即可连接。
 
 注：本配置由[orv](http://hep.tsinghua.edu.cn/~orv)贡献。
+
+#### iwd
+
+由于 Tsinghua-Secure 的证书问题（dhparams 中 p 的长度仅为 1024，不符合 [Linux 内核的 1536 长度需求](https://elixir.bootlin.com/linux/v6.0/source/crypto/dh.c#L52)），而 iwd 依赖于内核的密码学工具，默认使用 iwd 无法连接。
+
+[NickCao](https://github.com/NickCao) 为此提供了 [dhack 内核模块](https://github.com/NickCao/dhack) 与 ell 工具补丁（如下）；前者通过劫持相应符号实现补丁，后者在 nix 构建软件包时直接替换源码中的参数。用户可以依此类推自行构建内核与工具。
+
+```nix
+iwd.override {
+  ell = ell.overrideAttrs (_: {
+    postPatch = ''
+      substituteInPlace ell/tls-suites.c \
+        --replace 'params->prime_len < 192' 'params->prime_len < 128'
+    '';
+  });
+}
+```
+
+另外配置如下
+
+```
+[Security]
+EAP-Method=PEAP
+EAP-Identity=<username>
+EAP-PEAP-Phase2-Method=MSCHAPV2
+EAP-PEAP-Phase2-Identity=<username>
+EAP-PEAP-Phase2-Password=<passwd>
+[Settings]
+AutoConnect=true
+```
 
 ### Tsinghua-Secure 仅校内登录方式
 

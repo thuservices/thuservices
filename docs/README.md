@@ -60,6 +60,9 @@
             - 远端服务器代认证
             - 远端服务器网页认证
             - Tsinghua-Secure
+                - NetworkManager
+                - wpa_supplicant
+                - iwd
             - Tsinghua-Secure 仅校内登录方式
         - 校园网特性讨论
             - 二层隔离/邻居发现隔离
