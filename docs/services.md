@@ -373,22 +373,24 @@ Apr 02 07:00:34 Zenith dhcpcd[497]: enp3s0: adding address 2402:f000:4:3:888:192
 
 ### 不符合 RFC 的 DHCPv6
 
-你校的 DHCPv6 server 会不承认某些 DUID，对于这样的 DHCP 请求会不予回应。即使向学校反映该问题，学校尝试让厂商修复后，该问题仍然存在。
+> 你校的 DHCPv6 server 会不承认某些 DUID，对于这样的 DHCP 请求会不予回应。即使向学校反映该问题，学校尝试让厂商修复后，该问题仍然存在。
+>
+> 根据相关人士消息，只有 DUID Type 1，也就是 DUID-LLT 被承认，以下给出 dhcpcd 的相应配置方式。
+>
+> 首先将 `/etc/dhcpcd.conf` 中的 `duid` 打开，同时保证没有开启 `clientid`。然后我们检查下列文件
+>
+> ```
+> $ cat /var/lib/dhcpcd/duid
+> 00:01:00:01:26:53:6d:9d:ff:ff:ff:ff:ff:ff
+> ```
+>
+> 若以 `00:01` 开头，则表明为 DUID-LLT，否则（或文件不存在）需要改为上述格式。同时需要检查一下最后的 `ff:ff:ff:ff:ff:ff` 是否为相关网卡的MAC地址，如果不是需要更改为相应地址。
+>
+> **更新** 的测试发现，我们并不知道你校的 DHCPv6 是如何工作的，其如何工作完全是玄学。有的开启了 Anonymize 即可使用，有的开启了也尝试失败。
+>
+> 一些体验可以参考 <https://pwe.cat/zijing-dhcpv6/>
 
-根据相关人士消息，只有 DUID Type 1，也就是 DUID-LLT 被承认，以下给出 dhcpcd 的相应配置方式。
-
-首先将 `/etc/dhcpcd.conf` 中的 `duid` 打开，同时保证没有开启 `clientid`。然后我们检查下列文件
-
-```
-$ cat /var/lib/dhcpcd/duid
-00:01:00:01:26:53:6d:9d:ff:ff:ff:ff:ff:ff
-```
-
-若以 `00:01` 开头，则表明为 DUID-LLT，否则（或文件不存在）需要改为上述格式。同时需要检查一下最后的 `ff:ff:ff:ff:ff:ff` 是否为相关网卡的MAC地址，如果不是需要更改为相应地址。
-
-**更新**的测试发现，我们并不知道你校的 DHCPv6 是如何工作的，其如何工作完全是玄学。有的开启了 Anonymize 即可使用，有的开启了也尝试失败。
-
-一些体验可以参考 <https://nya.rs/posts/zijing-dhcpv6/>
+最近的尝试发现，使用较新版本的 `systemd-networkd` 能稳定获取地址。
 
 ### 30分钟无流量掉准入
 
