@@ -76,3 +76,9 @@ LaTeX package for students in Tsinghua University to write coursework more effic
 ## THU-Exam-LaTeX-Template
 
 <https://github.com/VicaYang/THU-Exam-LaTeX-Template>
+
+## ilatex
+
+课程作业, 实验报告模板
+
+<https://github.com/liblaf/ilatex>
