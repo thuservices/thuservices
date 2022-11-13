@@ -107,6 +107,7 @@
         - A Simple Tsinghua Letterhead Template
         - CV-tsinghua-template
         - THU-Exam-LaTeX-Template
+        - ilatex
 - [utils.md](utils.md)
     - 一些脚本和工具
         - 校园网认证工具汇总
