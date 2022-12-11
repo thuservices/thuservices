@@ -56,6 +56,17 @@
 感谢 [CircuitCoder](https://github.com/CircuitCoder) 提供的技术指导
 感谢 [SharzyL](https://github.com/SharzyL) 的建议与 DEBUG
 
+## 选课剩余课容标记
+
+不知道该用什么志愿抢课？
+这个脚本帮你忙！
+
+这个脚本为报名人数上色，最后一个绿色就是最佳抢课志愿了！
+
+脚本还在开发中，队列支持等即将上线！
+
+访问[这里](https://greasyfork.org/en/scripts/456440-colorful-course)获取脚本
+
 ## INFO 网络学堂 Telegram 消息推送
 
 参见 [thu-weblearn-tgbot](https://github.com/Konano/thu-weblearn-tgbot) 以及
