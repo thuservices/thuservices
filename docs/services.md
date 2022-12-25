@@ -36,8 +36,16 @@ $ pacman -S openconnect
 
 安装完毕后，使用
 
+>
+> $ openconnect --juniper https://sslvpn.tsinghua.edu.cn
+>
+
+指定协议为 Juniper 的情况下，客户端不会被分配 IPv6 地址，如果改成 Pulse Connect Secure 则可以获取到一个 IPv6 地址。同时还需要指定 UserAgent 才能正确地获取 IPv6 路由，否则会尝试将所有 IPv6 流量路由到 VPN。
+
+用如下的方式可以正确获取 IPv6 地址和路由（具体是 2402:f000::/32）：
+
 ```bash
-$ openconnect --juniper https://sslvpn.tsinghua.edu.cn
+openconnect --protocol=pulse https://sslvpn.tsinghua.edu.cn --useragent Pulse-Secure/9.1.11.6725
 ```
 
 输入帐号和密码后即连接上校园网，可以访问校内服务（INFO/USEREG）。
