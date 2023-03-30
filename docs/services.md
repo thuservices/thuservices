@@ -237,8 +237,6 @@ $ systemctl enable --now wpa_supplicant-nl80211@XXXX.service
 
 注：本配置由[orv](http://hep.tsinghua.edu.cn/~orv)贡献。
 
-对于使用 openssl 3.0 及以上的用户，``
-
 #### iwd
 
 由于 Tsinghua-Secure 的证书问题（dhparams 中 p 的长度仅为 1024，不符合 [Linux 内核的 1536 长度需求](https://elixir.bootlin.com/linux/v6.0/source/crypto/dh.c#L52)），而 iwd 依赖于内核的密码学工具，默认使用 iwd 无法连接。
