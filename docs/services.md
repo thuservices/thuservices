@@ -193,6 +193,17 @@ token=::114:514:1919:810
 
 该样例配置仅启用了 IPv6 并获取特定后缀（请自行挑选后缀以免地址相撞），同时使用了 `@tsinghua` 的 `identity` 以保证不占用准出名额。
 
+特别要注意的是，如果你同时符合下面三个条件：
+
+1.  `NetworkManager` 使用了 `wpa_supplicant` 后端 
+1.  使用了 3.0.0 及以上版本的 `openssl`
+1.  使用的发行版没有给 `wpa_supplicant` 打上 [修复 tls 1.0/1.1 连接的 patch](https://launchpad.net/ubuntu/+source/wpa/2:2.10-6ubuntu2) （目前确认 Ubuntu 有 patch，NixOS 没有 patch）
+
+那么你的 `NetworkManager` 可能由于 tls 1.0 连接被禁用而连不上 `Tsinghua-Secure`，此时有以下两种解决方法，任意一种都能解决：
+
+1.  升级 NetworkManager 到 `1.41.5-dev` 及以上，准确的说是确保 [这个 commit](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/-/commit/98dd4180ec163af63fe1e0fda00158ac7f0047df) 已经被包含，并且在 `nmcli` 中设置 `phase1-auth-flags`。
+1.  给自己的 `wpa_supplicant` 打上前面提到的 patch。
+
 #### wpa_supplicant
 
 也可使用 `wpa_supplicant` 完成相应 wifi 连接。安装 `wpa_supplicant`，编辑 `/etc/wpa_supplicant/wpa_supplicant-nl80211-XXXX.conf`， 其中 `XXXX` 是本机网卡名称，输入以下配置
@@ -209,7 +220,7 @@ network={
         eap=PEAP
         identity="username"
         password="password"
-        # 使用 3.0.0 及以上版本的 openssl 的话，tls 1.0 会被默认禁用，无法连接 Tsinghua-Secure
+        # 使用 3.0.0 及以上版本的 openssl，同时发行版没有打上相应 patch 的话（参见上一节），tls 1.0/1.1 会被默认禁用，无法连接 Tsinghua-Secure。下面这行可以解除禁用
         phase1="tls_disable_tlsv1_0=0"
         phase2="auth=MSCHAPV2"
         priority=9
