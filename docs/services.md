@@ -209,6 +209,8 @@ network={
         eap=PEAP
         identity="username"
         password="password"
+        # 使用 3.0.0 及以上版本的 openssl 的话，tls 1.0 会被默认禁用，无法连接 Tsinghua-Secure
+        phase1="tls_disable_tlsv1_0=0"
         phase2="auth=MSCHAPV2"
         priority=9
 }     
@@ -223,6 +225,8 @@ $ systemctl enable --now wpa_supplicant-nl80211@XXXX.service
 即可连接。
 
 注：本配置由[orv](http://hep.tsinghua.edu.cn/~orv)贡献。
+
+对于使用 openssl 3.0 及以上的用户，``
 
 #### iwd
 
