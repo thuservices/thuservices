@@ -16,6 +16,8 @@
 
 按照校园网建议，在配置 DNS 和 NTP 时，至少要使用校园网提供的服务。
 
+目前，校园网内只能使用校园网提供的 DNS，其余 DNS 不保证工作。
+
 ## SSLVPN
 
 在 Linux 机器上没有 PULSE SECURE 客户端，除了可以使用 WEB VPN 外，也可使用 `openconnect` 来做到连接清华VPN。
