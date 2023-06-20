@@ -6,7 +6,7 @@
 
 | 项目链接 | 支持平台 | 实现语言 | 目前是否可用（是否被维护）| 特性 |
 | --- | --- | --- | --- | --- |
-| [Tunet-2018 (official)](https://its.tsinghua.edu.cn/xywl/xywsyzn/yxw_hkhd_/khdxz.htm) | Windows-GUI, Linux-CLI | 未知 | 在2020年暑假的`ac_id`升级后不可用 | 未调查 |
+| [Tunet-2018 (official)](https://its.tsinghua.edu.cn/xywl/xywsyzn/yxw_hkhd_/khdxz.htm) | Windows-GUI, Linux-CLI | 未知 | 可用 | 未调查 |
 | [GoAuthing](https://github.com/z4yx/GoAuthing/) | Linux-CLI (x86\_64, arm, mips, ppc, riscv), Windows-CLI, Mac OS-CLI (Intel, Apple) | Go | 可用 | 全平台全架构，准入与准出，v4和v6，systemd 服务，TUNA 提供[镜像](https://mirrors.tuna.tsinghua.edu.cn/github-release/z4yx/GoAuthing/LatestRelease/)可以在未认证时下载认证工具，提供认证相关库 |
 | [tunet-python](https://github.com/yuantailing/tunet-python) | 支持 python 的平台，CLI | Python | 可用 | v4与v6，准入与准出，流量与准入出状态监控 |
 | [auth-tsinghua](https://github.com/jiegec/auth-tsinghua) | 支持 node.js 的平台, CLI | Javascript | 不再维护 | 已经重定向至 GoAuthing |
