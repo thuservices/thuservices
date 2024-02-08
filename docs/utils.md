@@ -207,6 +207,10 @@ c7w 版本：项目地址在[此](https://github.com/c7w/TsinghuaMoocCaptionCraw
 
 清华大学教参服务平台在版权允许范围内（在线浏览）提供课程教材和教参的扫描电子版，如果需要平台上没有的教材，可以直接邮件或电话联系[相关部门](https://lib.tsinghua.edu.cn/info/1184/3617.htm)进行扫描。
 
+[新版教参平台](https://mp.weixin.qq.com/s/JPOSwF-RR15ZnMBIanKC6A)于 2023 年 12 月 29 日上线，推荐使用[tsinghua-ereserves-lib-downloader](https://github.com/A1phaN/tsinghua-ereserves-lib-downloader)进行下载。
+
+以下为旧版平台的信息：
+
 推荐使用[reserves-lib-tsinghua-downloader](https://github.com/libthu/reserves-lib-tsinghua-downloader)进行下载。
 
 在 [thu-info-lib](https://github.com/thu-info-community/thu-info-lib) 中也实现了下载功能。
