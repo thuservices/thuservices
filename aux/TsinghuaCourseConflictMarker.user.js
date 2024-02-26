@@ -7,9 +7,9 @@
 // @description  Mark the conflicted course red
 // @description:zh-CN  将与已选课冲突的候选课标红
 // @author       Zenithal
-// @match        https://zhjwxk.cic.tsinghua.edu.cn/*
-// @match        https://zhjwxkyw.cic.tsinghua.edu.cn/*
-// @match        https://webvpn.tsinghua.edu.cn/https/*/*
+// @match        https://zhjwxk.cic.tsinghua.edu.cn/xkBks.vxkBksXkbBs.do*
+// @match        https://zhjwxkyw.cic.tsinghua.edu.cn/xkBks.vxkBksXkbBs.do*
+// @match        https://webvpn.tsinghua.edu.cn/https/*/xkBks.vxkBksXkbBs.do*
 // @grant        none
 // @license      MIT
 // ==/UserScript==
