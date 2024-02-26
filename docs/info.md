@@ -4,13 +4,17 @@
 
 快速访问路径：INFO（校外需要 VPN）->登录->综合->右上角校历
 
-### 2020-2021学年 
+### 2022-2023学年 
 
-![2021 - 2022 学年 秋季](image/cal/2021-2022-1-cn.jpg)
+![2022 - 2023 学年 春季](image/cal/2022-2023-2-cn.jpg)
+
+![2023 - 2024 学年 秋季](image/cal/2023-2024qiuji.jpg)
+
+![2023 - 2024 学年 春季](image/cal/2023-2024chunji.jpg)
 
 ## 本科专业培养方案
 
-[清华官网培养方案链接](https://2020.tsinghua.edu.cn/jyjx1/bksjy/bkzy1.htm)
+[清华官网培养方案链接](https://www.tsinghua.edu.cn/jyjx/bksjy/bkzy.htm)
 
 [计算机系 19 级培养方案 info 版本（需要已经登录 info）](http://zhjw.cic.tsinghua.edu.cn/jhBks.vjhBksPyfakzbBs.do?m=pyfakzFrame&fajhh=193024111&theModule=pyfa)
 
@@ -84,14 +88,14 @@
 
 ## 校内校车
 
-[校内交通介绍](https://2020.tsinghua.edu.cn/zjqh/syxx1/xyjt1.htm)
+[校内交通介绍](https://www.tsinghua.edu.cn/zjqh/syxx/xyjt.htm)
 [校车交通路线图](https://www.tsinghua.edu.cn/__local/3/BB/BE/7260A578E48A6BA827528DE4F74_004A1626_73CEC.png)
 
 校车实时运行情况可以使用“校内交通介绍”中提到的 APP 与/或小程序
 
 ## 校内地图（静态版）
 
-[校内地图](https://2020.tsinghua.edu.cn/zjqh/xyfg/xydt1.htm)
+[校内地图](https://www.tsinghua.edu.cn/zjqh/xyfg/xydt.htm)
 
 ## 清华大学调查问卷系统
 
@@ -148,3 +152,43 @@
 ## 火车票报销凭证
 
 在紫荆一号楼的东侧，通往桃李的路上，有一台取火车票报销凭证机器
+
+## DIVI 注册设备
+
+在连接 DIVI 后访问 register.your.device
+
+## 清华大学邮箱
+
+学生邮箱为 abbr@mails.tsinghua.edu.cn ，同时可以用 abbr@mails.thu.edu.cn 收到邮件。
+
+教师邮箱为 abbr@mail.tsinghua.edu.cn ，同时可以用 abbr@tsinghua.edu.cn ，两者等价。
+
+没有特别的邮件列表实现，一般使用教师邮箱并用群组转发实现邮件列表。
+
+没有 abbr@thu.edu.cn 。
+
+清华同时有 tsinghua.edu 的域名，尽管有解析，未见使用（注：隔壁 ustc.edu 被用作校友邮箱）
+
+### 清华大学校友邮箱
+
+访问 https://mailservice.tsinghua.org.cn/ 即可激活。
+
+可获得 abbr@tsinghua.org.cn 的邮箱。
+
+## 清华大学 Overleaf 服务
+
+访问 https://overleaf.tsinghua.edu.cn/ 即可。
+
+## LibGuides at Tsinghua University
+
+<https://tsinghua.cn.libguides.com/>
+
+## 清新时报
+
+<https://qxcm.tsjc.tsinghua.edu.cn/pc/folder120>
+
+## 各食堂进入人数
+
+> 微信->清华大学信息服务->学生食堂进入人数
+
+已关闭

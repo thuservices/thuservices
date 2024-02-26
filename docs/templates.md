@@ -1,5 +1,10 @@
 # LaTeX 等模板
 
+
+ppt 模板：<https://github.com/atomiechen/THU-PPT-Theme>
+
+以下模板均可在 <https://overleaf.tsinghua.edu.cn/templates/> 中找到并使用。
+
 ## 《如何使用 LaTeX 排版论文》讲稿
 
 2015 年起，每年 4 月、11 月清华大学图书馆专题培训讲座 《如何使用 LaTeX 排版论文》
@@ -42,6 +47,10 @@ Overleaf模板位于：<https://www.overleaf.com/latex/templates/thu-beamer-them
 
 <https://www.overleaf.com/latex/templates/report-presentation-for-tsinghua-university/yxcbdvyctybp>
 
+## thubeamer
+
+<https://github.com/YangLaTeX/thubeamer>
+
 ## THU coursework Template
 
 LaTeX package for students in Tsinghua University to write coursework more efficiently, also can be used by students from other university.
@@ -63,3 +72,13 @@ LaTeX package for students in Tsinghua University to write coursework more effic
 ## CV-tsinghua-template
 
 <https://github.com/K-Wu/CV-tsinghua-template>
+
+## THU-Exam-LaTeX-Template
+
+<https://github.com/VicaYang/THU-Exam-LaTeX-Template>
+
+## ilatex
+
+课程作业, 实验报告模板
+
+<https://github.com/liblaf/ilatex>

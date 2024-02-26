@@ -16,6 +16,10 @@
 
 按照校园网建议，在配置 DNS 和 NTP 时，至少要使用校园网提供的服务。
 
+目前，校园网内只能使用校园网提供的 DNS，其余 DNS 不保证工作。
+
+对于更多校园网 DNS 特性及可能可用的公共 DNS 服务，参考 [DNS 拦截](#dns-拦截)
+
 ## SSLVPN
 
 在 Linux 机器上没有 PULSE SECURE 客户端，除了可以使用 WEB VPN 外，也可使用 `openconnect` 来做到连接清华VPN。
@@ -36,8 +40,16 @@ $ pacman -S openconnect
 
 安装完毕后，使用
 
+>
+> $ openconnect --juniper https://sslvpn.tsinghua.edu.cn
+>
+
+指定协议为 Juniper 的情况下，客户端不会被分配 IPv6 地址，如果改成 Pulse Connect Secure 则可以获取到一个 IPv6 地址。同时还需要指定 UserAgent 才能正确地获取 IPv6 路由，否则会尝试将所有 IPv6 流量路由到 VPN。
+
+用如下的方式可以正确获取 IPv6 地址和路由（具体是 2402:f000::/32）：
+
 ```bash
-$ openconnect --juniper https://sslvpn.tsinghua.edu.cn
+openconnect --protocol=pulse https://sslvpn.tsinghua.edu.cn --useragent Pulse-Secure/9.1.11.6725
 ```
 
 输入帐号和密码后即连接上校园网，可以访问校内服务（INFO/USEREG）。
@@ -96,17 +108,17 @@ auth-thu online # 保持机器在线
 
 下载好文件以后请合理放置在相应目录（如 /usr/local/bin）下，同时将配置文件放在合理目录下，即可使用
 
-要做到自动 **准入**，需将其中附带的 `goauthing.service` 与 `goauthing.timer` 放置 `/usr/lib/systemd/system/` 文件夹下 ，并调整相应内容以符合程序文件以及配置文件的路径，使用
+要做到自动 **准出**，需将其中附带的 `goauthing.service` 或 `goauthing@.service` 放置 `/etc/systemd/system/` 文件夹下 ，并调整相应内容以符合程序文件以及配置文件的路径，使用
 
 ``` bash
-$ systemctl enable goauthing.service goauthing.timer
+$ systemctl enable goauthing.service
 ```
 
-启动相应服务，即可达到自动认证的目的。如果要实现账户信息储存在用户家目录中而不是 `/etc` 中，可以参考 `goauthing@.{service,timer}`。
+启动相应服务，即可达到自动认证的目的。如果要实现账户信息储存在用户家目录中而不是 `/etc` 中，可以参考 `goauthing@.service`。
 
-如果要实现 `v6` 的自动准入，可以拷贝并调整这些服务文件的一些参数，需要调整的参数请参考软件的文档。如果要实现自动准出，同样请参考相应参数修改。
+如果要实现 `v6` 的自动准入，可参考 `goauthing6.service` 和 `goauthing6@.service`。如果只要 v4 的自动准入，需要将 `goauthing.service` 中的 `auth` 变为 `auth -C`，且删除 `login` 一行。
 
-如果有打包者将此打包，请 PR。目前在 AUR 中已存在 `auth-thu` 包。
+如果有打包者将此打包，请 PR。目前在 AUR 中存在 `auth-thu-bin` 包（`auth-thu` 包已经过时）。
 
 ### 远端服务器代认证
 
@@ -134,13 +146,69 @@ ssh -D <port> host
 
 这样在本地会搭建一个以 `<port>` 为端口的 socks5 代理，如果在浏览器中使用该代理，即可与往常一样实现网页认证。
 
-尤其要注意的是，不能直接访问 auth4/auth6 来进行认证（参考问与答），需要通过跳转的方式来访问 auth4/auth6 以获取正确的 ac\_id. 一般情况下可以访问 info/learn 来跳转，也可通过 3.3.3.3 和 [3:3:3::3] 来跳转。后者对于三层接入的用户来说是一个较为方便的访问 auth6 的方案。
+尤其要注意的是，不能直接访问 auth4/auth6 来进行认证（参考问与答），需要通过跳转的方式来访问 auth4/auth6 以获取正确的 ac\_id. 一般情况下可以访问 info/learn/login 来跳转，也可通过 3.3.3.3 和 [3:3:3::3] 来跳转。后者对于三层接入的用户来说是一个较为方便的访问 auth6 的方案。
 
 ### Tsinghua-Secure
 
 如果是校内环境，首先连接 `Tsinghua-Secure无线网使用指南` 进入 [usereg.tsinghua.edu.cn](https://usereg.tsinghua.edu.cn) , 登录后在 `自注册及修改口令处` 设置 Tsinghua-Secure 使用的密码，此密码不需要与 info 密码相同。
 
+#### NetworkManager
+
 设置好后，可以使用 `NetworkManager` 连接该 Wifi，可以参考 its 的文档 [清华大学无线校园网 802.1x 认证登录客户端配置说明](https://its.tsinghua.edu.cn/info/1333/2318.htm)（本站[备份](file/tsinghua-secure-config.pdf)）
+
+样例配置 `/etc/NetworkManager/system-connections/Tsinghua-Secure.nmconnection` 如下
+
+```
+[connection]
+id=Tsinghua-Secure
+uuid=44638cf4-782e-4aaa-9ab9-f7a7e68de54c
+type=wifi
+permissions=
+timestamp=1661836652
+
+[wifi]
+mac-address-blacklist=
+mode=infrastructure
+seen-bssids=30:7B:AC:09:BF:EB;30:7B:AC:09:DD:8B;30:7B:AC:09:EF:CB;30:7B:AC:0A:18:2B;30:7B:AC:40:7F:CC;30:7B:AC:40:80:AC;30:7B:AC:40:A0:8A;30:7B:AC:65:0D:2B;30:7B:AC:65:22:6B;30:7B:AC:67:A5:4A;30:7B:AC:67:ED:8A;30:7B:AC:67:F5:8A;30:7B:AC:67:FC:4A;30:7B:AC:67:FC:59;30:7B:AC:92:ED:0C;30:7B:AC:93:08:8A;30:7B:AC:93:0F:CC;30:7B:AC:93:1D:6C;30:7B:AC:93:1D:7A;30:7B:AC:93:2B:2C;30:7B:AC:93:32:2C;30:7B:AC:93:33:2C;30:7B:AC:98:C0:CA;30:7B:AC:98:C1:0C;30:7B:AC:98:C1:CA;30:7B:AC:98:C5:6A;30:7B:AC:98:C8:0A;70:D9:31:23:AF:D2;94:28:2E:3F:ED:CA;94:28:2E:40:0E:CA;A8:58:40:5A:66:B2;A8:58:40:5B:7A:D2;A8:58:40:D5:D1:12;A8:58:40:D5:D3:22;A8:58:40:D5:D3:32;A8:58:40:D6:03:F2;A8:58:40:D6:25:F2;A8:58:40:D6:3C:F2;A8:58:40:D6:3F:52;A8:58:40:D6:44:B2;A8:58:40:D6:45:72;A8:58:40:D6:97:12;A8:58:40:D7:14:D2;
+ssid=Tsinghua-Secure
+
+[wifi-security]
+key-mgmt=wpa-eap
+
+[802-1x]
+eap=peap;
+identity=<username>@tsinghua
+password=<redacted>
+phase2-auth=mschapv2
+
+[ipv4]
+dns-search=
+method=disabled
+
+[ipv6]
+addr-gen-mode=eui64
+dns-search=
+ignore-auto-dns=true
+method=auto
+token=::114:514:1919:810
+
+[proxy]
+```
+
+该样例配置仅启用了 IPv6 并获取特定后缀（请自行挑选后缀以免地址相撞），同时使用了 `@tsinghua` 的 `identity` 以保证不占用准出名额。
+
+特别要注意的是，如果你同时符合下面三个条件：
+
+1.  `NetworkManager` 使用了 `wpa_supplicant` 后端 
+1.  使用了 3.0.0 及以上版本的 `openssl`
+1.  使用的发行版没有给 `wpa_supplicant` 打上 [修复 tls 1.0/1.1 连接的 patch](https://launchpad.net/ubuntu/+source/wpa/2:2.10-6ubuntu2) （目前确认 Ubuntu 有 patch，NixOS 没有 patch）
+
+那么你的 `NetworkManager` 可能由于 tls 1.0 连接被禁用而连不上 `Tsinghua-Secure`，此时有以下两种解决方法，任意一种都能解决：
+
+1.  升级 NetworkManager 到 `1.41.5-dev` 及以上，准确的说是确保 [这个 commit](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/-/commit/98dd4180ec163af63fe1e0fda00158ac7f0047df) 已经被包含。在上述配置文件的 `[802-1x]` 一节中加入一行 `phase1-auth-flags=32`（`NetworkManager` 中 `tls-1-0-enable` 这一选项对应 `0x20`，换算成十进制是 `32`，这一换算关系目前没有在文档里记录，所以不保证 32 这个数字始终有效。更能保证有效的方法是手动用 `nmcli` 设置 `Tsinghua-Secure` 中设置 `802-1x.phase1-auth-flags` 为 `tls-1-0-enable`）。
+1.  给自己的 `wpa_supplicant` 打上前面提到的 patch。
+
+#### wpa_supplicant
 
 也可使用 `wpa_supplicant` 完成相应 wifi 连接。安装 `wpa_supplicant`，编辑 `/etc/wpa_supplicant/wpa_supplicant-nl80211-XXXX.conf`， 其中 `XXXX` 是本机网卡名称，输入以下配置
 
@@ -156,6 +224,8 @@ network={
         eap=PEAP
         identity="username"
         password="password"
+        # 使用 3.0.0 及以上版本的 openssl，同时发行版没有打上相应 patch 的话（参见上一节），tls 1.0/1.1 会被默认禁用，无法连接 Tsinghua-Secure。下面这行可以解除禁用
+        phase1="tls_disable_tlsv1_0=0"
         phase2="auth=MSCHAPV2"
         priority=9
 }     
@@ -170,6 +240,36 @@ $ systemctl enable --now wpa_supplicant-nl80211@XXXX.service
 即可连接。
 
 注：本配置由[orv](http://hep.tsinghua.edu.cn/~orv)贡献。
+
+#### iwd
+
+由于 Tsinghua-Secure 的证书问题（dhparams 中 p 的长度仅为 1024，不符合 [Linux 内核的 1536 长度需求](https://elixir.bootlin.com/linux/v6.0/source/crypto/dh.c#L52)），而 iwd 依赖于内核的密码学工具，默认使用 iwd 无法连接。
+
+[NickCao](https://github.com/NickCao) 为此提供了 [dhack 内核模块](https://github.com/NickCao/dhack) 与 ell 工具补丁（如下）；前者通过劫持相应符号实现补丁，后者在 nix 构建软件包时直接替换源码中的参数。用户可以依此类推自行构建内核与工具。
+
+```nix
+iwd.override {
+  ell = ell.overrideAttrs (_: {
+    postPatch = ''
+      substituteInPlace ell/tls-suites.c \
+        --replace 'params->prime_len < 192' 'params->prime_len < 128'
+    '';
+  });
+}
+```
+
+另外配置如下
+
+```
+[Security]
+EAP-Method=PEAP
+EAP-Identity=<username>
+EAP-PEAP-Phase2-Method=MSCHAPV2
+EAP-PEAP-Phase2-Identity=<username>
+EAP-PEAP-Phase2-Password=<passwd>
+[Settings]
+AutoConnect=true
+```
 
 ### Tsinghua-Secure 仅校内登录方式
 
@@ -215,7 +315,9 @@ ip r a 2402:f000:2:b801::/64 via fe80::xxxx dev wlan0
 
 ### 低端口阻断
 
-按照前面的「使用简介」文档，IPv4 对 0到1024，8000到8100，3389 以及 9100 端口进行阻断。
+按照前面的「使用简介」文档，IPv4 对 0 到 1024，8000 到 8100，3389 以及 9100 端口进行阻断。另外由于众所周知的原因，1080、4781、7890 端口也被阻断。
+
+2022 年秋季开始，IPv6 对低端口部分进行阻断。
 
 ### 动态 IP
 
@@ -286,24 +388,38 @@ Apr 02 07:00:34 Zenith dhcpcd[497]: enp3s0: REPLY6 received from fe80::9629:2fff
 Apr 02 07:00:34 Zenith dhcpcd[497]: enp3s0: adding address 2402:f000:4:3:888:1926:8:17/128
 ```
 
+### 院系网（三层接入）的 IPv6
+
+有些院系网是三层接入的校园网在网内配置的是 SLAAC。
+
+一些机器（例如 Windows 的默认设置和一些 Linux 的默认设置）配置了隐私扩展后，在 SLAAC 环境下其 IPv6 地址会不断改变，由于学校的准入是对 IPv6 地址进行的，具体表现就是在用 auth6 准入 IPv6 一段时间后就失去了准入，需要重新登录 auth6。
+
+一种方法是关掉 IPv6 隐私临时地址（可 Google 查阅相关资料），另一种方式是使用自动准入客户端，例如前面提到的 auth-thu 的 goauthing6.service
+
 ### 不符合 RFC 的 DHCPv6
 
-你校的 DHCPv6 server 会不承认某些 DUID，对于这样的 DHCP 请求会不予回应。即使向学校反映该问题，学校尝试让厂商修复后，该问题仍然存在。
+> 你校的 DHCPv6 server 会不承认某些 DUID，对于这样的 DHCP 请求会不予回应。即使向学校反映该问题，学校尝试让厂商修复后，该问题仍然存在。
+>
+> 根据相关人士消息，只有 DUID Type 1，也就是 DUID-LLT 被承认，以下给出 dhcpcd 的相应配置方式。
+>
+> 首先将 `/etc/dhcpcd.conf` 中的 `duid` 打开，同时保证没有开启 `clientid`。然后我们检查下列文件
+>
+> ```
+> $ cat /var/lib/dhcpcd/duid
+> 00:01:00:01:26:53:6d:9d:ff:ff:ff:ff:ff:ff
+> ```
+>
+> 若以 `00:01` 开头，则表明为 DUID-LLT，否则（或文件不存在）需要改为上述格式。同时需要检查一下最后的 `ff:ff:ff:ff:ff:ff` 是否为相关网卡的MAC地址，如果不是需要更改为相应地址。
+>
+> **更新** 的测试发现，我们并不知道你校的 DHCPv6 是如何工作的，其如何工作完全是玄学。有的开启了 Anonymize 即可使用，有的开启了也尝试失败。
+>
+> 一些体验可以参考 <https://pwe.cat/zijing-dhcpv6/>
 
-根据相关人士消息，只有 DUID Type 1，也就是 DUID-LLT 被承认，以下给出 dhcpcd 的相应配置方式。
-
-首先将 `/etc/dhcpcd.conf` 中的 `duid` 打开，同时保证没有开启 `clientid`。然后我们检查下列文件
-
-```
-$ cat /var/lib/dhcpcd/duid
-00:01:00:01:26:53:6d:9d:ff:ff:ff:ff:ff:ff
-```
-
-若以 `00:01` 开头，则表明为 DUID-LLT，否则（或文件不存在）需要改为上述格式。同时需要检查一下最后的 `ff:ff:ff:ff:ff:ff` 是否为相关网卡的MAC地址，如果不是需要更改为相应地址。
+最近的尝试发现，使用较新版本的 `systemd-networkd` 能稳定获取地址。
 
 ### 30分钟无流量掉准入
 
-根据之前提到的《准入上网使用说明》，计算机长时间（目前为 30 分钟）不使用网络时，认证系统会关闭其网络连接；服务器如有必要可每 10 分钟 ping 1 次 ping.tsinghua.edu.cn。
+根据之前提到的《准入上网使用说明》，计算机长时间（目前为 30 分钟）不使用网络时，认证系统会关闭其网络连接； <del>服务器如有必要可每 10 分钟 ping 1 次 ping.tsinghua.edu.cn。</del>（已失效）
 
 ### 掉准出后无法准出
 
@@ -321,6 +437,62 @@ $ cat /var/lib/dhcpcd/duid
 
 能 ping 通也是预策略决定的，不过这一点没有文档；即，未准入时放行 ICMP reply 包。
 
+### DNS 拦截
+
+校园网（教育网）可能会拦截到一些常见 DNS 服务器的 ICMP 和 DNS 请求，表现为 `ping` 或 `dig` 相应地址时延迟异常低 (<1ms)，`traceroute` 显示包经过少数几跳后在某些属于校园网（教育网）的 IP 地址（118.229.x.y，可能为路由设备）处消失，未进入其他运营商网络。
+
+笔者在宿舍区 (59.66.x.y 网段) 测试了部分公开 DNS 服务器的响应情况，供参考，表中 ping 延迟 <1 的结果提示服务器可能被劫持。注意此类策略可能随时间动态调整，此测试结果可能无法及时更新。从测试结果中大致可总结出以下规律：
+
+1. 知名 DNS 提供商的主要 IPv4 地址易受拦截，备用 IPv4 地址 (114, Cloudflare) 、较不规律的 IPv4 地址 (360, Quad9 备用, OpenDNS) 和 IPv6 地址未被拦截，可能与用户请求数量有关；
+2. 海外 DNS 提供商的 IPv6 地址响应延迟低于响应的 IPv4 地址，大陆地区的 DNS 部分情况相反，IPv6 地址响应速度整体偏慢。校园网 DNS 和 TUNA 响应速度一骑绝尘。
+
+| DNS 厂商    | IP 地址               | ping 延迟 (ms) | dig 延迟 (ms) |
+| ----------- | --------------------- | -------------- | ------------- |
+| 校园网      | 166.111.8.28          | <1             |               |
+|             | 166.111.8.29          | <1             |               |
+|             | 2402:f000:1:801::8:28 | <1             |               |
+|             | 2402:f000:1:801::8:29 | <1             |               |
+| 114         | 114.114.114.114       | <1             |               |
+|             | 114.114.115.115       | 9              | 7             |
+| 360         | 101.226.4.6           | 28             | 31            |
+|             | 218.30.118.6          | 34             | 35            |
+|             | 140.207.198.6         | 25             | 27            |
+|             | 123.125.81.6          | 3              | 3             |
+| 阿里        | 223.5.5.5             | <1             |               |
+|             | 223.6.6.6             | <1             |               |
+|             | 2400:3200::1          | 3              | 3             |
+|             | 2400:3200:baba::1     | 3              | 3             |
+| 百度        | 180.76.76.76          | <1             |               |
+| 腾讯 DNSPod | 119.29.29.29          | <1             |               |
+|             | 2402:4e00::           | 54             | 51            |
+|             | 2402:4e00:1::         | 56             | 51            |
+| 天地互连    | 240c::6666            | 40             | 159           |
+|             | 240c::6644            | 36             | 55            |
+| TUNA DNS666 | 101.6.6.6             | 不响应         | 3             |
+|             | 2001:da8::666         | 1              | 1             |
+| 谷歌        | 8.8.8.8               | <1             |               |
+|             | 8.8.4.4               | <1             |               |
+|             | 2001:4860:4860::8888  | 36             | 40            |
+|             | 2001:4860:4860::8844  | 36             | 39            |
+| Cloudflare  | 1.1.1.1               | <1             |               |
+|             | 1.0.0.1               | 170            | 171           |
+|             | 2606:4700:4700::1111  | 38             | 51            |
+|             | 2606:4700:4700::1001  | 38             | 47            |
+| Quad9       | 9.9.9.9               | <1             |               |
+|             | 149.112.112.112       | 170            | 167           |
+|             | 2620:fe::9            | 37             | 35            |
+|             | 2620:fe::fe           | 38             | 39            |
+| OpenDNS     | 208.67.222.222        | 170            | 183           |
+|             | 208.67.220.220        | 170            | 179           |
+
+注:
+
+1. `dig` 使用笔者托管在 Cloudflare 上的某个域名测试，多次测量取较小值；
+2. 360 “安全” DNS 未收录笔者的域名，返回了空的 A 和 AAAA 记录查询结果；
+3. 部分 `dig` 测试延迟略低于 `ping` RTT，可能是由于二者计时方式不同或网络波动所致。
+
+本测试受 [Who Is Answering My Queries: Understanding and Characterizing Interception of the DNS Resolution Path](https://www.usenix.org/conference/usenixsecurity18/presentation/liu-baojun) 启发，该论文对 DNS 拦截现象进行了更深入全面的研究。
+
 ## 清华云盘
 
 建议使用 [seafile.com/download](https://seafile.com/download) 中的 Linux 客户端，而不是 Terminal 客户端，因为 Terminal 客户端需要独立密码，此密码不同于 INFO 密码，不能获得，故不能通过 Terminal 客户端登录。
@@ -333,19 +505,55 @@ pacman -S seafile-client
 
 而非 `pacman -S seafile`，此包为 Terminal 客户端。其余发行版请自行找到对应包。
 
-### 魔改 Terminal 客户端
+### 使用 Terminal 客户端
 
-在[该项目](https://github.com/prnake/Thu-Toolbox)中存在一个文件夹 seafile，其中指出了使用 Token 登录清华云盘的办法，可以避免使用独立密码。
+Terminal 客户端在 8.0.4 版本后以后支持使用 Token 进行同步，你可以在 [install_linux_client](https://help.seafile.com/syncing_client/install_linux_client/) 中找到大部分发行版 AMD64 架构的源，如果你所使用的包管理器中 `seafile` 或 `seafile-cli` 版本号低于 `8.0.4`，可以安装并参考后面替换部分文件的方法，也可以直接手动编译最新版。
+
+#### 获取 Token
+
+在浏览器中登录清华云盘，Cookie 中的 `seahub_auth` 应该为 `用户名（学号@tsinghua.edu.cn）@Token` 的模式，最后一段即为 Token 。每个账户的 Token 是唯一的，并且不会过期。
+
+在能正常运行 `seaf-cli` 后，可以使用命令行进行同步操作
+
+```
+seaf-cli init -d ~
+seaf-cli start
+seaf-cli sync -l <library-id> -s https://cloud.tsinghua.edu.cn -d <place-directory> -T <token>
+seaf-cli desync -d <existing-folder>
+```
+
+#### 替换部分文件实现 Token 登录
+
+`seaf-cli` 实质上是通过 `pysearpc` 与 `seaf-daemon` 通讯，因此大部分发行版默认源中较低版本的 `seafile` 在只替换 `seaf-cli` 的情况下也能正常工作。这里提供一种安装 Terminal 客户端后替换 `seaf-cli` 实现 Token 登录的简单办法。
+
+```
+git clone https://github.com/haiwen/seafile
+cd seafile
+cp app/seaf-cli /usr/bin/seaf-cli
+chmod +x /usr/bin/seaf-cli
+cp -r python/seafile $(python3 -m site --user-site)
+```
+
+#### 编译 Terminal 客户端
+
+具体的编译流程可以参考 [build_seafile](https://manual.seafile.com/build_seafile/linux/)，但要注意几点：
+
+- 下载并编译每个仓库中的最新源码或最新的 release
+- 可以忽略文档中的 `ccnet` 部分，仓库已经消失并且不存在相关依赖
+- make 有概率失败，可以多来几次
+- 如果安装完成后 `seaf-cli` 报错，例如 `No module named 'seafile'` 可以参考上一节手动复制 `seafile` 包
 
 ### Chrome 提醒下载的文件危险
 
-此现象可能是奇妙同学的奇妙操作导致 Chrome 讲清华云盘域名标记，进而所有文件下载都会提醒可能有危险并阻止。
+此现象可能是奇妙同学的奇妙操作导致 Chrome 将清华云盘域名标记，进而所有文件下载都会提醒可能有危险并阻止。
 
 请忽略此提醒。当然，如果您下载的真的是奇妙的文件，请您自查。
 
-## ISATAP 
+## ISATAP（已停止）
+
+目前，该服务已停止。
   
-参考 [ipv6.tsinghua.edu.cn](https://ipv6.tsinghua.edu.cn)
+参考 [ipv6.tsinghua.edu.cn](https://ipv6.tsinghua.edu.cn)。另有 [AUR 包 thu-isatap](https://aur.archlinux.org/packages/thu-isatap) 供参考。
 
 目前只有校内公网IPv4的可使用该服务，校外不可。注意 `166.111.21.1` 这个IP是不会回应ping包的。
 
@@ -378,3 +586,26 @@ cmd> nslookup -q=TXT win10.harrychen.xyz
 ### TUNA
 
 访问 <https://mirrors.tuna.tsinghua.edu.cn> ，点击获取下载链接即可。
+
+## 校内 IP 段
+
+校内共有 6 个 /16，可参考 <https://bgp.he.net/AS45576>
+
+```
+; 重要校园服务基本位于此网段，例如主页
+; 机房也常用该网段
+; 此网段还可在教学楼、图书馆获取
+166.111.0.0/16
+; 常用于机房与院系网
+101.5.0.0/16
+101.6.0.0/16
+; 紫荆，C 楼等学生区，以及南部居民区
+59.66.0.0/16
+; 无线网（两个 /16 还不够用呢）
+183.172.0.0/16
+183.173.0.0/16
+; 内部使用（大概是供路由器等网络基础设施使用）
+118.229.0.0/20
+```
+
+v6 一般使用 `2402:f000::/32`，也有部分地区使用 `2001:250:200::/48`（网研院）。有一段 `2001:da8:200::/48` 但未见使用。
