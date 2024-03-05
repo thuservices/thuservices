@@ -249,7 +249,7 @@ c7w 版本：项目地址在[此](https://github.com/c7w/TsinghuaMoocCaptionCraw
 
 也有另一种实现，参考 aux 目录中的 `TsinghuaBills.py`。
 
-还有另一种基于 curl 的 bash 脚本[实现](https://gist.github.com/DictXiong/793e72896b1390531c72f2ab46e62b89)。
+还有另一种基于 curl 的 shell 脚本[实现](https://gist.github.com/DictXiong/793e72896b1390531c72f2ab46e62b89)。
 
 通过这些脚本可以将数据灌入 grafana 中，实现电费监控与报警。
 
