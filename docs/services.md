@@ -120,6 +120,10 @@ $ systemctl enable goauthing.service
 
 如果有打包者将此打包，请 PR。目前在 AUR 中存在 `auth-thu-bin` 包（`auth-thu` 包已经过时）。
 
+#### 自动认证 （Windows）
+
+对于 Windows 用户，可以利用任务计划程序库新建开机自动启动的任务，以实现自动认证，可以参考 [这篇文章](https://aajax.top/2024/03/10/GoAuthingWindows/) 建立循环执行的登录脚本并设置在开机时启动。
+
 ### 远端服务器代认证
 
 （从笔者的经历来看，usereg 的对准入准出成功和失败的反馈较少，建议采用命令行以及网页认证，而只将 usereg 作为状态面板使用）
