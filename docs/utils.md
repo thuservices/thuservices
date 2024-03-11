@@ -46,7 +46,7 @@
 需要注意的是，现在未对半学期课做完全支持，也就是说可能出现假的时间冲突；
 同时在开课信息以及选课查询界面无法工作，只在选课操作界面工作。
 
-本脚本在 aux/TsinghuaCourseConflictMarker.user.js 中，需要使用油猴安装。
+本脚本在 misc/TsinghuaCourseConflictMarker.user.js 中，需要使用油猴安装。
 
 或者可以通过访问[这里](https://greasyfork.org/en/scripts/408340-tsinghuacourseconflictmarker)
 来一键获得脚本。
@@ -100,7 +100,7 @@ https://washer.voltair.top/
 还在为了抢洗衣机而努力吗，还在跑上跑下却发现一个洗衣机都没有而痛苦吗，这个服务
 帮你侦测洗衣机状态，足不出户而一键掌握全校洗衣机的动向！
 
-源码在 repo 的 aux 目录中。目前部署在 cf workers 上，地址为 [https://washer.thu.services](https://washer.thu.services)
+源码在 repo 的 misc 目录中。目前部署在 cf workers 上，地址为 [https://washer.thu.services](https://washer.thu.services)
 
 要实现搜索，我们需要加上参数，目前接受三种参数，「s」，「j」与「p」。「s」即为搜索的
 公寓楼，一般接受的字符串为「紫荆x号楼」或「南区x号楼」。举例来说
@@ -152,7 +152,7 @@ iOS 12 以上的用户可以透过此[链接](https://www.icloud.com/shortcuts/f
 通过 cksqs 或付费成绩单获取的，不在计算范围内），用新、旧算法将全部 GPA 与必限 GPA
 计算出来（直接输出 double），并弹出通知提醒。
 
-本脚本在 `aux/Tsinghua GPA Calculator.user.js` 中，需要使用油猴安装。
+本脚本在 `misc/Tsinghua GPA Calculator.user.js` 中，需要使用油猴安装。
 
 或者通过[这里](https://greasyfork.org/zh-CN/scripts/410960-tsinghua-gpa-calculator)
 来获得。
@@ -245,9 +245,9 @@ c7w 版本：项目地址在[此](https://github.com/c7w/TsinghuaMoocCaptionCraw
 
 有通过 headless Chrome 的[实现](https://github.com/WhymustIhaveaname/TsinghuaElectric)
 
-也有另一种实现，参考 aux 目录中的 `TsinghuaElectricityBillChecker.py`，用户需要修改一些内嵌的参数。
+也有另一种实现，参考 misc 目录中的 `TsinghuaElectricityBillChecker.py`，用户需要修改一些内嵌的参数。
 
-也有另一种实现，参考 aux 目录中的 `TsinghuaBills.py`。
+也有另一种实现，参考 misc 目录中的 `TsinghuaBills.py`。
 
 还有另一种基于 curl 的 shell 脚本[实现](https://gist.github.com/DictXiong/793e72896b1390531c72f2ab46e62b89)。
 
@@ -255,7 +255,7 @@ c7w 版本：项目地址在[此](https://github.com/c7w/TsinghuaMoocCaptionCraw
 
 ## 寝室水电费查询
 
-参考 aux 目录中的 `TsinghuaBills.py`。
+参考 misc 目录中的 `TsinghuaBills.py`。
 
 注：该脚本可查询的是寝室水费余额（非校园卡小钱包！），主要适用于W楼和双清公寓。具体适用范围：双清公寓、紫荆学生公寓十四号楼、紫荆学生公寓十五号楼、紫荆学生公寓十六号楼、紫荆学生公寓十七号楼、十七号楼、十八号楼。
 
