@@ -1,7 +1,11 @@
 #!/bin/sh
 
+cat aux/README.pre.md > docs/README.md
+./gen.readme.py >> docs/README.md
+cat aux/README.suf.md >> docs/README.md
+
 cat aux/README.pre.md > README.md
-./gen.readme.py >> README.md
+./gen.readme.py docs/ >> README.md
 cat aux/README.suf.md >> README.md
-cp README.md docs/README.md
+
 git add README.md docs/README.md

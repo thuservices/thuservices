@@ -5,11 +5,11 @@
 [选课登录（校内或 SSLVPN）（选课时段内有效）](http://zhjwxk.cic.tsinghua.edu.cn/xklogin.do)
 
 ## 文件内容
-- [accounts.md](accounts.md)
+- [accounts.md](docs/accounts.md)
     - 公众帐号们
         - 微信公众号
         - 知乎
-- [info.md](info.md)
+- [info.md](docs/info.md)
     - INFO重要信息集合
         - 校历
             - 2022-2023学年 
@@ -48,7 +48,7 @@
         - LibGuides at Tsinghua University
         - 清新时报
         - 各食堂进入人数
-- [services.md](services.md)
+- [services.md](docs/services.md)
     - 清华服务使用指北（主要面向 Linux 用户）
         - DNS/NTP
         - SSLVPN
@@ -92,7 +92,7 @@
             - ITS
             - TUNA
         - 校内 IP 段
-- [templates.md](templates.md)
+- [templates.md](docs/templates.md)
     - LaTeX 等模板
         - 《如何使用 LaTeX 排版论文》讲稿
         - ThuThesis
@@ -109,7 +109,7 @@
         - CV-tsinghua-template
         - THU-Exam-LaTeX-Template
         - ilatex
-- [utils.md](utils.md)
+- [utils.md](docs/utils.md)
     - 一些脚本和工具
         - 校园网认证工具汇总
         - INFO/网络学堂 APP/插件
@@ -154,7 +154,7 @@
         - thuhole database backup
         - 计算机系学生科协技能引导文档
         - 清华大学研究生社会实践系统爬虫
-- [websites.md](websites.md)
+- [websites.md](docs/websites.md)
     - 常用校外网站
         - thu.services
         - T大树洞
