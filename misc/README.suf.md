@@ -7,8 +7,6 @@
 
 在 pre-commit hook 的作用下，README.md 是自动生成的，故如果需要在 README.md 中修改，请在 [misc 文件夹](https://github.com/ZenithalHourlyRate/thuservices/tree/master/misc)下进行。
 
-由于 Windows 文件系统的限制，文件夹名不能为 misc，请在非Windows环境（WSL也可以）下克隆该项目。
-
 ### 编译
 
 ```
