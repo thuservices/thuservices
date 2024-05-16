@@ -357,3 +357,14 @@ https://github.com/Wsky51/THU-CS912-kaoyan
 Crawl structured data from https://thshijian.tsinghua.edu.cn (清华大学研究生社会实践系统). Use at your own risk.
 
 <https://github.com/Harry-Chen/thshijian-crawler>
+
+## 清华云盘批量下载助手
+
+清华云盘批量下载助手，适用于分享的文件 size 过大导致无法直接下载的情况，本脚本添加了更多实用的小功能：
+
+- [x] 直接下载链接中的所有文件，无打包过程，且无文件数量和大小限制
+- [x] 支持下载带密码云盘链接
+- [x] 支持查看文件下载总大小和下载进度
+- [x] 支持模糊匹配需要下载的文件（如指定文件类型 / 指定文件夹下载）
+
+<https://github.com/chenyifanthu/THU-Cloud-Downloader>
