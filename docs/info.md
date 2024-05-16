@@ -8,6 +8,8 @@
 
 ![2022 - 2023 学年 春季](image/cal/2022-2023-2-cn.jpg)
 
+### 2023-2024学年 
+
 ![2023 - 2024 学年 秋季](image/cal/2023-2024qiuji.jpg)
 
 ![2023 - 2024 学年 春季](image/cal/2023-2024chunji.jpg)
@@ -113,7 +115,7 @@
 
 ## eduroam
 
-访问 <https://guestman.tsinghua.edu.cn:8443/> 可注册。注：只可用于清华校外。
+访问 <https://eduroam.tsinghua.edu.cn/> 可注册。注：只可用于清华校外。
 
 ## cksqs 查询GPA
 
