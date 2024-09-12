@@ -77,15 +77,9 @@
 
 ## 全校洗衣机状态
 
-### 全校洗衣机状态 - 洗衣机查询工具（有界面）
+### THU Info app
 
-https://washer.sdevs.top/
-
-界面简洁易用，数据经过整理，可记忆查询的公寓楼，提供反馈渠道。
-
-### 清华大学洗衣房可用性查询
-
-https://washer.voltair.top/
+https://app.cs.tsinghua.edu.cn/
 
 ### 全校洗衣机状态 - 官方小程序
 
