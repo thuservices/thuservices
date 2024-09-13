@@ -203,9 +203,7 @@ c7w 版本：项目地址在[此](https://github.com/c7w/TsinghuaMoocCaptionCraw
 
 [新版教参平台](https://mp.weixin.qq.com/s/JPOSwF-RR15ZnMBIanKC6A)于 2023 年 12 月 29 日上线，推荐使用[tsinghua-ereserves-lib-downloader](https://github.com/A1phaN/tsinghua-ereserves-lib-downloader)进行下载。
 
-以下为旧版平台的信息：
-
-推荐使用[reserves-lib-tsinghua-downloader](https://github.com/libthu/reserves-lib-tsinghua-downloader)进行下载。
+[reserves-lib-tsinghua-downloader](https://github.com/libthu/reserves-lib-tsinghua-downloader)具有命令行界面，也支持新版平台的下载。
 
 在 [thu-info-lib](https://github.com/thu-info-community/thu-info-lib) 中也实现了下载功能。
 
