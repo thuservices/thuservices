@@ -73,6 +73,12 @@ LaTeX package for students in Tsinghua University to write coursework more effic
 
 <https://github.com/K-Wu/CV-tsinghua-template>
 
+## THU-CV
+
+清华大学 LaTeX 中文简历模板
+
+<https://github.com/Windrain7/THU-CV>
+
 ## THU-Exam-LaTeX-Template
 
 <https://github.com/VicaYang/THU-Exam-LaTeX-Template>
