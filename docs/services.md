@@ -400,6 +400,17 @@ Apr 02 07:00:34 Zenith dhcpcd[497]: enp3s0: adding address 2402:f000:4:3:888:192
 
 一种方法是关掉 IPv6 隐私临时地址（可 Google 查阅相关资料），另一种方式是使用自动准入客户端，例如前面提到的 auth-thu 的 goauthing6.service
 
+### systemd-networkd 有线连接时无法获取 ipv4 地址
+
+清华校园网 DHCPv4 服务器不接受非 mac 地址的 client id，而 systemd-networkd 默认使用 duid。因而 systemd-networkd 获取不到 ip。
+
+解决方案：在 `/etc/systemd/network/<your wired network>.network` 中加入
+
+```
+[DHCP]
+ClientIdentifier=mac
+```
+
 ### 不符合 RFC 的 DHCPv6
 
 > 你校的 DHCPv6 server 会不承认某些 DUID，对于这样的 DHCP 请求会不予回应。即使向学校反映该问题，学校尝试让厂商修复后，该问题仍然存在。
