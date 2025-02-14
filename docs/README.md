@@ -75,6 +75,7 @@
                 - IPv6 静态后缀或短 IPv6 地址
                 - 尝试获取某一特定IPv4、IPv6地址
             - 院系网（三层接入）的 IPv6
+            - systemd-networkd 有线连接时无法获取 ipv4 地址
             - 不符合 RFC 的 DHCPv6
             - 30分钟无流量掉准入
             - 掉准出后无法准出
@@ -109,6 +110,7 @@
         - THU Letter of Recommendation Template
         - A Simple Tsinghua Letterhead Template
         - CV-tsinghua-template
+        - THU-CV
         - THU-Exam-LaTeX-Template
         - ilatex
 - [utils.md](utils.md)
@@ -155,7 +157,8 @@
         - thuhole database backup
         - 计算机系学生科协技能引导文档
         - 清华大学研究生社会实践系统爬虫
-        - 清华云盘批量下载助手
+        - 清华云盘批量下载助手（CLI）
+        - 清华云盘下载助手（浏览器插件）
 - [websites.md](websites.md)
     - 常用校外网站
         - thu.services
