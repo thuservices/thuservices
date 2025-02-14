@@ -351,7 +351,7 @@ Crawl structured data from https://thshijian.tsinghua.edu.cn (清华大学研究
 
 <https://github.com/Harry-Chen/thshijian-crawler>
 
-## 清华云盘批量下载助手
+## 清华云盘批量下载助手（CLI）
 
 清华云盘批量下载助手，适用于分享的文件 size 过大导致无法直接下载的情况，本脚本添加了更多实用的小功能：
 
@@ -361,3 +361,9 @@ Crawl structured data from https://thshijian.tsinghua.edu.cn (清华大学研究
 - [x] 支持模糊匹配需要下载的文件（如指定文件类型 / 指定文件夹下载）
 
 <https://github.com/chenyifanthu/THU-Cloud-Downloader>
+
+## 清华云盘下载助手（浏览器插件）
+
+清华云盘下载助手，使用浏览器脚本，简单便捷从seafile共享链接中批量下载，无需python，适用于分享的文件 size 过大导致无法直接下载的情况。
+
+<https://github.com/lixc21/Seafile-Sharing-Link-Downloader> 
