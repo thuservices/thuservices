@@ -1,34 +1,53 @@
 site_name: THU Services
-site_description: 'A yellow page for Tsinghua/THU service/info/utils'
+site_description: "A yellow page for Tsinghua/THU service/info/utils"
 
-theme: 
-  name: 'material'
-  language: 'zh'
-  custom_dir: 'theme-override/'
+theme:
+  name: "material"
+  language: "zh"
+  custom_dir: "theme-override/"
   icon:
     repo: fontawesome/brands/github
   features:
     # - navigation.tabs
     # - navigation.instant
+  palette:
+    - media: (prefers-color-scheme)
+      toggle:
+        icon: material/brightness-auto
+        name: Auto
+    - scheme: default
+      primary: teal
+      accent: purple
+      media: "(prefers-color-scheme: light)"
+      toggle:
+        icon: material/weather-sunny
+        name: Light Mode
+    - scheme: slate
+      primary: black
+      accent: lime
+      media: "(prefers-color-scheme: dark)"
+      toggle:
+        icon: material/weather-night
+        name: Dark Mode
 
-repo_name: 'ZenithalHourlyRate/thuservices'
-repo_url: 'https://github.com/ZenithalHourlyRate/thuservices'
+repo_name: "ZenithalHourlyRate/thuservices"
+repo_url: "https://github.com/ZenithalHourlyRate/thuservices"
 
 extra:
-  pagetime: 'on'
+  pagetime: "on"
 
 nav:
   - THU Services:
-    - 目录: README.md
-    - 信息: info.md
-    - 服务: services.md
-    - 工具: utils.md
-    - 模板: templates.md
-    - 网站: websites.md
-    - 公号: accounts.md
+      - 目录: README.md
+      - 信息: info.md
+      - 服务: services.md
+      - 工具: utils.md
+      - 模板: templates.md
+      - 网站: websites.md
+      - 公号: accounts.md
 
 extra_javascript:
-  - 'https://cdn.jsdelivr.net/npm/mathjax@2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+  - "https://cdn.jsdelivr.net/npm/mathjax@2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"
 
 plugins:
   - search
@@ -64,4 +83,3 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-
