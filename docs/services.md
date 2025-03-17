@@ -513,6 +513,24 @@ DUIDType=link-layer-time
 
 本测试受 [Who Is Answering My Queries: Understanding and Characterizing Interception of the DNS Resolution Path](https://www.usenix.org/conference/usenixsecurity18/presentation/liu-baojun) 启发，该论文对 DNS 拦截现象进行了更深入全面的研究。
 
+2025 年更新:
+
+笔者用奇怪的手段拿到了 2024 年 12 月时学校的确切的 DNS 拦截列表如下:
+
+```txt
+1.1.1.1/255.255.255.255 via 118.229.1.82
+8.8.4.4/255.255.255.255 via 118.229.1.82
+8.8.8.8/255.255.255.255 via 118.229.1.82
+9.9.9.9/255.255.255.255 via 118.229.1.82
+101.7.8.9/255.255.255.255 via 118.229.1.82
+114.114.114.114/255.255.255.255 via 118.229.1.82
+118.229.1.82/255.255.255.255 via 118.229.1.82
+119.29.29.29/255.255.255.255 via 118.229.1.82
+180.76.76.76/255.255.255.255 via 118.229.1.82
+223.5.5.5/255.255.255.255 via 118.229.1.82
+223.6.6.6/255.255.255.255 via 118.229.1.82
+```
+
 ## 清华云盘
 
 建议使用 [seafile.com/download](https://seafile.com/download) 中的 Linux 客户端，而不是 Terminal 客户端，因为 Terminal 客户端需要独立密码，此密码不同于 INFO 密码，不能获得，故不能通过 Terminal 客户端登录。
