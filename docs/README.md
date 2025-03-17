@@ -61,6 +61,7 @@
                 - 自动认证 （Windows）
             - 远端服务器代认证
             - 远端服务器网页认证
+            - 可信服务器自动代认证
             - Tsinghua-Secure
                 - NetworkManager
                 - wpa_supplicant

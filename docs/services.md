@@ -152,6 +152,16 @@ ssh -D <port> host
 
 尤其要注意的是，不能直接访问 auth4/auth6 来进行认证（参考问与答），需要通过跳转的方式来访问 auth4/auth6 以获取正确的 ac\_id. 一般情况下可以访问 info/learn/login 来跳转，也可通过 3.3.3.3 和 [3:3:3::3] 来跳转。后者对于三层接入的用户来说是一个较为方便的访问 auth6 的方案。
 
+### 可信服务器自动代认证
+
+考虑到网络管理员有用自己的账号对不完全可信的服务器 (如课题组服务器) 做认证的需求, 笔者写了一个简单的 Python 脚本以实现即便在未准入的情况下也能向外传递信息, 以期利用可信服务器对不可信服务器进行代准入.
+
+此脚本利用了校园网准入系统的特性 (也算是漏洞?), 即便在未准入情况下, 设备的 UDP Port 67 (DHCP) 单播包可以穿越接入层交换机的防火墙配置, 实现了未准入条件下的单向信道.
+
+此脚本开源于 [Github](https://github.com/84634E1A607A/proxy_authing), 其功能实现较为简陋, 有诸多不足, 如目前无法自动检测网络配置变更; 但相信 Client 和 Server 都相当少 (~150 行) 的 Python 代码可以让读者自由拓展其功能.
+
+脚本的 Server 目前可以检测并认证 Client. 可以更改 Server 以在成功验证 Client 身份后调用前述具有代准入功能的脚本 (如 GoAuthing).
+
 ### Tsinghua-Secure
 
 如果是校内环境，首先连接 `Tsinghua-Secure无线网使用指南` 进入 [usereg.tsinghua.edu.cn](https://usereg.tsinghua.edu.cn) , 登录后在 `自注册及修改口令处` 设置 Tsinghua-Secure 使用的密码，此密码不需要与 info 密码相同。
