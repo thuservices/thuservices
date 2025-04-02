@@ -44,6 +44,6 @@ jobs:
         cp -ar ../site/* ../CNAME ./
         touch .nojekyll
         git add .
-        git commit -m "Github Action auto build for https://github.com/ZenithalHourlyRate/thuservices/commit/${git_commit_id}" --allow-empty
+        git commit -m "Github Action auto build for https://github.com/thuservices/thuservices/commit/${git_commit_id}" --allow-empty
         git push -u origin $remote_branch
 

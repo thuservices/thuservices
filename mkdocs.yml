@@ -30,8 +30,8 @@ theme:
         icon: material/weather-night
         name: Dark Mode
 
-repo_name: "ZenithalHourlyRate/thuservices"
-repo_url: "https://github.com/ZenithalHourlyRate/thuservices"
+repo_name: "thuservices/thuservices"
+repo_url: "https://github.com/thuservices/thuservices"
 
 extra:
   pagetime: "on"
