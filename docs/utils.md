@@ -9,6 +9,7 @@
 | 项目链接 | 支持平台 | 实现语言 | 目前是否可用（是否被维护）| 特性 |
 | --- | --- | --- | --- | --- |
 | [Tunet-2018 (official)](https://its.tsinghua.edu.cn/xywl/xywsyzn/yxw_hkhd_/khdxz.htm) | Windows-GUI, Linux-CLI | 未知 | 不可用 | 认证系统升级后被取代 |
+| [Tunet-2025 (official)](https://login.tsinghua.edu.cn) | Windows-GUI, Linux-CLI (x86\_64) | 未知 | 可用 | 官方认证工具 |
 | [GoAuthing](https://github.com/z4yx/GoAuthing/) | Linux-CLI (x86\_64, arm, mips, ppc, riscv), Windows-CLI, Mac OS-CLI (Intel, Apple) | Go | 可用 | 全平台全架构，准入与准出，v4和v6，systemd 服务，TUNA 提供[镜像](https://mirrors.tuna.tsinghua.edu.cn/github-release/z4yx/GoAuthing/LatestRelease/)可以在未认证时下载认证工具，提供认证相关库 |
 | [tunet-python](https://github.com/yuantailing/tunet-python) | 支持 python 的平台，CLI | Python | 未测试 | v4与v6，准入与准出，流量与准入出状态监控. 最后一个 Commit 在认证系统升级前, 应该未适配新系统 |
 | [tunet-c](https://github.com/robertying/tunet-c) | OpenWRT, Linux, macOS; CLI | C | 未测试 | 提供认证相关库，二进制文件较小. 最后一个 Commit 在认证系统升级前, 应该未适配新系统 |
