@@ -233,6 +233,8 @@ network={
         phase1="tls_disable_tlsv1_0=0"
         phase2="auth=MSCHAPV2"
         priority=9
+        ca_cert="/etc/ssl/certs/ca-certificates.crt"
+        domain_suffix_match="wifi.tsinghua.edu.cn"
 }     
 ```
 
