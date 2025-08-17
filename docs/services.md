@@ -250,24 +250,7 @@ $ systemctl enable --now wpa_supplicant-nl80211@XXXX.service
 
 #### iwd
 
-在准入认证系统升级后, 以下问题已被修复.
-
-> 由于 Tsinghua-Secure 的证书问题（dhparams 中 p 的长度仅为 1024，不符合 [Linux 内核的 1536 长度需求](https://elixir.bootlin.com/linux/v6.0/source/crypto/dh.c#L52)），而 iwd 依赖于内核的密码学工具，默认使用 iwd 无法连接。
->
-> [NickCao](https://github.com/NickCao) 为此提供了 [dhack 内核模块](https://github.com/NickCao/dhack) 与 ell 工具补丁（如下）；前者通过劫持相应符号实现补丁，后者在 nix 构建软件包时直接替换源码中的参数。用户可以依此类推自行构建内核与工具。
->
-> ```nix
-> iwd.override {
->   ell = ell.overrideAttrs (_: {
->     postPatch = ''
->       substituteInPlace ell/tls-suites.c \
->         --replace 'params->prime_len < 192' 'params->prime_len < 128'
->     '';
->   });
-> }
-> ```
-
-另外配置如下
+创建文件 `Tsinghua-Secure.8021x`, 文件目录在 Arch Linux 上为 `/var/lib/iwd`
 
 ```
 [Security]
