@@ -79,6 +79,13 @@
 在 Telegram 上已经存在 THU INFO CHANNEL，由于是私有频道，需要通过[邮件](mailto:i@zenithal.me)
 获取邀请链接。
 
+## INFO 新闻 RSS
+
+GitHub 仓库 [InfoTsinghuaRSS](https://github.com/84634E1A607A/InfoTsinghuaRSS),
+可以自行部署, 由于合规性原因, [公共实例](https://inforss.aajax.top:3443/) 需要清华 Git OAuth 登录.
+
+支持筛选需要的栏目, 如通过 `/rss?token={YOUR_TOKEN}&not_in=招聘信息` 排除招聘信息
+
 ## 全校洗衣机状态
 
 ### THU Info app
