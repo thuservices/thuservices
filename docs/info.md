@@ -14,6 +14,18 @@
 
 ![2023 - 2024 学年 春季](image/cal/2023-2024chunji.jpg)
 
+### 2024-2025学年
+
+![2024 - 2025 学年 秋季](image/cal/2024qj.jpg)
+
+![2024 - 2025 学年 春季](image/cal/2025cj.jpg)
+
+### 2025-2026学年
+
+![2025 - 2026 学年 秋季](image/cal/2025qiuji.jpg)
+
+![2025 - 2026 学年 春季](image/cal/2026chunji.jpg)
+
 ## 本科专业培养方案
 
 [清华官网培养方案链接](https://www.tsinghua.edu.cn/jyjx/bksjy/bkzy.htm)
