@@ -381,3 +381,13 @@ Crawl structured data from https://thshijian.tsinghua.edu.cn (清华大学研究
 清华云盘下载助手，使用浏览器脚本，简单便捷从seafile共享链接中批量下载，无需python，适用于分享的文件 size 过大导致无法直接下载的情况。
 
 <https://github.com/lixc21/Seafile-Sharing-Link-Downloader> 
+
+## 清华研究生社会实践系统增强插件（浏览器插件）（2026）
+
+- 新详情页跳转改进成内嵌侧边栏
+- 收藏页面增加查询已选人数情况
+- 已提交申请增加显示详情和已选人数情况
+- 项目查询页面支持中签概率排序
+- 支持查看提交历史
+
+<https://github.com/pioet/thshijian-extension>
