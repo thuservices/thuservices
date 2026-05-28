@@ -71,6 +71,21 @@
 
 访问[这里](https://greasyfork.org/en/scripts/456440-colorful-course)获取脚本
 
+## NextTHUxk — 下一代选课
+
+NextTHUxk 是一个清华本科生选课增强浏览器扩展（Chrome / Firefox），在原选课页面叠加全屏工作台，提供以下功能：
+
+- **课程搜索与筛选**：全校课程目录搜索，按类型/学分/时间/冲突状态筛选
+- **中签概率计算**（预选阶段）：基于志愿级联机制自动计算各选法的中签概率
+- **课余量实时数据**（抽签结果阶段）：自动获取课余量、排队人数，显示个人候补队列排名
+- **课表预览**：周课表视图，支持时间冲突检测，可预览暂存/草稿课表
+- **暂存草稿系统**：最多保存 5 套课表方案，支持导出/导入 JSON 分享
+- **时间冲突检测**：所有课程卡片自动检测与当前预览课表的冲突
+- **培养方案检测**：自动检测已选+暂存+草稿是否覆盖培养方案要求
+- **AI 排课助手**：接入 OpenAI 兼容 API，智能推荐最优选课方案
+
+项目地址：<https://github.com/smartThise/NextTHUxk>
+
 ## INFO 网络学堂 Telegram 消息推送
 
 参见 [thu-weblearn-tgbot](https://github.com/Konano/thu-weblearn-tgbot) 以及
