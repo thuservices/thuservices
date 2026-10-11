@@ -4,6 +4,7 @@ site_description: "A yellow page for Tsinghua/THU service/info/utils"
 theme:
   name: "material"
   language: "zh"
+  font: false
   custom_dir: "theme-override/"
   icon:
     repo: fontawesome/brands/github
