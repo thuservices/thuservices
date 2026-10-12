@@ -61,7 +61,7 @@ Overleaf 模板位于：<https://www.overleaf.com/latex/templates/thu-beamer-the
 
 基于 [Touying](https://github.com/touying-typ/touying) Stargazer 主题二次开发、参考 thubeamer 样式的清华大学 Typst 幻灯片模板。
 
-已发布至 Typst Universe，可直接通过 `#import "@preview/shuimu-touying:0.3.0": *` 使用。
+已发布至 [Typst Universe](https://typst.app/universe/package/shuimu-touying)。
 
 项目地址在[此](https://github.com/JSB-Unscarred/shuimu-touying)
 
