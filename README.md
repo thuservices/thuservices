@@ -110,6 +110,7 @@
         - TsinghuaBeamear
         - Report Presentation for Tsinghua University
         - thubeamer
+        - shuimu-touying
         - THU coursework Template
         - 清华大学近代物理实验报告模版
         - THU Letter of Recommendation Template
