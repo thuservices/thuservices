@@ -57,6 +57,14 @@ Overleaf 模板位于：<https://www.overleaf.com/latex/templates/thu-beamer-the
 
 <https://github.com/YangLaTeX/thubeamer>
 
+## shuimu-touying
+
+基于 [Touying](https://github.com/touying-typ/touying) Stargazer 主题二次开发、参考 thubeamer 样式的清华大学 Typst 幻灯片模板。
+
+已发布至 Typst Universe，可直接通过 `#import "@preview/shuimu-touying:0.3.0": *` 使用。
+
+项目地址在[此](https://github.com/JSB-Unscarred/shuimu-touying)
+
 ## THU coursework Template
 
 LaTeX package for students in Tsinghua University to write coursework more efficiently, also can be used by students from other university.
