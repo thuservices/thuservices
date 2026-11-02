@@ -37,7 +37,7 @@
 
 ## 沙雕园的博客
 
-<https://blog.shadiao.online/>
+<https://blog.shadiao.win/>
 
 “精神病人欢乐多”的个人网站
 
