@@ -27,11 +27,9 @@ TnTT 是“Tntt is Not a Tex Thesis Template for Tsinghua university”的递归
 
 ## ThuWordThesis
 
-清华本科毕业论文 Word 模板
+清华大学毕业论文 Word 模板（含本科生、研究生）
 
-项目地址在[此](https://github.com/qbh16/ThuWordThesis)
-
-[清华云盘下载](https://cloud.tsinghua.edu.cn/d/5e264d25ce124695b3de)
+项目地址在[此](https://github.com/fatalerror-i/thuwordthesis)
 
 ## THU-Beamer-Theme
 
